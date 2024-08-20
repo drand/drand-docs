@@ -4,48 +4,55 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  image: string;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'drand',
+    image: require('@site/static/img/drand-logo.avif').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        drand is a distributed randomness beacon daemon written in the Go programming
+        language. It generates collective, publicly verifiable, unbiased, and 
+        unpredictable random values at fixed intervals using advanced cryptographic
+        techniques.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'League of Entropy',
+    image: require('@site/static/img/league-of-entropy.avif').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        The League of Entropy is a voluntary consortium providing a verifiable, 
+        decentralized randomness beacon for anyone who needs a publicly verifiable
+        source of randomness.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'League Members',
+    image: require('@site/static/img/league-members.avif').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Active members of the League currently include Arbitrand, Automata Network,
+        ChainSafe, cLabs, Cloudflare, DIA Association, Emerald Onion, 
+        École Polytechnique Fédérale de Lausanne (EPFL), Ethereum Foundation, 
+        Filecoin Foundation; Gelato Network; IPFS Force, KEN Labs, Kudelski Security,
+        Protocol Labs, PTisp, Quantum Resistant Ledger (QRL) Foundation, Randamu,
+        StorSwift, Tierion, University of Chile, UCL, Tangle Network, and Zama.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, image, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={image} className={styles.featureSvg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

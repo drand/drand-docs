@@ -39,7 +39,7 @@ If you'd prefer not to install `drand` globally, or if you want to put the `d
 
 ## **Usage**
 
-This section gives a basic overview of the main `drand` CLI interface to give an idea of the options available. If you're setting up a drand network deployment, please see the [4.1 DevOps: Deployment](4%201%20DevOps%20Deployment%20c3df6cf2adaf42f3ac1ef6d3414880a8.md), which walks through using `drand` to run a live network.
+This section gives a basic overview of the main `drand` CLI interface to give an idea of the options available. If you're setting up a drand network deployment, please see the [4.1 DevOps: Deployment](4-1-ops-guide-deployment), which walks through using `drand` to run a live network.
 
 The `drand` command has several subcommands. Among the most important is `drand help`, which will introduce you to the rest of the subcommands:
 
@@ -81,7 +81,7 @@ The `help` command can be used for subcommands as well, for example `drand he
 
 ### **`drand generate-keypair`**
 
-The `generate-keypair` command creates a long-term public/private keypair for a drand network. You must provide the address that your drand node will listen on, including the publicly reachable port number. This may be different from the port specified when starting the daemon, for example if you've set up `drand` to run behind a reverse proxy as described in the [**Deployment Guide**](4%201%20DevOps%20Deployment%20c3df6cf2adaf42f3ac1ef6d3414880a8.md). These new keys will be loaded on drand daemon if the daemon is up and running.
+The `generate-keypair` command creates a long-term public/private keypair for a drand network. You must provide the address that your drand node will listen on, including the publicly reachable port number. This may be different from the port specified when starting the daemon, for example if you've set up `drand` to run behind a reverse proxy as described in the [**Deployment Guide**](4-1-ops-guide-deployment). These new keys will be loaded on drand daemon if the daemon is up and running.
 
 ```jsx
 $ drand help generate-keypair
@@ -112,7 +112,7 @@ The `start` command starts the drand daemon. Note that `drand` does not auto
 
 If this node has already joined a network by performing a Distributed Key Generation phase, it will attempt to catch up with the drand beacon chain by contacting other nodes and will participate in the randomness generation protocol once it has caught up.
 
-If the DKG has not yet been performed, the daemon will wait for an operator to begin the DKG phase using the [`drand dkg init`](4%205%20DevOps%20Command-line%20Tools%20e00b58d6e74849d7bd425253cc673305.md) command.
+If the DKG has not yet been performed, the daemon will wait for an operator to begin the DKG phase using the [`drand dkg init`](4-5-ops-guide-command-line-tools#drand-dkg-init) command.
 
 It contains a lot of flags for metrics, OpenTelemetry configuration, json log formatting, and configuring which database engine to user.
 
@@ -197,9 +197,9 @@ For more details on how to use Grafana, you can [read the manual here](https://
 
 **TLS configuration**
 
-TLS certificate configuration is no longer supported by drand as of v2. Instead, you should run drand behind a reverse proxy and perform TLS termination there, as described in the [4.1 DevOps: Deployment](4%201%20DevOps%20Deployment%20c3df6cf2adaf42f3ac1ef6d3414880a8.md) . By default, drand assumes that all connections between nodes will take place over TLS. To override this config and run an insecure network, you can build it with the following go compiler flag: `-tags=conn_insecure` .
+TLS certificate configuration is no longer supported by drand as of v2. Instead, you should run drand behind a reverse proxy and perform TLS termination there, as described in the [4.1 DevOps: Deployment](4-1-ops-guide-deployment) . By default, drand assumes that all connections between nodes will take place over TLS. To override this config and run an insecure network, you can build it with the following go compiler flag: `-tags=conn_insecure` .
 
-For more on TLS setup, see the [4.1 DevOps: Deployment](4%201%20DevOps%20Deployment%20c3df6cf2adaf42f3ac1ef6d3414880a8.md) .
+For more on TLS setup, see the [4.1 DevOps: Deployment](4-1-ops-guide-deployment).
 
 ### **`drand stop`**
 
@@ -308,7 +308,7 @@ OPTIONS:
 
 ### **`drand dkg init`**
 
-The initial DKG is run to create a distributed key amongst a set of nodes for the first time. It takes a proposal file (created using the [`drand dkg generate-proposal`](4%205%20DevOps%20Command-line%20Tools%20e00b58d6e74849d7bd425253cc673305.md) command, or by hand for sadists), and key attributes of the new network such as period (how often it emits randomness), threshold (the number of shares required to create a valid signature), and the catchup period (how fast the network can create new beacons if it gets behind).
+The initial DKG is run to create a distributed key amongst a set of nodes for the first time. It takes a proposal file (created using the [`drand dkg generate-proposal`](./4-5-ops-guide-command-line-tools#drand-dkg-generate-proposal) command, or by hand for sadists), and key attributes of the new network such as period (how often it emits randomness), threshold (the number of shares required to create a valid signature), and the catchup period (how fast the network can create new beacons if it gets behind).
 
 ```jsx
 $ drand dkg init -h
@@ -546,7 +546,7 @@ For full usage information, run `drand util --help`.
 
 In addition to the main `drand` cli app, there are several supplemental tools that can be used to consume randomness from a drand network or help securely scale a drand deployment.
 
-The following tools do not yet have binary releases and must be installed from source. The basic procedure is the same as [**](https://drand.love/operator/drand-cli/#source-code)[4.5 DevOps: Command-line Tools](4%205%20DevOps%20Command-line%20Tools%20e00b58d6e74849d7bd425253cc673305.md)**, but instead of `make install` or `make build`, you'll run one of:
+The following tools do not yet have binary releases and must be installed from source. The basic procedure is the same as [**](https://drand.love/operator/drand-cli/#source-code)[4.5 DevOps: Command-line Tools](./4-5-ops-guide-command-line-tools)**, but instead of `make install` or `make build`, you'll run one of:
 
 - `make client`
 - `make relay-http`

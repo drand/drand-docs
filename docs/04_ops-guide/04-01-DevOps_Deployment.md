@@ -1,6 +1,6 @@
 ---
 id: 4-1-ops-guide-deployment
-title: "4.0 Deployment"
+title: "4.1 Deployment"
 description: Detailed instructions for how to deploy one or more drand nodes.
 ---
 # 4.1 DevOps: Deployment
@@ -26,7 +26,7 @@ The setup process for a drand node consists of the following steps:
 3. Generate the long-term key pair for each new network.
 4. The leader starts the command as a coordinator & every participant connects to the coordinator to setup the network.
 
-This document explains how to do the setup with the drand binary itself. If you want to install drand using Docker, follow the [**Docker instructions instead**](4%202%20DevOps%20Docker%20Install%2028ed47d4b96a47208267fde9d40823bb.md).
+This document explains how to do the setup with the drand binary itself. If you want to install drand using Docker, follow the [**Docker instructions instead**](4-2-ops-guide-docker-install).
 
 ### **Beacon ID**
 
@@ -328,7 +328,7 @@ drand share --leader --transition --secret-file /path/to/my/secret/file --nodes 
 drand share --connect <coordinator> --transition --secret-file /path/to/my/secret/file --out group2.toml --id {beacon-id}
 ```
 
-**Setting up the new members**: The new members need the current group file to proceed. Check how to get the group file in the [Deployment](4%201%20DevOps%20Deployment%20c3df6cf2adaf42f3ac1ef6d3414880a8.md) section.
+**Setting up the new members**: The new members need the current group file to proceed. Check how to get the group file in the [Deployment](4-1-ops-guide-deployment) section.
 
 <aside>
 💡 **TIP**: A new member will need the full history of randomness beacons to participate in a group so that the new node can field requests for previous rounds. Getting the full history can take a while.

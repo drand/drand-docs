@@ -10,14 +10,14 @@ import JsLogo from "./img/JavaScriptBadge.png";
 
 Client libraries enable easy access to drand randomness in specific programming languages. They also provide peace of mind by *verifying* randomness rounds and add additional features like failover, racing, aggregation, and caching.
 
-Drand randomness is available over [**HTTP**](./03-04-DevGuide_HTTP_API.md), [**libp2p PubSub**](./03-05-DevGuide_PubSub_Network.md) and gRPC.
+Drand randomness is available over [**HTTP**](./3-4-dev-guide-http-api), [**libp2p PubSub**](./3-5-dev-guide-pubsub-network) and gRPC.
 
 Currently, the following client libraries are available:
 
 - [**Go**](https://github.com/drand/drand)
 - [**JavaScript**](https://github.com/drand/drand-client)
 
-If your application cannot use the libraries above, you can still use the [**drand-client CLI**](./03-02-DevGuide_drand-client_CLI.md) or make requests to the [**HTTP API**](./03-04-DevGuide_HTTP_API.md) endpoints. If you have created a client library or know of a client library not listed here, [**please let us know by opening an issue**](https://github.com/drand/website/issues/new).
+If your application cannot use the libraries above, you can still use the [**drand-client CLI**](./3-2-dev-guide-drand-client-cli) or make requests to the [**HTTP API**](./3-4-dev-guide-http-api) endpoints. If you have created a client library or know of a client library not listed here, [**please let us know by opening an issue**](https://github.com/drand/website/issues/new).
 
 <img src={GoLogo} alt="Go Logo" width="100" />
 
@@ -37,8 +37,8 @@ For documentation and examples please check the Go clients reference:
 
 Client implementations (to be used with the above):
 
-- [**HTTP**](./03-04-DevGuide_HTTP_API.md) client: [**https://pkg.go.dev/github.com/drand/drand/client/http**](https://pkg.go.dev/github.com/drand/drand/client/http)
-- [**libp2p gossip**](./03-05-DevGuide_PubSub_Network.md) client: [**https://pkg.go.dev/github.com/drand/drand/lp2p/client**](https://pkg.go.dev/github.com/drand/drand/lp2p/client)
+- [**HTTP**](./3-4-dev-guide-http-api) client: [**https://pkg.go.dev/github.com/drand/drand/client/http**](https://pkg.go.dev/github.com/drand/drand/client/http)
+- [**libp2p gossip**](./3-5-dev-guide-pubsub-network) client: [**https://pkg.go.dev/github.com/drand/drand/lp2p/client**](https://pkg.go.dev/github.com/drand/drand/lp2p/client)
 - gRPC client: [**https://pkg.go.dev/github.com/drand/drand/client/grpc**](https://pkg.go.dev/github.com/drand/drand/client/grpc)
 
 <img src={JsLogo} width="100" />

@@ -5,7 +5,7 @@ description: A list of public endpoints, instructions how to fetch, explanation 
 ---
 # 3.4 DevGuide: HTTP API
 
-Drand provides a JSON HTTP interface that clients can use to fetch randomness from each drand network running on nodes. If you're using drand in an application, it may be easier and *more secure* to use one of the [**client libraries**](3%203%20DevGuide%20Client%20Libraries%20164d2ce8c1b3489b99728a35ef774c2a.md), which will also perform *verification* of randomness rounds and add additional features like failover, racing, aggregation, and caching.
+Drand provides a JSON HTTP interface that clients can use to fetch randomness from each drand network running on nodes. If you're using drand in an application, it may be easier and *more secure* to use one of the [**client libraries**](3-3-dev-guide-client-libraries), which will also perform *verification* of randomness rounds and add additional features like failover, racing, aggregation, and caching.
 
 All that's required is the address of the HTTP interface and way to fetch from HTTP, e.g. `curl`.
 
@@ -22,7 +22,7 @@ The public [**League of Entropy**](http://leagueofentropy.org) HTTP APIs are av
 - StorSwift
     - **`https://api.drand.secureweb3.com:6875/`**
 
-The League of Entropy currently runs two networks in mainnet: `default` and `fastnet`. They are chained and unchained networks respectively, the details of which can be found in the [**cryptography specification**](2%201%20Concepts%20Cryptography%206b6cea36929e4b1b8ed5b00ad8600081.md).
+The League of Entropy currently runs two networks in mainnet: `default` and `fastnet`. They are chained and unchained networks respectively, the details of which can be found in the [**cryptography specification**](../concepts/2-1-concepts-cryptography).
 
 The chain hash for the League of Entropy `default` chain running at a 30s frequency in chained mode on Mainnet is:
 
@@ -129,7 +129,7 @@ Retrieves a previous round of randomness identified by the positive integer `ro
 - `round` is a sequentially increasing integer - the randomness round index
 - `randomness` is a SHA-256 hash of the signature
 - `signature` is the *Boneh-Lynn-Shacham* (BLS) signature for this round of randomness
-- `previous_signature` is the signature of the previous round of randomness (note: this will is omitted for [**unchained networks**](2%201%20Concepts%20Cryptography%206b6cea36929e4b1b8ed5b00ad8600081.md)
+- `previous_signature` is the signature of the previous round of randomness (note: this will is omitted for [**unchained networks**](../concepts/2-1-concepts-cryptography#%EF%B8%8F-chained-and-unchained-modes)
 
 **Note**: For backwards-compatibility reasons, paths without `chain-hash` will resort to the the default network in operation.
 

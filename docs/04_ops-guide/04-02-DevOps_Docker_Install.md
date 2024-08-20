@@ -7,7 +7,7 @@ description: Detailed instructions for running a production drand node using Doc
 
 # **Install drand with Docker**
 
-This page describes how to run a *production* version of `drand` based on `docker-compose`. This is meant as a **production setup**. It notably involves generating TLS certificates for your public-facing server. Check out the [**simple install if you just want a local drand demo →**](4%205%20DevOps%20Command-line%20Tools%20e00b58d6e74849d7bd425253cc673305.md)
+This page describes how to run a *production* version of `drand` based on `docker-compose`. This is meant as a **production setup**. It notably involves generating TLS certificates for your public-facing server. Check out the [**simple install if you just want a local drand demo →**](4-5-ops-guide-command-line-tools)
 
 ## **Prerequisites for this Guide**
 

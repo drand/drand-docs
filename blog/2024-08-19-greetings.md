@@ -2,7 +2,7 @@
 slug: drand-greetings
 title: Greetings!
 authors: [kentbull, dgrantham]
-tags: [greetings]
+tags: [hello]
 ---
 
 Congratulations, you have made your first post!

@@ -32,14 +32,14 @@ There are two networks on mainnet:
 
 </aside>
 
-In order to retrieve randomness from a drand network you should **preferentially use the [drand client libraries](3%203%20DevGuide%20Client%20Libraries%20164d2ce8c1b3489b99728a35ef774c2a.md) or the [drand-client CLI](3%202%20DevGuide%20drand-client%20CLI%208f2135d9f9b645d6ae70615f370a5b3d.md)**, which support the different mechanisms and perform verification for every value obtained.
+In order to retrieve randomness from a drand network you should **preferentially use the [drand client libraries](3-3-dev-guide-client-libraries) or the [drand-client CLI](3-2-dev-guide-drand-client-cli)**, which support the different mechanisms and perform verification for every value obtained.
 
 Alternatively, you can interact directly with the endpoints. Make sure to manually verify every value:
 
-- [**HTTP API reference**](3%204%20DevGuide%20HTTP%20API%2012e8a9712c5b4b77a52e2b42de1ac009.md)
-- [PubSub-based randomness distribution](3%205%20DevGuide%20PubSub%20Network%20e6a528c07d8f4475a894948d1efb1c69.md)
-- gRPC API: usually not publicly accessible. A gRPC API is supported by the drand client libraries, the `drand-client` CLI application and the [**drand application**](4%205%20DevOps%20Command-line%20Tools%20e00b58d6e74849d7bd425253cc673305.md) itself (using `drand get public`).
+- [**HTTP API reference**](3-4-dev-guide-http-api)
+- [PubSub-based randomness distribution](3-5-dev-guide-pubsub-network)
+- gRPC API: usually not publicly accessible. A gRPC API is supported by the drand client libraries, the `drand-client` CLI application and the [**drand application**](../ops-guide/4-5-ops-guide-command-line-tools) itself (using `drand get public`).
 
-Finally, for development purposes, we recommend also testing your code against our Testnet endpoints. See [**our dedicated documentation entry about testnet endpoints**](3%204%20DevGuide%20HTTP%20API%2012e8a9712c5b4b77a52e2b42de1ac009.md).
+Finally, for development purposes, we recommend also testing your code against our Testnet endpoints. See [**our dedicated documentation entry about testnet endpoints**](3-4-dev-guide-http-api).
 
 ---
