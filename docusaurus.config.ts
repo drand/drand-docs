@@ -8,14 +8,14 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://kentbull.github.io',
+  url: 'https://drand.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/drand-docs',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'kentbull', // Usually your GitHub org/user name.
+  organizationName: 'drand', // Usually your GitHub org/user name.
   projectName: 'drand-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -36,7 +36,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/kentbull/drand-docs/tree/main',
+            'https://github.com/drand/drand-docs/tree/main',
         },
         blog: {
           showReadingTime: true,
@@ -45,7 +45,7 @@ const config: Config = {
             xslt: true,
           },
           editUrl:
-            'https://github.com/kentbull/drand-docs/tree/main',
+            'https://github.com/drand/drand-docs/tree/main',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -76,7 +76,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/kentbull/drand-docs',
+          href: 'https://github.com/drand/drand-docs',
           label: 'GitHub',
           position: 'right',
         },
