@@ -61,7 +61,7 @@ This document may be updated periodically. Refer to the git history for changes.
 
 ## Credit and License
 
-This Code of Conduct is based on the [IPFS Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md), the [npm Code of Conduct](https://www.npmjs.com/policies/conduct), [CodeOfConduct4Lib](https://github.com/code4lib/code-of-conduct/blob/master/code_of_conduct.md), and the [Geek Feminism wiki](http://geekfeminism.wikia.com/).
+This Code of Conduct is based on the [IPFS Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md), the [npm Code of Conduct](https://www.npmjs.com/policies/conduct), [CodeOfConduct4Lib](https://github.com/code4lib/code-of-conduct/blob/main/code_of_conduct.md), and the [Geek Feminism wiki](http://geekfeminism.wikia.com/).
 
 This document may be reused under a [Creative Commons Attribution-ShareAlike License](http://creativecommons.org/licenses/by-sa/4.0/).
 
