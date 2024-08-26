@@ -159,7 +159,16 @@ getRandomnessFastNode()
    Randomness from fastest node is: 7b1f0db59345bcaa48e6d385fab911cd7a9d705b0a7f2bdf27ca7a7f47c1b1b6
    Randomness is: 7b1f0db59345bcaa48e6d385fab911cd7a9d705b0a7f2bdf27ca7a7f47c1b1b6
    ```
+   
+## HTTP API
+
+### Python
+
+This guide recommends you use Pipenv to manage Python versions as it simplifies the process.
+
+1. First, [install Pipenv][INSTALL_PIPENV] with brew: `brew install pipenv`.
+2. TBD
 
 [INSTALL_GO]: https://go.dev/doc/install
 [INSTALL_NODEJS]: https://nodejs.org/en/download/package-manager
-
+[INSTALL_PIPENV]: https://pipenv.pypa.io/en/latest/installation.html
