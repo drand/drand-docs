@@ -182,7 +182,13 @@ It also recommends you use Pipenv for managing project dependencies for your Pyt
    ```bash
    pipenv install requests
    ```
-7. TBD
+7. Make an HTTP request to `https://pl-us.testnet.drand.sh/chains` to get the list of chains.
+
+   Select the first chain and save it in a variable. 
+
+### Postman Collection
+
+TBD
 
 [INSTALL_GO]: https://go.dev/doc/install
 [INSTALL_NODEJS]: https://nodejs.org/en/download/package-manager

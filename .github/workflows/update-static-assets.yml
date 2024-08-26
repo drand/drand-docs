@@ -5,7 +5,7 @@ on:
     branches: ["gh-pages"]
   workflow_dispatch:
   workflow_run:
-    workflows: ["Build latest, push to gh-pages"]
+    workflows: ["Build and push to gh-pages"]
     types:
       - completed
 
@@ -31,6 +31,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Switch to gh-pages branch
+        run: |
+          git fetch origin gh-pages
+          git switch gh-pages
+          git reset --hard origin/gh-pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
