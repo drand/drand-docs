@@ -162,7 +162,7 @@ getRandomnessFastNode()
    
 ## HTTP API
 
-### Python
+### Python (WIP)
 
 This guide recommends you use Pyenv to manage Python versions as it simplifies the process.
 It also recommends you use Pipenv for managing project dependencies for your Python project.
@@ -186,7 +186,7 @@ It also recommends you use Pipenv for managing project dependencies for your Pyt
 
    Select the first chain and save it in a variable. 
 
-### Postman Collection
+### Postman Collection (WIP)
 
 TBD
 
