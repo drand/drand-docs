@@ -44,9 +44,9 @@ jobs:
       - name: Commit changes
         run: |
           TIMESTAMP=$(date +"%Y-%m-%d %H:%M")
-          git rebase master
           git add site/*          
           git commit -m "Update site with new build - $TIMESTAMP"
+          git rebase master
 
       - name: Push changes to gh-pages branch
         run: git push origin gh-pages --force
