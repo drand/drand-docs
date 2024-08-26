@@ -1,12 +1,8 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy gh-pages
 
 on:
-  # Runs on pushes targeting the gh-pages
   push:
     branches: ["gh-pages"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -37,6 +33,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
+          # the ./site directory is used because the `deploy-master.yaml` workflow copies the `./build` output dir contents to the `site` directory
           path: './site'
       - name: Deploy to GitHub Pages
         id: deployment
