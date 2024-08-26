@@ -184,8 +184,19 @@ It also recommends you use Pipenv for managing project dependencies for your Pyt
    ```
 7. Make an HTTP request to `https://pl-us.testnet.drand.sh/chains` to get the list of chains.
 
-   Select the first chain and save it in a variable. 
-8. 
+   Select the first chain and save it in a variable, say `chain-hash`.
+
+   Sample JSON response:
+   ```json
+   [
+   "84b2234fb34e835dccd048255d7ad3194b81af7d978c3bf157e3469592ae4e02",
+   "cc9c398442737cbd141526600919edd69f1d6f9b4adb67e4d912fbc64341a9a5",
+   "f3827d772c155f95a9fda8901ddd59591a082df5ac6efe3a479ddb1f5eeb202c",
+   "7672797f548f3f4748ac4bf3352fc6c6b6468c9ad40ad456a397545c6e2df5bf"
+   ]
+   ```
+
+8. To get the chain information make an HTTP request to `f"https://pl-us.testnet.drand.sh/{chain-hash}/info"`
 
 ### Postman Collection (WIP)
 
