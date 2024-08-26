@@ -164,11 +164,27 @@ getRandomnessFastNode()
 
 ### Python
 
-This guide recommends you use Pipenv to manage Python versions as it simplifies the process.
+This guide recommends you use Pyenv to manage Python versions as it simplifies the process.
+It also recommends you use Pipenv for managing project dependencies for your Python project.
 
-1. First, [install Pipenv][INSTALL_PIPENV] with brew: `brew install pipenv`.
-2. TBD
+1. First, [install Pyenv][INSTALL_PYENV] with brew: `brew install pyenv`.
+2. Then [install Pipenv][INSTALL_PIPENV] with `brew install pipenv`.
+3. Then install Python 3.12.3 with Pipenv: `pyenv install 3.12.3`.
+4. Set Python 3.12.3 to be in use globally with `pyenv global 3.12.3`.
+5. Set up your project directory, dependency management Pipfile, and your Python module.
+    ```bash
+    mkdir myproject
+    cd myproject
+    touch main.py
+    touch Pipfile
+    ```
+6. Add the `reqests` library to your `Pipfile`:
+   ```bash
+   pipenv install requests
+   ```
+7. TBD
 
 [INSTALL_GO]: https://go.dev/doc/install
 [INSTALL_NODEJS]: https://nodejs.org/en/download/package-manager
 [INSTALL_PIPENV]: https://pipenv.pypa.io/en/latest/installation.html
+[INSTALL_PYENV]: https://github.com/pyenv/pyenv?tab=readme-ov-file
