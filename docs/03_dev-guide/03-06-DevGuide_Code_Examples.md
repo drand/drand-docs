@@ -185,6 +185,7 @@ It also recommends you use Pipenv for managing project dependencies for your Pyt
 7. Make an HTTP request to `https://pl-us.testnet.drand.sh/chains` to get the list of chains.
 
    Select the first chain and save it in a variable. 
+8. 
 
 ### Postman Collection (WIP)
 
