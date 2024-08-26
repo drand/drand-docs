@@ -5,7 +5,9 @@ description: Examples of how to integrate drand in various coding languages.
 ---
 # 3.6 DevGuide: Code Examples
 
-drand is easy to use with clients in Go and JavaScript as shown here. The HTTP API is how other languages can interact with drand. A Python example is provided below.
+drand is easy to use with clients in Go and JavaScript as shown here. 
+
+The HTTP API is how other languages can interact with drand. A Python example is provided below.
 
 ## Golang
 
