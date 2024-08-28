@@ -198,6 +198,23 @@ It also recommends you use Pipenv for managing project dependencies for your Pyt
 
 8. To get the chain information make an HTTP request to `f"https://pl-us.testnet.drand.sh/{chain-hash}/info"`
 
+   Sample JSON response:
+   ```json
+   {
+      "public_key": "8200fc249deb0148eb918d6e213980c5d01acd7fc251900d9260136da3b54836ce125172399ddc69c4e3e11429b62c11",
+      "period": 3,
+      "genesis_time": 1651677099,
+      "hash": "7672797f548f3f4748ac4bf3352fc6c6b6468c9ad40ad456a397545c6e2df5bf",
+      "groupHash": "65083634d852ae169e21b6ce5f0410be9ed4cc679b9970236f7875cff667e13d",
+      "schemeID": "pedersen-bls-unchained",
+      "metadata": {
+         "beaconID": "testnet-unchained-3s"
+      }
+   }   
+   ```
+
+9. 
+
 ### Postman Collection (WIP)
 
 TBD
