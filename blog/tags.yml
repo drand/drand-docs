@@ -17,3 +17,18 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+how-to:
+  label: How-to
+  permalink: /how-to
+  description: how to tag
+
+begginer:
+  label: Begginer
+  permalink: /begginer
+  description: begginer tag
+
+features:
+  label: Features
+  permalink: /features
+  description: begginer tag
