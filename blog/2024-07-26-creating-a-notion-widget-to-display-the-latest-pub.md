@@ -1,7 +1,6 @@
 ---
-slug: drand-greetings
+slug: create-a-notion-widget
 title: Creating a Notion Widget to display the latest Public Randomness from drand!
-authors: [kentbull, dgrantham]
 tags: [how-to, begginer, features]
 ---
 
@@ -292,9 +291,9 @@ Open the Notion page where you want to embed the URL, and embed it with the foll
 
 - Click on the `+` button to add a new block or type `/embed` to bring up the embed block option.
 
-![Screenshot 2024-07-25 at 09.41.46.png](Creating%20a%20Notion%20Widget%20to%20display%20the%20latest%20Pub%205167378d2c794b34a130ba2a0af41a38/Screenshot_2024-07-25_at_09.41.46.png)
+![Screenshot 2024-07-25 at 09.41.46.png](/img/Screenshot_2024-07-25_at_09.41.46.png)
 
-![Screenshot 2024-07-25 at 09.41.53.png](Creating%20a%20Notion%20Widget%20to%20display%20the%20latest%20Pub%205167378d2c794b34a130ba2a0af41a38/Screenshot_2024-07-25_at_09.41.53.png)
+![Screenshot 2024-07-25 at 09.41.53.png](/img/Screenshot_2024-07-25_at_09.41.53.png)
 
 - Select the `Embed` option from the list.
 - Paste your GitHub Pages URL into the embed block.
@@ -304,7 +303,7 @@ Once the URL is embedded, you can resize the embed block by dragging the handles
 
 An example drand widget embedded in a Notion page is shown below.
 
-![Screenshot 2024-07-24 at 15.36.43.png](Creating%20a%20Notion%20Widget%20to%20display%20the%20latest%20Pub%205167378d2c794b34a130ba2a0af41a38/Screenshot_2024-07-24_at_15.36.43.png)
+![Screenshot 2024-07-24 at 15.36.43.png](/img/Screenshot_2024-07-24_at_15.36.43.png)
 
 ### To Recap
 
