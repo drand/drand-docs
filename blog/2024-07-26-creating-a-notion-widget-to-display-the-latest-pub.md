@@ -1,11 +1,9 @@
 ---
-slug: create-a-notion-widget
-title: Creating a Notion Widget to display the latest Public Randomness from drand!
+slug: "create-a-notion-widget"
+title: "Creating a Notion Widget to display the latest Public Randomness from drand!"
+authors: []
 tags: [how-to, begginer, features]
 ---
-
-Date Published: July 26, 2024
-Tags: Beginner, Features, How-to
 
 In this blog post, we’ll dive into creating a simple Notion widget that displays the latest public randomness from drand (for both the `default` and `quicknet` beacons from the League of Entropy network).
 
