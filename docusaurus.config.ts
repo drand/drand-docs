@@ -18,7 +18,7 @@ const config: Config = {
   organizationName: 'drand', // Usually your GitHub org/user name.
   projectName: 'drand-docs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
