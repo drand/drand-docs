@@ -1,0 +1,235 @@
+---
+slug: "drand-on-filecoin-virtual-machine-FVM-draffle"
+title: "drand on Filecoin Virtual Machine (FVM) - draffle"
+authors: []
+tags: [FVM, features, how-to]
+---
+
+To mark the launch of user-programmable smart contracts on the Filecoin Virtual Machine (FVM), the drand team is excited to release a three-part blog series on using randomness on the FVM! In this first part, we dive into the prevrandao EVM opcode (the FVM fully supports EVM bytecode!), a sample Solidity contract using it, a UI to interact with it, and some other necessary plumbing to make it all work.
+
+If you want to skip all the wonderful learning, you can jump straight into the demo project we developed [**on GitHub**](https://github.com/drand/draffle) - the contract is deployed at address `0x9D38f3BB80D98cE09C3f0936Bea140181d4CCABA` on the Hyperspace testnet! A little familiarity with [**Solidity**](https://soliditylang.org/) will be helpful to follow along, but anyone familiar with a C-style language should be able to get the gist.
+
+## 🎲 **Randomness on the Blockchain** ⛓️
+
+When developers think of randomness, we most often think of private randomness - for example, [**using a cryptographically secure pseudorandom number generator**](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator) such as [**/dev/random/**](https://en.wikipedia.org/wiki//dev/random) to generate a private key. When executing a smart contract in a blockchain ecosystem, this poses a few challenges: Who provides the randomness? How do you know it's random? If you interact with a smart contract, you can't trust the author to generate randomness for you, as they may have a vested interest in the outcome. Similarly, you can't trust miners to generate the randomness for you, as they too might have an interest in the outcome (or wish to collude with other participants).
+
+---
+
+To be more concrete: **Suppose I'm running a raffle via a smart contract**, and users enter the draw by calling a function such as the following:
+
+```solidity
+address[] entrants;
+
+function enter() external {
+    entrants.push(msg.sender);
+}
+```
+
+Everybody who submits a transaction (and has it mined) has their address added to the list of entrants, which will be "randomly" drawn from. As the *totally unbiased* author of the smart contract, I've provided another function that allows me to draw the randomly chosen participant:
+
+```solidity
+event Winner(address theWinner);
+
+function draw(uint32 someTotallyRandomNumber) external {
+    require(author == msg.sender, "Only the completely unbiased author can execute the draw winner!"); // assuming we have set the `author` field in the constructor somewhere
+    emit Winner(entrants[someTotallyRandomNumber]);
+}
+```
+
+Of course, in blockchain-land, the state of the contract is public to everyone, and you as the author could simply register your own address as an entrant and pass in its index to win the raffle yourself!
+
+### **How Ethereum Increases Fairness**
+
+To address the challenges of randomness in smart contracts, the Ethereum community created [**RANDAO**](https://github.com/randao/randao), a Decentralized Autonomous Organization (DAO) for providing randomness.
+
+### **How RANDAO Works**
+
+1. **Contribution Phase**:
+    - In each block, 128 addresses from the network can contribute their piece of randomness.
+    - Contributors send a small amount of ETH to the RANDAO contract along with a hash of their chosen random number.
+2. **Reveal Phase**:
+    - Six blocks later, contributors reveal their number.
+    - Revealing the number earns them an ETH bounty.
+    - Failing to reveal the number results in the loss of their deposited ETH.
+3. **Aggregation Phase**:
+    - Revealed numbers are combined to create a final random number.
+    - This final random number is included in the block and is available to smart contracts in the next block using the prevrandao opcode.
+
+### **Advantages Over Single-Author Randomness**
+
+1. **Verifiability**:
+    - Users can inspect the RANDAO contract state and see all the inputs combined to create the final random number.
+    - This transparency attests to the method of construction and ensures fairness.
+2. **Reduced Bias**:
+    - Instead of relying on a single *totally unbiased* author, up to 128 parties are involved in creating the randomness.
+    - This makes it much harder to influence the output, raising the bar for any potential bias.
+
+### ⛔ **Challenges and Limitations**
+
+While RANDAO improves fairness, it is not entirely immune to manipulation. One such challenge is the 'last mover's advantage':
+
+- **Commit/Reveal Scheme**: Participants commit to a random number ahead of time by providing the corresponding (SHA-3) hash. Later, they can choose to reveal or not reveal that number.
+- **Last Mover's Advantage**: The last participant to reveal their number can choose to reveal or not reveal it based on the desired outcome, thereby biasing the final output.
+
+### **Illustrating Last Mover's Advantage**
+
+Imagine a scenario with 10 slots where each participant decides a single bit of the output number:
+
+```
+Number | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | ? |
+Slot   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+
+```
+
+- Suppose the committed number is `1`.
+- The last participant can influence the final bit by deciding whether to reveal or not reveal their number.
+- For example, if a coin-flipping smart contract uses the last bit to determine heads (1) or tails (0), the last participant can ensure a desired outcome by revealing or not revealing their number.
+
+In practice, the influence is probabilistic and not direct. However, larger players who can fill more of the 'slots' in RANDAO can still exert undue influence.
+
+By involving multiple parties and ensuring transparency, RANDAO significantly enhances the fairness and reliability of randomness in smart contracts, despite its limitations.
+
+### **RANDAO on FVM**
+
+RANDAO on EVM is still great - the above is more an insight into some of the security assumptions around it, as a way of introducing FVM's approach to RANDAO and contrasting it. As the FVM is EVM compatible (i.e., everything possible in EVM bytecode is also possible on the FVM), it must also provide a `prev_randao` opcode for use in smart contracts and compatibility purposes. Instead of bridging to Ethereum or running its own RANDAO (both of which could happen in the future), Filecoin already has its own source of randomness used for leader election: drand.
+
+### **Refresher of how drand works**
+
+- **Threshold Network**: drand is a [**threshold network**](https://en.wikipedia.org/wiki/Threshold_cryptosystem) that provides publicly verifiable, unbiasable randomness. It exploits the fact that the hash of a signature is indistinguishable from randomness to people without the associated private key.
+- **Cooperative Action**: A threshold network is a network of nodes that can cooperatively perform actions such as signing. Enough nodes need to work together (referred to as the 'threshold') to perform these actions.
+- **Shamir's Secret Sharing**: Using a form of [**Shamir's Secret Sharing**](https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing), the network creates a cryptographic keypair that no single member of the group has the private key of. Instead, they each get a share of that private key and must aggregate a threshold number of signatures to create a full signature on behalf of the entire group.
+
+### **Key Features of drand**
+
+- **Unbiasable Randomness**: Unlike RANDAO, nodes in drand cannot influence the final random output. Once the keypair is generated, all future random numbers are deterministically decided, but nobody can get them until they've received a threshold number of signatures for each number.
+- **Security Considerations**: One drawback is that if a threshold number of nodes were compromised, all future random numbers could be derived.
+
+### **drand in Filecoin**
+
+- **Inclusion in Blocks**: In Filecoin, the drand randomness beacon for the current time is included in every block's headers.
+- **Usage in Smart Contracts**: When a contract calls the `prevrandao` opcode, the randomness from the previous block is provided to it. This offers a straightforward method of using randomness on-chain, though with some potential pitfalls to consider.
+
+---
+
+Okay - without further ado let's jump into the web app and code!
+
+## The UI
+
+When the user first opens the UI, they should see something like this:
+
+![https://drand.love/assets/img/start.bdca1319.png](/img/start.bdca1319.png)
+
+On the left-hand side we see when the next draw is scheduled, the current block and any draws that have already happened. There’s also a button labelled ‘Enter the next draw’ that we can click to pay the entry fee via our Metamask wallet. When we click it, a popup from Metamask such as the following appears:
+
+![https://drand.love/assets/img/connect-wallet.083095e5.png](/img/connect-wallet.083095e5.png)
+
+Once we’ve confirmed the transaction, we’ve now entered the draw:
+
+![https://drand.love/assets/img/draw-accepted.2ff1aab6.png](/img/draw-accepted.2ff1aab6.png)
+
+If you’re on hyperspace, we can wait up to 24 hours (the default) until the next draw is scheduled, and we will be able to trigger it (in the next section we’ll find how to reduce that to any time we want for easier testing). At the time of the draw, the right-hand side of the UI will have changed:
+
+![https://drand.love/assets/img/trigger-draw.4356efc5.png](/img/trigger-draw.4356efc5.png)
+
+At the draw block height, users will be able to compete to trigger the draw and receive a small payout. Once the draw has been triggered, a new one is scheduled:
+
+![https://drand.love/assets/img/draw-triggered.ac101ff4.png](/img/draw-triggered.ac101ff4.png)
+
+## The Contract
+
+First off, in the `./contracts/` directory, we have a single file called [**DRaffle.sol**](https://drand.love/blog/2023/03/16/draffle/contracts/DRaffle.sol). It contains the solidity code which will be run on FVM to manage all the entrants and payouts from the contest. Let's take a look at its constructor and fields:
+
+```solidity
+solidityCopy code
+uint256 costPerDraw;
+uint256 drawCutoff;
+uint256 triggerReward;
+uint256 nextDrawBlockHeight;
+
+address[] candidates;
+
+constructor(uint256 roundCutoff, uint256 cost, uint256 reward) {
+    costPerDraw = cost;
+    triggerReward = reward;
+    drawCutoff = roundCutoff;
+
+    scheduleNext();
+}
+```
+
+- The first field set in the constructor enables the author of the contract to choose a `cost` of entry (in FIL). All entrants will pay it, and (nearly all of) the total pool for every draw will be paid out to the winning address.
+- The second field set is a `reward` for users who initiate the draw. As the contract runs on-chain, we can't easily (in solidity anyway) schedule future draws automagically - we have to rely on somebody in the ecosystem submitting a transaction to trigger the draw. To incentivise that, we'll provide a small FIL bounty to cover the transaction fee plus a little extra, so users will want to trigger the draw.
+- The final field set - `drawCutOff` - is the number of blocks in advance we wish to close entries for a given draw. Readers with a keen eye will have noticed in the explanation of the `prevrandao` instruction, that it returns the randomness from the *previous* block header, and not the current block. Entrants could therefore know the random number used for a draw in advance of the draw happening.
+    - *In follow-up blog posts, we'll discuss how we can use more current randomness to avoid this pitfall, but for now let's close draws a few blocks in advance to eliminate this possibility of gaming the draw.*
+- Finally the constructor calls the `scheduleNext` function which will set the `nextDrawBlockHeight` field, clear any candidates and emit some convenient events for the UI to consume. It's implementation is as follows:
+
+```solidity
+solidityCopy code
+function scheduleNext() internal {
+    candidates = new address ;
+    nextDrawBlockHeight = block.number + 2880;
+    emit Scheduled(nextDrawBlockHeight);
+}
+```
+
+With this implementation a draw will happen once every 24 hours (Filecoin mines a block every 30 seconds, i.e. 2 per minute, 60 minutes per hour, 24 hours per day- 2 * 60 * 24 = 2880), but it can easily be configured to be more frequent.
+
+Now to our function users will call to enter the draw:
+
+```solidity
+solidityCopy code
+function enter() external payable {
+    require(msg.value == costPerDraw, "you have passed too much or too little money to enter the lotto");
+    require(block.number < nextDrawBlockHeight - drawCutoff, "It's too close to the next draw to participate");
+    candidates.push(msg.sender);
+}
+```
+
+It's quite simple: users must pass a token amount equal to the `costPerDraw` into the contract with their transaction (hence the `payable` keyword). If they correctly do that and it's not too close to the draw (remembering our `prevrandao` limitation discussed above!), their address is added to the candidate list for the draw.
+
+The final important function is the draw function itself:
+
+```solidity
+solidityCopy code
+function draw() external payable {
+    // first we ensure that users can't trigger the draw too early
+    // we let them draw late, because perhaps nobody could get a transaction mined for the exact block height!
+    require(block.number >= nextDrawBlockHeight, "it's too early to trigger the draw!");
+
+    // if nobody entered the draw, and thus there is no money to pay out, we send an event that there was no winner and
+    // just schedule the next draw
+    uint numberOfEntries = candidates.length;
+    if (numberOfEntries == 0) {
+        emit NoWinner(block.number);
+
+    // if there are candidates for the draw, we use the `prevrandao` value from the block, and turn it into an index to choose the winner.
+    // note: using the modulo operation can result in an output bias - check this great blog post on the matter: <https://research.kudelskisecurity.com/2020/07/28/the-definitive-guide-to-modulo-bias-and-how-to-avoid-it/>
+    } else {
+        address winner = candidates[block.prevrandao % numberOfEntries];
+        uint256 amount = numberOfEntries * costPerDraw - triggerReward;
+
+        // we pay out the chosen winner
+        payable(winner).transfer(amount);
+
+        // and also pay out the `triggerReward` to the address who triggered the draw successfully
+        // a small point to note is that they won't get paid out if there are no entrants...
+        // paying them out would require the contract to maintain its own balance of tokens to pay out
+        // raffles with no entries, so it's been omitted for convenience, but it's something to consider if you
+        // decide to run your own raffle!
+        payable(msg.sender).transfer(triggerReward);
+
+        // and emit an event to let any listeners know who won!
+        emit Winner(block.number, winner, amount);
+    }
+
+    // finally, regardless of whether there is a winner or not we want to schedule the next draw as we saw in the constructor
+    scheduleNext();
+}
+
+```
+
+So that's it for part 1 - how to run a raffle using drand on the FVM via solidity. The sample repository contains a lot more useful tooling for deploying your own smart contract to the [**Hyperspace testnet**](https://hyperspace.yoga/) or your own local [**ganache network**](https://trufflesuite.com/ganache/). In our next post, we'll discuss how to use more immediate randomness functionality specific to the FVM, stepping outside the bounds of EVM compatibility.
+
+Until then you can find the team on both the [**Filecoin slack**](https://filecoin.io/slack) and our own [**drand slack**](https://join.slack.com/t/drandworkspace/shared_invite/zt-19u4rf6if-bf7lxIvF2zYn4~TrBwfkiA) should you have any questions. Enjoy deploying cool projects to the FVM, and let us know how you've been using the FVM and randomness!
+
+---
