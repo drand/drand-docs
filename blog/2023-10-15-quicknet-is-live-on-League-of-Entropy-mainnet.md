@@ -1,15 +1,21 @@
 ---
-slug: "quicknet-is-live-on-league-of-entrophy-mainnet"
-title: "quicknet is live on League of Entropy mainnet"
-authors: []
+slug: "quicknet-live-on-loe-mainnet"
+title: "quicknet is live!"
+description: "quicknet is live on League of Entropy mainnet"
+authors: [yolan]
 tags: [news]
+date: 2023-10-15
 ---
+
+## quicknet is live on League of Entropy mainnet
 
 We are thrilled to announce the General Availability (GA) of our brand new `quicknet` drand network running on the `mainnet` nodes. This significant upgrade harnesses the capabilities of the new unchained randomness mode, enables timelock encryption in production, and delivers outputs at a much faster frequency of **3 seconds**!
 
 The network has now been running without issues for a month and a half since its launch on August 23rd, and we’ve seen our first early adopters start transitioning to it successfully.
 
-## **🌟 Key Features of `quicknet` drand Network**
+<!-- truncate -->
+
+## 🌟 Key Features of `quicknet` drand Network
 
 Keep reading to learn more details about the new features this network launch enables:
 
@@ -18,7 +24,7 @@ Keep reading to learn more details about the new features this network launch en
 - **3-second frequency:** Quicker generation compared to the legacy frequency, enabling faster applications, better UX, and higher throughput.
 - **Shorter beacons:** Thanks to the G1-G2 swap that we’re detailing below, we’ve been able to cut our signatures’ size by 50%!
 
-## **The `quicknet` Details**
+## The `quicknet` Details
 
 We successfully launched the `quicknet-t` Testnet beacon chain on July 13th and more recently the `quicknet` one on our Mainnet on August 23rd.
 
@@ -46,7 +52,7 @@ The same holds for our testnet relays, e.g. [https://pl-us.testnet.drand.sh/chai
 
 Check our [DevGuide: HTTP API](https://www.notion.so/3-4-DevGuide-HTTP-API-12e8a9712c5b4b77a52e2b42de1ac009?pvs=21) for more information about our public endpoints!
 
-## **`quicknet-t`**
+## `quicknet-t`
 
 You can always get more details about a given chain by querying its `{chainhash}/info` endpoint, e.g. [https://testnet-api.drand.cloudflare.com/cc9c398442737cbd141526600919edd69f1d6f9b4adb67e4d912fbc64341a9a5/info](https://testnet-api.drand.cloudflare.com/cc9c398442737cbd141526600919edd69f1d6f9b4adb67e4d912fbc64341a9a5/info) returns the `quicknet-t` details:
 
@@ -63,7 +69,7 @@ You can always get more details about a given chain by querying its `{chainhash}
 
 ```
 
-## **`quicknet`**
+## `quicknet`
 
 The same holds for our mainnet relays. Any given beacon chain information can be queried from our HTTP relays, e.g. [https://api.drand.sh/52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971/info](https://api.drand.sh/52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971/info) returns the `quicknet` details:
 
@@ -80,7 +86,7 @@ The same holds for our mainnet relays. Any given beacon chain information can be
 
 ```
 
-## **Sun-setting of `fastnet`**
+## Sun-setting of `fastnet`
 
 If you've been following our blog, you'll remember our previous post about [Timelock Encryption is now supported on drand mainnet](Timelock%20Encryption%20is%20now%20supported%20on%20drand%20main%20327425b1e16d4c22aa0d785dbf1c5fbb.md) where we announced the launch of our new `fastnet` network that supported our timelock scheme. The League of Entropy launched this new drand network on March 1st, 2023. However, we quickly identified an issue with our BLS signatures on G1 that made them non-compliant with the Hash To Curve [RFC 9380](https://www.ietf.org/rfc/rfc9380.html) specification, as well as most BLS signatures implementations on G1 apart from ours. Therefore, we had to double down and launch the `quicknet` network to fix this issue.
 
@@ -91,19 +97,19 @@ us if this is a concern for you or your team.
 > ℹ️ NOTE: The default chained beacon network remains available with its legacy frequency of 30s for those who require it. We might consider deprecating it at some point in the next 18 months, but nothing is set in stone yet.
 > 
 
-## **Shoutout to the League of Entropy 🤝**
+## Shoutout to the League of Entropy 🤝
 
 Our decentralization journey wouldn't be possible without [The League of Entropy](https://www.notion.so/The-League-of-Entropy-1e76674b75e249699445799c5083fe78?pvs=21). We are delighted to share that all members in the League of Entropy are running the `quicknet` drand network alongside the `default` chained beacon network on the League’s network of 23 nodes.
 
 A big shoutout to the League of Entropy for their invaluable contributions, running drand nodes for free for anyone to use whenever one needs public, verifiable randomness. Together, we're pioneering a faster, more decentralized future for randomness generation, with this new unchained network enabling a host of new possibilities for our users!
 
-## **Get Started 🚀**
+## Get Started 🚀
 
 For developers and users eager to dive into the new `quicknet` drand network, our [official documentation](https://drand.love/developer/) provides detailed resources about using drand relays and beacons.
 
 We also have a blog post about “[drand for beginners](https://drand.love/blog/2023/06/02/drand-explainer/)” that’s packed with useful information and another one about [using drand on-chain](https://drand.love/blog/2023/03/16/draffle/) with a demo lottery use-case running on the Filecoin Virtual Machine.
 
-## **G1 - G2 Swap**
+## G1 - G2 Swap
 
 Let us see what the G1-G2 swap really means!
 
@@ -119,7 +125,7 @@ This is the reason why it makes more sense given the way drand beacons work to h
 
 This swap allowed us to **reduce the size of the drand beacons emitted by the new `quicknet` network by 50%**, as well as to **increase the performance and reduce the gas cost** of any on-chain operations pertaining to drand beacons produced by `quicknet`.
 
-## **Unchained Mode**
+## Unchained Mode
 
 We’ve introduced the notion of [unchained beacons](https://drand.love/blog/2022/02/21/multi-frequency-support-and-timelock-encryption-capabilities/#unchained-randomness-timed-encryption) last year on the blog already. But in essence, the new drand network brings a host of improvements aimed at enhancing the overall UX for drand users and developers. The 'unchained mode' means that new random beacons are entirely independent from previous ones, meaning that you can now perform stateless verification of a beacon, without having to keep a record of past beacons!
 
@@ -127,7 +133,7 @@ These enhancements are designed to make the drand network more robust, efficient
 
 We’re looking forward to your projects and ideas, don’t hesitate to [join our Slack workspace](https://join.slack.com/t/drandworkspace/shared_invite/zt-19u4rf6if-bf7lxIvF2zYn4~TrBwfkiA) to discuss these.
 
-## **Security Considerations**
+## Security Considerations
 
 Finally, you might be wondering what these changes might mean from a **security** point of view. On that front, the guarantees of the League of Entropy (LoE) network remain the same:
 
@@ -141,13 +147,13 @@ The fact that the drand beacons are now **unchained** might give the *false impr
 
 We’ve also made sure our new Timelock Encryption service relying on our new `quicknet` network was [properly audited](https://drand.love/blog/2023/05/26/tlock-security-assessment/). We’ve got you covered!
 
-## **Extra Liveness!**
+## Extra Liveness!
 
 From a **liveness** point of view, the way the drand nodes operate hasn’t changed and we are very happy to announce the availability of a new official HTTP relay run by [StorSwift](https://www.storswift.com/), a dear member of the League of Entropy. Their relay is reachable at [https://api.drand.secureweb3.com:6875](https://api.drand.secureweb3.com:6875/) and as you can see by querying [https://api.drand.secureweb3.com:6875/chains](https://api.drand.secureweb3.com:6875/chains), it provides access to both our mainnet `default` and mainnet `quicknet` beacons. It is also located in Asia.
 
 As you can see, the League of Entropy’s and drand’s security, liveness, and availability are not impacted in any way by these changes - on the contrary.
 
-## **Onward!**
+## Onward!
 
 That’s it, we’ve launched everything we need to allow you to start using Timelock Encryption or drand random beacons right now in your services! And actually, people do!
 

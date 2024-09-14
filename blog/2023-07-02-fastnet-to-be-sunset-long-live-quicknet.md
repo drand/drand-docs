@@ -1,13 +1,16 @@
 ---
 slug: "fastnet-to-be-sunset"
 title: "fastnet to be sunset, long live quicknet"
-authors: []
+authors: [yolan]
 tags: [news]
+date: 2023-07-02
 ---
 
-Last month, we have identified [**a minor issue](https://github.com/drand/kyber-bls12381/issues/22)** in our implementation of the BLS signature on G1 used in the newly launched `fastnet` network. This is an RFC compliance issue which led us to plan the launch of a new compliant `quicknet` network and to spin down `fastnet`. 
+Last month, we have identified [**a minor issue](https://github.com/drand/kyber-bls12381/issues/22)** in our implementation of the BLS signature on G1 used in the newly launched `fastnet` network. This is an RFC compliance issue which led us to plan the launch of a new compliant `quicknet` network and to spin down `fastnet`.
 
-## **The Issue**
+<!-- truncate -->
+
+## The Issue
 
 While not a *security issue* for drand, the problem is affecting our “hash to curve” function, used to map round numbers to a point on the elliptic curve that get signed using [**threshold BLS](https://en.wikipedia.org/wiki/BLS_digital_signature)** by the drand network. The issue relates to the upcoming Hash To Curve [**RFC 9380**](https://www.rfc-editor.org/auth48/rfc9380), which mandates specific “Domain Separation Tags“ (DST) for certain curves. In the BLS curve case, where we have two different groups (G1 and G2) that we can map to, the RFC recommends using different DST for both groups (it’s the point of having a DST!). Sadly, our implementation of BLS signatures was initially written to perform signatures on G2 and not on G1… (Stay tuned for an upcoming blog post about the choice of the group for BLS signatures!) The usage of a global variable in our codebase for the DST meant that both our G1 and G2 implementations were sharing the same DST. Since we don’t have “official test vectors” for BLS signatures on G1 and G2, this went unnoticed until [**someone tried](https://drandworkspace.slack.com/archives/C011JB8NU2E/p1683527867397549?thread_ts=1683197659.071499&cid=C011JB8NU2E)** to verify our signatures done on G1 with a C++ implementation and reported the issue in our Slack.
 
@@ -19,7 +22,7 @@ For us, the main takeaways here are:
 - Generate more noise and community outreach around new network launches, including new testnets.
 - Expect early adopters to take at least 2-3 months to start testing their implementations building on top of your new features, and therefore plan your testnet and mainnet launches accordingly.
 
-## **Next Steps**
+## Next Steps
 
 This issue means that **all beacons** emitted for the new `fastnet` network that we launched on March 1st are featuring signatures that are non-compliant with the hash to curve spec, and so is the case for beacons from our testnet.
 
@@ -40,13 +43,13 @@ Given the above, [The League of Entropy](https://www.notion.so/The-League-of-Ent
 
 We are currently planning to launch these new `quicknet` networks in July on both our Testnet and Mainnet.
 
-## **Consequences**
+## Consequences
 
 The biggest problem with shutting down our `fastnet` network, is that any usage of its public key to perform timelock encryption past the shutdown date will lead to ciphertexts that cannot be decrypted. This is because the required beacon’s signature won’t be emitted by the network. This means that whoever used our timelock system with our `fastnet` network (or our `testnet-g` one) and set a decryption date after their shutdown date won’t be able to decrypt their ciphertexts.
 
 For “classical” public randomness usage, switching to a new network does not affect the quality or verifiability of the randomness.
 
-## **Recommendations**
+## Recommendations
 
 For “public verifiable randomness usage”, we recommend always having a way to transition to a new “beacon chain” easily shall the need arise. This means being able to switch to a new public key and starting to monitor a new chainhash at a given time.
 

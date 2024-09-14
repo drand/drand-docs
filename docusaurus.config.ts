@@ -7,23 +7,16 @@ const config: Config = {
   tagline: 'Distributed randomness beacon',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://docs.drand.love',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'drand', // Usually your GitHub org/user name.
-  projectName: 'drand-docs', // Usually your repo name.
+  organizationName: 'drand', // GitHub org/user name.
+  projectName: 'drand-docs', // GitHub repo name.
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -39,7 +32,13 @@ const config: Config = {
             'https://github.com/drand/drand-docs/tree/master',
         },
         blog: {
+          blogTitle: 'drand Blog',
+          blogDescription: 'The latest news from the drand project',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
           showReadingTime: true,
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -50,6 +49,7 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+
         },
         gtag: {
           trackingID: 'G-PH6HJ6ECV2'

@@ -1,13 +1,16 @@
 ---
 slug: "announcing-randamu"
 title: "Announcing Randamu!"
-authors: []
+description: "Randamu is a spin off of the drand project with the original team members from Protocol Labs."
+authors: [yolan, patrick, laith, erick]
 tags: [news, update, league-of-entropy]
 ---
 
 Dear Friends & Colleagues,
 
 TOPLINE: After four years of stewarding the [drand](https://github.com/drand) project on behalf of [LoE](https://leagueofentropy.com/), [Protocol Labs](https://protocol.ai/) has decided to spin off our drand team into its own private enterprise, now called [Randamu](https://randa.mu/).
+
+<!-- truncate -->
 
 BACKGROUND: Protocol Labs is undergoing a slow and steady process of decentralization, expected to culminate by the end of this year. At its conclusion, Protocol Labs will no longer be one company but rather a network of companies known as the Protocol Labs Network (PLN). Today the PLN is already approaching 100 independent companies - each unique, but bound together in common cause to drive breakthroughs in computing that push humanity forward. For more details please visit the [Protocol Labs Blog](https://protocol.ai/blog/).
 

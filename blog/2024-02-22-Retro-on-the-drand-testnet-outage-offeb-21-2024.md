@@ -1,8 +1,10 @@
 ---
-slug: "retro-on-the-drand-testnet"
+slug: "retro-drand-testnet-outage-2024-02-21"
 title: "Retro on the drand testnet outage of Feb 21, 2024"
-authors: []
+description: "Retro on the drand testnet outage of Feb 21, 2024"
+authors: [yolan]
 tags: [news, postmortem, ceremony]
+date: 2024-02-22
 ---
 
 ## **TL;DR**
@@ -12,6 +14,8 @@ tags: [news, postmortem, ceremony]
 - Bugs in migration paths and the state machine blocked the ceremony.
 - We will re-run the ceremony asynchronously.
 - Testnet has regained stability and is operating normally.
+
+<!-- truncate --> 
 
 ## Background
 

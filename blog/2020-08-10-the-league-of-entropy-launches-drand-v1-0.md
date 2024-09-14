@@ -1,11 +1,14 @@
 ---
 slug: "drand-v1.0-and-the-league-of-entropy-two-weeks-in"
 title: "drand v1.0 and the League of Entropy: Two Weeks In"
-authors: []
+authors: [yolan]
 tags: [release, major, league-of-entropy]
+date: 2020-08-24
 ---
 
 Two weeks ago, we announced the launch of drand v1.0, the League of Entropy production-level service, and this very website. Here is a roundup of related blog posts and news items from around the web:
+
+<!-- truncate -->
 
 - [The League of Entropy Launches Production Drand Network, Providing the First Publicly Verifiable Distributed Randomness Beacon](https://www.notion.so/League-of-Entropy-Launches-Production-drand-Network-dfc17d24f35d4558b6fd909276d573c1?pvs=21), League of Entropy press release, Aug 10 (picked up by [Yahoo! Finance](https://finance.yahoo.com/news/league-entropy-launches-production-drand-140000595.html) and others)
 - [The League of Entropy launches drand v1.0 to become the Internet’s first production-grade, publicly verifiable randomness beacon!](The%20League%20of%20Entropy%20launches%20drand%20v1%200%20to%20becom%202577496887ce4d88bf89358d0df69ac7.md), drand, Aug 10

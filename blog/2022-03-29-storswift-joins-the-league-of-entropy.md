@@ -1,16 +1,16 @@
 ---
 slug: "storswift-joins-the-league-of-entropy"
 title: "StorSwift joins the League of Entropy!"
-authors: []
+authors: [yolan]
 tags: [league-of-entropy, new-members,news]
+date: 2022-03-29
 ---
-
-Date Published: March 29, 2022
-Tags: League of Entropy, New Members, News
 
 *"StorSwift becomes the newest member of the League of Entropy. We've asked them why they're motivated by drand and decided to contribute - check what they said!"*
 
-![StorSwiftLogo.png](/img/StorSwiftLogo.png)
+<!-- truncate -->
+
+![StorSwiftLogo.png](https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/5393c571-b63b-4062-bfa3-5778a04672cb/StorSwiftLogo/w=384,quality=90,fit=scale-down)
 
 We are excited to announce that [**StorSwift**](https://storswift.com/), a China-based cloud computing and storage services company, is joining forces with the [**League of Entropy**](https://leagueofentropy.com/) (LoE)! StorSwift is becoming the 15th member to join the LoE and the first partner joining from China - a significant milestone for the LoE!
 
