@@ -68,10 +68,10 @@ In 2019, Cloudflare, EPFL, the University of Chile, Kudelski Security, and Proto
 
 With the LoE Main Network upgrade, new partners have joined, increasing robustness and quality of service. Current members include:
 
-- [EPFL Center for Digital Trust (C4DT)](../The%20League%20of%20Entropy%201e76674b75e249699445799c5083fe78/League%20Partners%2089fecb56737044e5bdfbbb3f6864a422/EPFL%20Center%20for%20Digital%20Trust%20(C4DT)%20dc94bcdadab64950aa1e6bc96cb1e39a.md)
-- [ChainSafe Systems](../The%20League%20of%20Entropy%201e76674b75e249699445799c5083fe78/League%20Partners%2089fecb56737044e5bdfbbb3f6864a422/ChainSafe%20Systems%20480ac8864a33408dae64fad706c38a8e.md)
-- [c**·**Labs](../The%20League%20of%20Entropy%201e76674b75e249699445799c5083fe78/League%20Partners%2089fecb56737044e5bdfbbb3f6864a422/c%C2%B7Labs%208125559f2fb44804b9e6ca63da70f6b6.md)
-- [Cloudflare](../The%20League%20of%20Entropy%201e76674b75e249699445799c5083fe78/League%20Partners%2089fecb56737044e5bdfbbb3f6864a422/Cloudflare%2012bbcd90be5f4e42af18599f65019e7e.md)
+- [EPFL Center for Digital Trust (C4DT)](https://drand.love/dc94bcdadab64950aa1e6bc96cb1e39a)
+- [ChainSafe Systems](https://drand.love/480ac8864a33408dae64fad706c38a8e)
+- [c**·**Labs](https://drand.love/8125559f2fb44804b9e6ca63da70f6b6)
+- [Cloudflare](https://drand.love/12bbcd90be5f4e42af18599f65019e7e)
 - [Emerald Onion](https://emeraldonion.org/)
 - [EPFL](https://www.epfl.ch/labs/dedis/)
 - [Ethereum Foundation](https://ethereum.foundation/)

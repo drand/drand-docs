@@ -38,7 +38,7 @@ drand generates randomness without allowing any party to predict or bias the out
 1. **Network Setup**: A drand network consists of nodes running the drand protocol. These nodes agree on a threshold parameter and generate partial signatures.
 2. **Randomness Generation**: Nodes broadcast parts of their signatures, which are collected until they match the threshold. The final signature, a [**Boneh–Lynn–Shacham**](https://en.wikipedia.org/wiki/BLS_digital_signature) (BLS) signature, is verified by the network and hashed to produce the random value.
 
-For more details, refer to the [project specifications](https://drand.love/docs/specification).
+For more details, refer to the [project specifications](https://docs.drand.love/docs/concepts/2-3-concepts-specification).
 
 ## Public Randomness
 

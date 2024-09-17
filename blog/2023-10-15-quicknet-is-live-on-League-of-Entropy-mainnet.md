@@ -50,7 +50,7 @@ The same holds for our testnet relays, e.g. [https://pl-us.testnet.drand.sh/chai
 - `f3827d772c155f95a9fda8901ddd59591a082df5ac6efe3a479ddb1f5eeb202c` our `testnet-g` unchained beacon chain, featuring our non-RFC compliant G1 signature scheme.
 - `cc9c398442737cbd141526600919edd69f1d6f9b4adb67e4d912fbc64341a9a5` which is our latest `quicknet-t` network, featuring RFC compliant BLS12-381 G1 based BLS signatures!
 
-Check our [DevGuide: HTTP API](https://www.notion.so/3-4-DevGuide-HTTP-API-12e8a9712c5b4b77a52e2b42de1ac009?pvs=21) for more information about our public endpoints!
+Check our [DevGuide: HTTP API](https://docs.drand.love/docs/dev-guide/3-4-dev-guide-http-api) for more information about our public endpoints!
 
 ## `quicknet-t`
 
@@ -88,9 +88,9 @@ The same holds for our mainnet relays. Any given beacon chain information can be
 
 ## Sun-setting of `fastnet`
 
-If you've been following our blog, you'll remember our previous post about [Timelock Encryption is now supported on drand mainnet](Timelock%20Encryption%20is%20now%20supported%20on%20drand%20main%20327425b1e16d4c22aa0d785dbf1c5fbb.md) where we announced the launch of our new `fastnet` network that supported our timelock scheme. The League of Entropy launched this new drand network on March 1st, 2023. However, we quickly identified an issue with our BLS signatures on G1 that made them non-compliant with the Hash To Curve [RFC 9380](https://www.ietf.org/rfc/rfc9380.html) specification, as well as most BLS signatures implementations on G1 apart from ours. Therefore, we had to double down and launch the `quicknet` network to fix this issue.
+If you've been following our blog, you'll remember our previous post about [Timelock Encryption is now supported on drand mainnet](/blog/timelock-encryption-is-now-supported-on-drand-mainnet) where we announced the launch of our new `fastnet` network that supported our timelock scheme. The League of Entropy launched this new drand network on March 1st, 2023. However, we quickly identified an issue with our BLS signatures on G1 that made them non-compliant with the Hash To Curve [RFC 9380](https://www.ietf.org/rfc/rfc9380.html) specification, as well as most BLS signatures implementations on G1 apart from ours. Therefore, we had to double down and launch the `quicknet` network to fix this issue.
 
-We’ll be sun-setting `fastnet` in the coming months [as announced previously](https://drand.love/blog/2023/07/03/fastnet-sunset-quicknet-new/). We are currently going to scale down `fastnet` by another 3 nodes in November, and we’ll be shutting it down completely at the earliest opportunity. Please reach out to
+We’ll be sun-setting `fastnet` in the coming months [as announced previously](/blog/fastnet-to-be-sunset). We are currently going to scale down `fastnet` by another 3 nodes in November, and we’ll be shutting it down completely at the earliest opportunity. Please reach out to
 
 us if this is a concern for you or your team.
 
@@ -99,15 +99,15 @@ us if this is a concern for you or your team.
 
 ## Shoutout to the League of Entropy 🤝
 
-Our decentralization journey wouldn't be possible without [The League of Entropy](https://www.notion.so/The-League-of-Entropy-1e76674b75e249699445799c5083fe78?pvs=21). We are delighted to share that all members in the League of Entropy are running the `quicknet` drand network alongside the `default` chained beacon network on the League’s network of 23 nodes.
+Our decentralization journey wouldn't be possible without [The League of Entropy][LOE]. We are delighted to share that all members in the League of Entropy are running the `quicknet` drand network alongside the `default` chained beacon network on the League’s network of 23 nodes.
 
 A big shoutout to the League of Entropy for their invaluable contributions, running drand nodes for free for anyone to use whenever one needs public, verifiable randomness. Together, we're pioneering a faster, more decentralized future for randomness generation, with this new unchained network enabling a host of new possibilities for our users!
 
 ## Get Started 🚀
 
-For developers and users eager to dive into the new `quicknet` drand network, our [official documentation](https://drand.love/developer/) provides detailed resources about using drand relays and beacons.
+For developers and users eager to dive into the new `quicknet` drand network, our [official documentation](https://docs.drand.love/docs/category/30-developers-guide) provides detailed resources about using drand relays and beacons.
 
-We also have a blog post about “[drand for beginners](https://drand.love/blog/2023/06/02/drand-explainer/)” that’s packed with useful information and another one about [using drand on-chain](https://drand.love/blog/2023/03/16/draffle/) with a demo lottery use-case running on the Filecoin Virtual Machine.
+We also have a blog post about “[drand for beginners](/blog/drand-explainer-for-begginers)” that’s packed with useful information and another one about [using drand on-chain](/blog/drand-on-filecoin-virtual-machine-FVM-draffle) with a demo lottery use-case running on the Filecoin Virtual Machine.
 
 ## G1 - G2 Swap
 
@@ -127,7 +127,7 @@ This swap allowed us to **reduce the size of the drand beacons emitted by the ne
 
 ## Unchained Mode
 
-We’ve introduced the notion of [unchained beacons](https://drand.love/blog/2022/02/21/multi-frequency-support-and-timelock-encryption-capabilities/#unchained-randomness-timed-encryption) last year on the blog already. But in essence, the new drand network brings a host of improvements aimed at enhancing the overall UX for drand users and developers. The 'unchained mode' means that new random beacons are entirely independent from previous ones, meaning that you can now perform stateless verification of a beacon, without having to keep a record of past beacons!
+We’ve introduced the notion of [unchained beacons](/blog/multi-frequency-support-and-timelock-encryption-are-coming-to-drand) last year on the blog already. But in essence, the new drand network brings a host of improvements aimed at enhancing the overall UX for drand users and developers. The 'unchained mode' means that new random beacons are entirely independent from previous ones, meaning that you can now perform stateless verification of a beacon, without having to keep a record of past beacons!
 
 These enhancements are designed to make the drand network more robust, efficient, and user-friendly. They help in reducing the computational and storage load of our users, making drand more cost-effective and faster. The unchained nature of the beacons also means you can now decide to sample only one every 5 beacons to have a frequency of 15s or one every 20 beacons to have a frequency of 1 minute! This significantly improves flexibility and scalability for everyone.
 
@@ -145,7 +145,7 @@ The fact that the drand beacons are now **unchained** might give the *false impr
 - **Predictability:** An attacker controlling a threshold number of shares is able to predict any arbitrary round in the unchained setting, whereas they would need to compute all intermediary rounds to predict a given future round with the chained setting. *However*, controlling a threshold amount of shares at any point in time allows computation of the shared secret of the group, and nothing can prevent such an attacker having obtained the group secret from then computing all future chained rounds offline much faster than the existing network would have, leading to the same result as in the unchained case: complete predictability of all future rounds in case of a compromise of either scheme.
 - **Bias:** All future beacons are entirely determined by two things: the initial Distributed Key Generation and their round number. This was already the case for the chained network and hasn’t changed with the unchained schemes. For a given distributed group public key, future rounds cannot be biased in any way after the initial Distributed Key Generation ceremony has been run.
 
-We’ve also made sure our new Timelock Encryption service relying on our new `quicknet` network was [properly audited](https://drand.love/blog/2023/05/26/tlock-security-assessment/). We’ve got you covered!
+We’ve also made sure our new Timelock Encryption service relying on our new `quicknet` network was [properly audited](/blog/security-assessment-of-tlock). We’ve got you covered!
 
 ## Extra Liveness!
 
@@ -162,3 +162,5 @@ If you are already doing so, or plan on doing so, don’t hesitate to join our [
 Until next time! 😄
 
 ---
+
+[LOE]: https://drand.love/1e76674b75e249699445799c5083fe78

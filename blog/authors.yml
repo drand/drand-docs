@@ -1,48 +1,3 @@
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
-  page: true
-  socials:
-    x: yangshunz
-    github: yangshun
-
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
-  socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
-
-kentbull:
-  name: Kent Bull
-  title: drand Community Manager
-  url: https://kentbull.com
-  image_url: https://avatars.githubusercontent.com/u/65027257?v=4
-  page: true
-  socials:
-    x: kentopbull
-    github: kentbull
-
-dgrantham:
-  name: Dave Grantham
-  title: drand Community Manager & Cryptographer
-  url: https://cryptid.tech
-  image_url: https://avatars.githubusercontent.com/u/5017470?v=4
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-dave-grantham-articles'
-  socials:
-    github: dhuseby
-
 yolan:
   name: Yolan Romailler
   title: Co-Founder & Cryptographer
@@ -52,7 +7,7 @@ yolan:
     Worked on the Distributed Randomness project, drand, at Protocol Labs and also on CBDC and SSI at SICPA, as well as broader cryptographic engineering at Kudelski Security. I've also been a Security Engineer on the Diem security team for Novi (Facebook/Meta).
     A subject matter expert in secure coding. As a consultant, I've supported customers by answering complex questions on security critical systems such as blockchain technologies, and by designing, evaluating and implementing complex cryptography such as key management systems or cryptographic primitives.
   url: https://romailler.ch/
-  image_url: https://media.licdn.com/dms/image/v2/C5603AQHKMl2eqMuNaw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1587563958538?e=1731542400&v=beta&t=P3xWRN9Vxshih2vPsvbdBKWmBo8mH5rTQGQljBlMEYg
+  image_url: /img/author/yolan.jpeg
   page: true
   socials:
     linkedin: anomalroil
@@ -65,7 +20,7 @@ patrick:
   description: |
     Randamu, drand, threshold cryptography
     Polyglot developer
-  image_url: https://media.licdn.com/dms/image/v2/D4E03AQHnR3WKvq1g2A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709586991713?e=1731542400&v=beta&t=ea_E7RBxxyUtNewe_LAF9GvvFd3FzFiIufckhXM4Dps
+  image_url: /img/author/patrick.jpeg
   page: true
   socials:
     linkedin: patrickmcclurg
@@ -76,7 +31,7 @@ laith:
   title: Fullstack & DevOps Engineer
   description: |
     I'm a full stack software engineer & devops who loves to build systems and pipelines meticulously. I care about attention to detail, correctness, and maintainability.
-  image_url: https://media.licdn.com/dms/image/v2/C4E03AQEgjfh_7ZwmSw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516525202814?e=1731542400&v=beta&t=J4YvtoE2WK49MXtUylIv4xoUq9W9i3u07GkUq78yHwI
+  image_url: /img/author/laith.jpeg
   page: true
   socials:
     linkedin: laith-alissa-b2760874
@@ -86,8 +41,7 @@ erick:
   title: Co-Founder & CEO @ Randamu | Decentralized Ecosystem Builder
   description: |
     Erick Watson serves as the CEO of Randamu, a company that specializes in developing leading-edge cryptographic solutions. With over 15 years of experience in leading innovation projects, Erick has a proven track record of delivering value to customers and stakeholders.
-  image_url: https://media.licdn.com/dms/image/v2/D5603AQFDZrnupQzeLg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718309668467?e=1731542400&v=beta&t=kgfROyBEDKJRwqnxhOYRKzOWMOlhNEz9lTeU-SGofJQ
+  image_url: /img/author/erick.jpeg
   socials:
     linkedin: erick-watson
     website: https://randa.mu
-

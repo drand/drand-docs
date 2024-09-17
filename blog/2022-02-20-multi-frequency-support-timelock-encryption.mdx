@@ -1,5 +1,5 @@
 ---
-slug: "multi-frequency-support-&-timelock-encryption-are-coming-to-drand"
+slug: "multi-frequency-support-and-timelock-encryption-are-coming-to-drand"
 title: "Multi-Frequency Support & Timelock Encryption are coming to drand!"
 authors: [yolan]
 tags: [features]
@@ -75,7 +75,7 @@ It is worth noting that all of the properties already natively integrated in dra
 
 With the updated setup different frequencies (realized as routines) are generated and live within the same process as separate protocols, although each protocol is completely isolated from each other. Applications that wish to consume randomness at some particular frequency can form a separate network. Nodes that join each network participate in randomness generation and propagation between them and make use of the corresponding protocol.
 
-![https://drand.love/assets/img/multi-frequency-diagram.cad03494.jpg](https://drand.love/assets/img/multi-frequency-diagram.cad03494.jpg)
+![https://drand.love/assets/img/multi-frequency-diagram.cad03494.jpg](/img/multi-frequency-diagram.avif)
 
 More generally, each new frequency runs as a separate protocol. The new protocol can also choose between chained and unchained randomness. So, for instance, if we assume that the main drand network (the one operated by the LoE) runs at some specific frequency in unchained randomness mode, one can set up a new network with a different frequency and chained randomness.
 

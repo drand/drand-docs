@@ -15,7 +15,7 @@ In this blog post, we’ll dive into creating a simple Notion widget that displa
 
 ## An overview of drand
 
-Our earlier [blog](https://drand.love/blog/a-guide-on-how-to-use-drand) post titled "A Guide on How to Use drand", explains the importance of public randomness and how drand provides it using a threshold network. It offers a step-by-step tutorial on setting up and using drand's randomness in applications, including fetching randomness with JavaScript, verifying it, and using it in real-life scenarios like coin flips and random selection. The guide emphasizes fairness and verifiability in applications requiring random numbers.
+Our earlier [blog](/blog/a-guide-on-how-to-use-drand) post titled "A Guide on How to Use drand", explains the importance of public randomness and how drand provides it using a threshold network. It offers a step-by-step tutorial on setting up and using drand's randomness in applications, including fetching randomness with JavaScript, verifying it, and using it in real-life scenarios like coin flips and random selection. The guide emphasizes fairness and verifiability in applications requiring random numbers.
 
 In a nutshell, drand uses a threshold network, where multiple parties collaborate to generate random numbers, ensuring no single entity can predict or bias the outcome. By leveraging hashed signatures without a complete secret key held by any party, drand achieves verifiable randomness. This system's reliability and unpredictability make it ideal for projects with a dependency on secure and verifiable randomness.
 
@@ -37,7 +37,7 @@ npm install drand-client
 
 Once the drand client is installed, we’re ready to start implementing our simple ReactJS application! The application will allow users to select their desired network (i.e., default or quicknet) from a dropdown menu and display the latest randomness after each round, the round number and a countdown to the next randomness generation round or ETA. 
 
-Appropriate API URLs for the mainnet default and quicknet networks can be found here: [https://drand.love/docs/developers-guide](https://drand.love/docs/developers-guide)
+Appropriate API URLs for the mainnet default and quicknet networks can be found here: [https://docs.drand.love/docs/dev-guide/3-0-dev-guide](https://docs.drand.love/docs/dev-guide/3-0-dev-guide)
 
 Let’s implement the reactjs component in our `App.js` file.
 

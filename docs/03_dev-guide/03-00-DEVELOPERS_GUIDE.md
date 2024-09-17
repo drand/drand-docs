@@ -28,7 +28,7 @@ There are two networks on mainnet:
 `quicknet` network chain hash: `52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971`
 
 <aside>
-⚠️ Note that [**the `fastnet`](https://drand.love/blog/2023/07/03/fastnet-sunset-quicknet-new/) [network has been deprecated](https://www.notion.so/fastnet-to-be-sunset-long-live-quicknet-5d125025752146b5bc307c834435d49e?pvs=21).**
+⚠️ Note that [**the `fastnet`](/blog/fastnet-to-be-sunset) [network has been deprecated](https://www.notion.so/fastnet-to-be-sunset-long-live-quicknet-5d125025752146b5bc307c834435d49e?pvs=21).**
 
 </aside>
 

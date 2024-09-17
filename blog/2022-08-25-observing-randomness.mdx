@@ -12,7 +12,7 @@ date: 2022-08-25
 
 ### What is drand?
 
-**Drand** is a public, verifiable, unpredictable, and unbiased randomness beacon. It is based on the idea that to generate randomness in a reliable and trustworthy way, you cannot depend on a single entity to control the infrastructure where it runs. This led us to seek the collaboration of multiple organizations to run their own drand daemons, forming [The League of Entropy](https://www.notion.so/The-League-of-Entropy-1e76674b75e249699445799c5083fe78?pvs=21) (LoE)—a distributed organization where each participating partner runs a drand node.
+**Drand** is a public, verifiable, unpredictable, and unbiased randomness beacon. It is based on the idea that to generate randomness in a reliable and trustworthy way, you cannot depend on a single entity to control the infrastructure where it runs. This led us to seek the collaboration of multiple organizations to run their own drand daemons, forming [The League of Entropy][LOE] (LoE)—a distributed organization where each participating partner runs a drand node.
 
 A drand *network* is composed of multiple *nodes*. Each network generates separate randomness beacons at specific intervals, called *rounds*. The number of nodes on a network is fixed at any given point in time and only changes during a *ceremony*. During the ceremony, a *threshold* is set, which is the minimum number of nodes that need to be connected to the network at any given time for randomness generation to succeed.
 
@@ -117,3 +117,5 @@ it in the dashboard until the ceremony is finished. We would like to have some w
 - [Asynchronous System](https://en.wikipedia.org/wiki/Asynchronous_system)
 
 ---
+
+[LOE]: https://drand.love/1e76674b75e249699445799c5083fe78

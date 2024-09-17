@@ -10,13 +10,13 @@ date: 2022-03-29
 
 <!-- truncate -->
 
-![StorSwiftLogo.png](https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/5393c571-b63b-4062-bfa3-5778a04672cb/StorSwiftLogo/w=384,quality=90,fit=scale-down)
+![StorSwiftLogo.png](/img/StorSwiftLogo.png)
 
 We are excited to announce that [**StorSwift**](https://storswift.com/), a China-based cloud computing and storage services company, is joining forces with the [**League of Entropy**](https://leagueofentropy.com/) (LoE)! StorSwift is becoming the 15th member to join the LoE and the first partner joining from China - a significant milestone for the LoE!
 
 StorSwift has already deployed various workload-scalable enterprise storage systems in video surveillance, HPC, and AI industries and provides support for the many platforms in operation. Based on their extensive experience with large-scale infrastructure projects, StorSwift has recently focused on improving infrastructure management and security techniques for Web3.0 computing platforms - all of which make StorSwift a great addition to the LoE! Welcome!
 
-We've asked StorSwift some key questions that we've previously asked other LoE members - see [**here**](The%20Value%20of%20drand%20(Part%201%20of%202)%200cc0bb5ecb6d471da62152370180701b.md) and [**here**](The%20Value%20of%20drand%20(Part%202%20of%202)%206d53b4cc6b5f4f31a8cab0b3fe2e94c3.md) - on the value of drand. Here are the answers.
+We've asked StorSwift some key questions that we've previously asked other LoE members - see [**here**](/blog/the-value-of-drand-part-1-of-2) and [**here**](/blog/the-value-of-drand-part-2-of-2) - on the value of drand. Here are the answers.
 
 ---
 
