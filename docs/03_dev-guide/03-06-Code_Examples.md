@@ -3,7 +3,7 @@ id: 3-6-dev-guide-code-examples
 title: "3.6 Code Examples"
 description: Examples of how to integrate drand in various coding languages.
 ---
-# 3.6 DevGuide: Code Examples
+# 3.6 Code Examples
 
 drand is easy to use with clients in Go and JavaScript as shown here. 
 

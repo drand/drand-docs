@@ -1,9 +1,9 @@
 ---
-id: 2-0-concepts
-title: 2.0 Concepts
+id: 2-0-intro-to-drand
+title: 2.0 Intro to drand
 description: A brief introduction to key concepts
 ---
-# 2.0 CONCEPTS (Getting Started)
+# 2.0 Intro to drand
 
 This section introduces the key concepts behind drand. For information about consuming randomness from a drand network, see the [**Developer's Guide](../dev-guide/3-0-dev-guide). F**or help running a drand network, see the entries under the “For Operators” section. To run node(s) or relay(s) for the [League of Entropy](https://leagueofentropy.org), please [apply to the League](https://docs.google.com/forms/d/e/1FAIpQLSfGwiSz2_gq6NHo3MGyJyH4_GKv_TcY1YmbwkctKlCh5aVToA/viewform?usp=sf_link) to be considered for membership.
 

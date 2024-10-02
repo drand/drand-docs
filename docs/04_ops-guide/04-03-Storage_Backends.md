@@ -3,7 +3,7 @@ id: 4-3-ops-guide-storage-backends
 title: "4.3 Storage Backends"
 description: Describes options available for storage of drand beacon data.
 ---
-# 4.3 DevOps: Storage Backends
+# 4.3 Storage Backends
 
 drand supports multiple storage backends: BoltDB, PostgreSQL, in-memory storage, aka. MemDB.
 

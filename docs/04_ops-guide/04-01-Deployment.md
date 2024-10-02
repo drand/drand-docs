@@ -3,7 +3,7 @@ id: 4-1-ops-guide-deployment
 title: "4.1 Deployment"
 description: Detailed instructions for how to deploy one or more drand nodes.
 ---
-# 4.1 DevOps: Deployment
+# 4.1 Deployment
 
 # **Deployment guide**
 

@@ -1,9 +1,9 @@
 ---
-id: 4-0-ops-guide
-title: "4.0 OPERATORS GUIDE"
+id: 4-0-getting-started-ops
+title: "4.0 Getting Started - Ops"
 description: A guide for drand node operators.
 ---
-# 4.0 OPERATORS GUIDE
+# 4.0 Getting Started - Operators
 
 # Overview
 

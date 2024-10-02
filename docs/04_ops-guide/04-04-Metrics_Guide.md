@@ -3,7 +3,7 @@ id: 4-4-ops-guide-metrics-guide
 title: "4.4 Metrics Guide"
 description: Describes Prometheus instrumentation exposed by drand nodes.
 ---
-# 4.4 DevOps: Metrics Guide
+# 4.4 Metrics Guide
 
 Drand uses [Prometheus](https://prometheus.io/) instrumentation for helping operators monitor and understand the runtime behavior of system.
 

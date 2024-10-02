@@ -3,7 +3,7 @@ id: 2-1-concepts-cryptography
 title: "2.1 Cryptography"
 description: An overview of drand's cryptographic building blocks
 ---
-# 2.1 Concepts: Cryptography
+# 2.1 Cryptography
 
 This document provides an overview of the cryptographic building blocks that drand uses to generate publicly verifiable, unbiased, and unpredictable randomness in a distributed manner. 
 

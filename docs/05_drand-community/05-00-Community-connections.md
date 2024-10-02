@@ -1,9 +1,9 @@
 ---
-id: 5-0-drand-community
-title: "5.0 DRAND COMMUNITY"
+id: 5-0-community-connections
+title: "5.0 Community Connections"
 description: A list of ways you can connect with the drand community.
 ---
-# 5.0 DRAND COMMUNITY
+# 5.0 Community Connections
 
 Welcome to the drand community! We're always seeking better ways to engage with our members and welcome new participants. Here’s how you can join and stay connected with us:
 

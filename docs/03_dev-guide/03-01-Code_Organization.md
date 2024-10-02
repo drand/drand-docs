@@ -1,9 +1,9 @@
 ---
-id: 3-1-dev-guide-organization
-title: "3.1 DevGuide: Organization"
+id: 3-1-dev-guide-code-organization
+title: "3.1 Code Organization"
 description: A table of contents for drand packages and related bits.
 ---
-# 3.1 DevGuide: Organization
+# 3.1 Code Organization
 
 ## **Top-level Packages**
 

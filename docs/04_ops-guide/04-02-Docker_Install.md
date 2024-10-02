@@ -3,7 +3,7 @@ id: 4-2-ops-guide-docker-install
 title: "4.2 Docker Install"
 description: Detailed instructions for running a production drand node using Docker.
 ---
-# 4.2 DevOps: Docker Install
+# 4.2 Docker Install
 
 # **Install drand with Docker**
 

@@ -3,7 +3,7 @@ id: 3-4-dev-guide-http-api
 title: "3.4 HTTP API"
 description: A list of public endpoints, instructions how to fetch, explanation of results.
 ---
-# 3.4 DevGuide: HTTP API
+# 3.4 drand HTTP API
 
 Drand provides a JSON HTTP interface that clients can use to fetch randomness from each drand network running on nodes. If you're using drand in an application, it may be easier and *more secure* to use one of the [**client libraries**](3-3-dev-guide-client-libraries), which will also perform *verification* of randomness rounds and add additional features like failover, racing, aggregation, and caching.
 

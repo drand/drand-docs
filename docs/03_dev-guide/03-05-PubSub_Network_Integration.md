@@ -1,9 +1,9 @@
 ---
-id: 3-5-dev-guide-pubsub-network
-title: "3.5 PubSub Network"
+id: 3-5-dev-guide-pubsub-network-integration
+title: "3.5 PubSub Network Integration"
 description: A list of public endpoints with usage instructions.
 ---
-# 3.5 DevGuide: PubSub Network
+# 3.5 PubSub Network Integration
 
 drand is able to publish randomness on a [**libp2p**](https://libp2p.io/) PubSub network using the [**gossipsub protocol**](https://docs.libp2p.io/concepts/publish-subscribe/) , using what is known as a *gossip relay*.
 

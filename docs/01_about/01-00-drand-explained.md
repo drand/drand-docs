@@ -1,9 +1,9 @@
 ---
-id: 1-0-about
-title: 1.0 About
+id: 1-0-drand-explained
+title: 1.0 drand Explained
 description: What is drand?
 ---
-# 1.0 ABOUT (What is “drand”?)
+# 1.0 drand Explained (What is “drand”?)
 
 **drand** (lower case, pronounced "DEE-rand") is a distributed randomness beacon daemon written in the [**Go**](https://en.wikipedia.org/wiki/Go_(programming_language)) programming language. It generates collective, publicly verifiable, unbiased, and unpredictable random values at fixed intervals using advanced cryptographic techniques.
 

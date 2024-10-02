@@ -3,7 +3,7 @@ id: 2-2-concepts-security-model
 title: "2.2 Security Model"
 description: Describes drand’s security assumptions.
 ---
-# 2.2 Concepts: Security Model
+# 2.2 Security Model
 
 ## 📕 Key Terminology
 

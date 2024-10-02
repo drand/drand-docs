@@ -3,7 +3,7 @@ id: 5-1-drand-community-contributing
 title: "5.1 Contributing"
 description: Explains how to contribute your time and talent to the drand project.
 ---
-# 5.1 Community: Contributing
+# 5.1 Contributing
 
 We welcome contributions to the drand project! Whether you’re interested in submitting code, fixing bugs, or updating documentation, your help is invaluable.
 

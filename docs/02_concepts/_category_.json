@@ -1,9 +1,8 @@
 {
-    "label": "2.0 CONCEPTS (Getting Started)",
+    "label": "2.0 CONCEPTS",
     "position": 3,
     "link": {
       "type": "generated-index",
       "description": "A brief introduction to key concepts."
     }
   }
-  

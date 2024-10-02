@@ -1,9 +1,9 @@
 ---
-id: 3-0-dev-guide
-title: 3.0 Developers Guide
-description: Help for developers who wish to use drand.
+id: 3-0-getting-started
+title: 3.0 Getting Started - Dev
+description: Guidance for developers seeking to use drand.
 ---
-# 3.0 DEVELOPERS GUIDE
+# 3.0 Getting Started - Developers
 
 This section helps developers build applications that use drand as a source of randomness. For help running your own drand network, see the guides under “For Operators” on the main menu of the site.
 

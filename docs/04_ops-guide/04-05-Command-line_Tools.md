@@ -3,7 +3,7 @@ id: 4-5-ops-guide-command-line-tools
 title: "4.5 Command-line Tools"
 description: Installing and operating drand from the command line.
 ---
-# 4.5 DevOps: Command-line Tools
+# 4.5 Command-line Tools
 
 Drand's main functionality is provided by the `drand` program, which allows you to run a drand server and control its operation. You can also use `drand` as a client to fetch randomness from a drand network.
 

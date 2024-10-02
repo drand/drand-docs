@@ -4,7 +4,7 @@ title: "2.4 Timelock Encryption"
 description: Describes timelock encryption and how it works.
 ---
 
-# 2.4 Concepts: Timelock Encryption
+# 2.4 Timelock Encryption
 
 ## 🤔 **What is Timelock Encryption?**
 
