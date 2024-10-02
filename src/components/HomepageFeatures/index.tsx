@@ -15,7 +15,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         drand is a distributed randomness beacon daemon written in the Go programming
-        language. It generates collective, publicly verifiable, unbiased, and 
+        language. It generates collective, publicly verifiable, unbiased, and
         unpredictable random values at fixed intervals using advanced cryptographic
         techniques.
       </>
@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
     image: require('@site/static/img/league-of-entropy.avif').default,
     description: (
       <>
-        The League of Entropy is a voluntary consortium providing a verifiable, 
+        The League of Entropy is a voluntary consortium providing a verifiable,
         decentralized randomness beacon for anyone who needs a publicly verifiable
         source of randomness.
       </>
@@ -38,8 +38,8 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Active members of the League currently include Arbitrand, Automata Network,
-        ChainSafe, cLabs, Cloudflare, DIA Association, Emerald Onion, 
-        École Polytechnique Fédérale de Lausanne (EPFL), Ethereum Foundation, 
+        ChainSafe, cLabs, Cloudflare, DIA Association, Emerald Onion,
+        École Polytechnique Fédérale de Lausanne (EPFL), Ethereum Foundation,
         Filecoin Foundation; Gelato Network; IPFS Force, KEN Labs, Kudelski Security,
         Protocol Labs, PTisp, Quantum Resistant Ledger (QRL) Foundation, Randamu,
         StorSwift, Tierion, University of Chile, UCL, Tangle Network, and Zama.
@@ -52,7 +52,7 @@ function Feature({title, image, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <img src={image} className={styles.featureSvg} alt={title} />
+        <img src={image} className={styles.featureSvg} alt={title} style={{ width: 'auto', maxHeight: '250px'}} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
