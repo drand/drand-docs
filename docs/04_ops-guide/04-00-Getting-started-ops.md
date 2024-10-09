@@ -79,10 +79,10 @@ A high-level view of a simple drand stack
 | Resource | For a drand node | For a Publicly-accessible HTTP Relay |
 | --- | --- | --- |
 | Compute  | Comparable to x86-64 at the AWS ‘micro’ tier | Comparable to x86-64 at the AWS ‘micro’ tier |
-| Storage | At least 64GB of persistent storage | N/A |
+| Storage | At least 32GB of persistent storage | N/A |
 | Storage I/O | No special provisioning required | N/A |
 | Network Bandwidth | Minimum 1Mbps of dedicated bandwidth | 100Mbps of network traffic |
-| Memory | 32GB | 32GB to keep all rounds cached in memory |
+| Memory | 8GB | 32GB to keep all rounds cached in memory |
 | Hosting Capacity | At least 100Gbps of available peered or transit bandwidth | N/A |
 
 # Monitoring Recommendations
