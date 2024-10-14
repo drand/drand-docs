@@ -19,7 +19,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/concepts/2-0-concepts">
+            to="/docs/concepts/2-0-intro-to-drand">
             Get Started using drand!
           </Link>
         </div>
