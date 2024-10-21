@@ -44,7 +44,7 @@ We've introduced tools to monitor drand nodes and alert operators to incidents. 
 
 ### drand’s Specification & Security Model
 
-The drand protocol now has a [full specification](https://www.notion.so/2-3-Concepts-Specification-3c6b9de90dfd4ccbbdce860edc19b238?pvs=21) and a documented [security model](https://www.notion.so/2-2-Concepts-Security-Model-e28de9e2a7a94dcab08d06160879b6c5?pvs=21).
+The drand protocol now has a [full specification](https://docs.drand.love/docs/concepts/2-3-concepts-specification) and a documented [security model](https://docs.drand.love/docs/concepts/2-2-concepts-security-model).
 
 ### Security Audit
 
@@ -68,10 +68,10 @@ In 2019, Cloudflare, EPFL, the University of Chile, Kudelski Security, and Proto
 
 With the LoE Main Network upgrade, new partners have joined, increasing robustness and quality of service. Current members include:
 
-- [EPFL Center for Digital Trust (C4DT)](https://drand.love/dc94bcdadab64950aa1e6bc96cb1e39a)
-- [ChainSafe Systems](https://drand.love/480ac8864a33408dae64fad706c38a8e)
-- [c**·**Labs](https://drand.love/8125559f2fb44804b9e6ca63da70f6b6)
-- [Cloudflare](https://drand.love/12bbcd90be5f4e42af18599f65019e7e)
+- [EPFL Center for Digital Trust (C4DT)][C4DT]
+- [ChainSafe Systems][CHAINSAFE]
+- [c·Labs][CLABS]
+- [Cloudflare][CLOUDFLARE]
 - [Emerald Onion](https://emeraldonion.org/)
 - [EPFL](https://www.epfl.ch/labs/dedis/)
 - [Ethereum Foundation](https://ethereum.foundation/)
@@ -100,3 +100,8 @@ To celebrate this launch, the drand team, ETHGlobal, Protocol Labs Research, and
 That’s all for now! Stay tuned for more updates on drand’s new online home.
 
 ---
+
+[C4DT]: https://drand.love/loe/epfl-center-for-digital-trust-c4dt
+[CHAINSAFE]: https://drand.love/loe/chainsafe-systems
+[CLABS]: https://drand.love/loe/clabs
+[CLOUDFLARE]: https://drand.love/loe/cloudflare

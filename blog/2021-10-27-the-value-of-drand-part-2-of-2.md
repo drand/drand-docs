@@ -73,17 +73,17 @@ In short, we are shooting to make drand a foundational protocol for randomness i
 ---
 
 [LOE]: https://drand.love/1e76674b75e249699445799c5083fe78
-[CLOUDFLARE]: https://drand.love/12bbcd90be5f4e42af18599f65019e7e
-[DEDIS]: https://drand.love/e855b8f643d4475aa89a47252e6623d9
-[CHILE]: https://drand.love/27708a6027104c3ba708e2d8d7508a66
-[KUDELSKI]: https://drand.love/d800657770494c6cb39cffb5480407a4
-[PROTOCOL]: https://drand.love/9e18324379574803918146d996c24df5
-[CHAINSAFE]: https://drand.love/480ac8864a33408dae64fad706c38a8e
-[CLABS]: https://drand.love/8125559f2fb44804b9e6ca63da70f6b6
-[C4DT]: https://drand.love/dc94bcdadab64950aa1e6bc96cb1e39a
-[EMERALD]: https://drand.love/e22d8bdb07ef4198b283d0436bcc9cf4
-[EMERALD]: https://drand.love/184fc01bc464488c9570eb543d6c386a
-[PTISP]: https://drand.love/f8fa38c9c36d4b4bbbb40fe785e9ae12
-[TIERION]: https://drand.love/5b38e1b289f44e9d87498eddb788d38f
-[UCL]: https://drand.love/af818bec61a542daa950596f01fddf09
-[QUANTUM]: https://drand.love/b3e60c968098435790c3718f85ed3057
+
+[C4DT]: https://drand.love/loe/epfl-center-for-digital-trust-c4dt
+[CHAINSAFE]: https://drand.love/loe/chainsafe-systems
+[CHILE]: https://drand.love/loe/universidad-de-chile
+[CLABS]: https://drand.love/loe/clabs
+[CLOUDFLARE]: https://drand.love/loe/cloudflare
+[DEDIS]: https://drand.love/loe/epfl-decentralized-distributed-systems-lab-dedis
+[EMERALD]: https://drand.love/loe/emerald-onion
+[KUDELSKI]: https://drand.love/loe/kudelski-security
+[PROTOCOL]: https://drand.love/the-league-of-entropy/league-partners/protocol-labs
+[PTISP]: https://drand.love/loe/ptisp
+[QUANTUM]: https://drand.love/loe/quantum-resistant-ledger
+[TIERION]: https://drand.love/loe/tierion
+[UCL]: https://drand.love/loe/university-college-london
