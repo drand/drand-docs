@@ -2,11 +2,8 @@ yolan:
   name: Yolan Romailler
   title: Co-Founder & Cryptographer
   description: |
-    Applied cryptographer with a leaning for broader security/vulnerability research. 
-    
-    Worked on the Distributed Randomness project, drand, at Protocol Labs and also on CBDC and SSI at SICPA, as well as broader cryptographic engineering at Kudelski Security. I've also been a Security Engineer on the Diem security team for Novi (Facebook/Meta).
-    A subject matter expert in secure coding. As a consultant, I've supported customers by answering complex questions on security critical systems such as blockchain technologies, and by designing, evaluating and implementing complex cryptography such as key management systems or cryptographic primitives.
-#  url: https://romailler.ch/
+     Yolan is the chief cryptographer and co-founder at Randamu, delving into (and dwelling on) cryptography, secure coding, and other fun things. He can be found speaking in conferences such as Black Hat USA, NorthSec, GopherCon, Real World Crypto or DEF CON on topics including automation in cryptography, public keys vulnerabilities, elliptic curves, post-quantum cryptography, functional encryption, open source security, distributed randomness, and more! Nowadays he's focusing on the distributed randomness project, drand; on pairing-based cryptography; distributed key generation; threshold systems and timelock Encryption.
+    #  url: https://romailler.ch/
   image_url: /img/author/yolan.jpeg
   page: true
 #  socials:
@@ -30,7 +27,7 @@ laith:
   name: Laith Alissa
   title: Fullstack & DevOps Engineer
   description: |
-    I'm a full stack software engineer & devops who loves to build systems and pipelines meticulously. I care about attention to detail, correctness, and maintainability.
+    Laith is a full stack software engineer & devops who loves to build systems and pipelines meticulously. He cares about attention to detail, correctness, and maintainability.
   image_url: /img/author/laith.jpeg
   page: true
 #  socials:
@@ -46,3 +43,19 @@ erick:
 #  socials:
 #    linkedin: erick-watson
 #    website: https://randa.mu
+
+tari:
+  name: Nemitari Ajienka
+  title: Full-Stack Engineer @ Randamu
+  description: |
+    Nemitari Ajienka is a versatile full-stack software engineer and researcher, currently applying his expertise at Randamu. He specializes in developing smart contracts, integrating drand randomness across diverse ecosystems and developing innovative solutions leveraging blockchain functionality and decentralized threshold networks. 
+  image_url: /img/author/tari.jpeg
+  page: true
+
+yiannis:
+  name: Yiannis Psarrs
+  title: Research Scientist @ Protocol Labs / Probe Labs
+  description: | 
+    Yiannis has a long-standing interest in Information- or Content-Centric Networks with several noteworthy contributions in the area. He has extensive background in several of the architectural and protocol design aspects of Information-Centric Networks having run several projects over the last decade. He sees IPFS as a deployment of ICN in the wild with a huge user-base and is therefore excited to contribute his past experience into the protocol design choices of a live network. Yiannis is active in the ICN research community and the IRTF ICNRG. In the past, he has worked in areas related to congestion control, routing, caching, naming and resource allocation of current and future fixed and mobile Internet architectures. He believes that decentralisation of Internet services will be demanded through the need to deploy services at the edge of the network, aka edge-computing.
+  image_url: /img/author/yiannis.jpeg
+  page: true

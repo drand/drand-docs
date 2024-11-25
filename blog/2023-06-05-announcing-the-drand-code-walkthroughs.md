@@ -1,7 +1,7 @@
 ---
 slug: "announcing-drand-code-walkthrough"
 title: "Announcing the drand Code Walkthroughs"
-authors: [yolan]
+authors: [patrick]
 tags: [news, how-to, code-walkthrough]
 date: 2023-06-05
 ---

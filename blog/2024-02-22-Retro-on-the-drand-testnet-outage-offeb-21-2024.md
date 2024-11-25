@@ -2,7 +2,7 @@
 slug: "retro-drand-testnet-outage-2024-02-21"
 title: "Retro on the drand testnet outage of Feb 21, 2024"
 description: "Retro on the drand testnet outage of Feb 21, 2024"
-authors: [yolan]
+authors: [patrick]
 tags: [news, postmortem, ceremony]
 date: 2024-02-22
 ---
