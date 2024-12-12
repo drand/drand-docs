@@ -59,3 +59,16 @@ yiannis:
     Yiannis has a long-standing interest in Information- or Content-Centric Networks with several noteworthy contributions in the area. He has extensive background in several of the architectural and protocol design aspects of Information-Centric Networks having run several projects over the last decade. He sees IPFS as a deployment of ICN in the wild with a huge user-base and is therefore excited to contribute his past experience into the protocol design choices of a live network. Yiannis is active in the ICN research community and the IRTF ICNRG. In the past, he has worked in areas related to congestion control, routing, caching, naming and resource allocation of current and future fixed and mobile Internet architectures. He believes that decentralisation of Internet services will be demanded through the need to deploy services at the edge of the network, aka edge-computing.
   image_url: /img/author/yiannis.jpeg
   page: true
+
+elia:
+  name: Elia Nicolaou
+  title: research intern
+  page: false
+
+robin:
+  name: Robin Müller
+  title: Cryptography Engineer @ Randamu
+  description: |
+    Robin Müller is a cryptography engineer who worked on post-quantum and threshold cryptography prior to working at Randamu. He is currently working towards bringing advanced threshold schemes to blockchains.
+  image_url: /img/author/robin.jpeg
+  page: true
