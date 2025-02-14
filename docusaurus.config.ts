@@ -77,7 +77,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: 'https://drand.love/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/drand/drand-docs',
           label: 'GitHub',

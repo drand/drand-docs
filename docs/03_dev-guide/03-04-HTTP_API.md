@@ -38,7 +38,7 @@ The chain hash for the League of Entropy `quicknet` network running at a 3s fr
 52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971
 ```
 
-Note that ** [the `fastnet`](/blog/fastnet-to-be-sunset) [network has been deprecated.](/blog/fastnet-to-be-sunset) **
+Note that ** [the `fastnet` network has been deprecated.](https://drand.love/blog/fastnet-to-be-sunset) **
 
 ### **Testnet endpoints**
 
