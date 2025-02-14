@@ -17,7 +17,7 @@ The best way to actively participate and contribute to drand is through [GitHub]
 
 ## 💬 Engage in Discussions on Slack
 
-For real-time conversations and ongoing discussions, join us on [drandworkspace.slack.com](http://drandworkspace.slack.com/). On Slack, you can:
+For real-time conversations and ongoing discussions, join us on [drandworkspace.slack.com](https://join.slack.com/t/drandworkspace/shared_invite/zt-2p00bn43o-qALTK5RZEIK3I4fIO9h8dQ). On Slack, you can:
 
 - Ask questions and get near-immediate responses.
 - Participate in topic-specific channels.
