@@ -32,25 +32,25 @@ const config: Config = {
             'https://github.com/drand/drand-docs/tree/master',
         },
         blog: false,
-       # {
-       #   blogTitle: 'drand Blog',
-       #   blogDescription: 'The latest news from the drand project',
-       #   blogSidebarTitle: 'All posts',
-       #   blogSidebarCount: 'ALL',
-       #   showReadingTime: true,
-       #   readingTime: ({content, frontMatter, defaultReadingTime}) =>
-       #     defaultReadingTime({content, options: {wordsPerMinute: 300}}),
-       #   feedOptions: {
-       #     type: ['rss', 'atom'],
-       #     xslt: true,
-       #   },
-       #   editUrl:
-       #     'https://github.com/drand/drand-docs/tree/master',
-       #   // Useful options to enforce blogging best practices
-       #   onInlineTags: 'warn',
-       #   onInlineAuthors: 'warn',
-       #   onUntruncatedBlogPosts: 'warn',
-       # },
+       // {
+       //   blogTitle: 'drand Blog',
+       //   blogDescription: 'The latest news from the drand project',
+       //   blogSidebarTitle: 'All posts',
+       //   blogSidebarCount: 'ALL',
+       //   showReadingTime: true,
+       //   readingTime: ({content, frontMatter, defaultReadingTime}) =>
+       //     defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+       //   feedOptions: {
+       //     type: ['rss', 'atom'],
+       //     xslt: true,
+       //   },
+       //   editUrl:
+       //     'https://github.com/drand/drand-docs/tree/master',
+       //   // Useful options to enforce blogging best practices
+       //   onInlineTags: 'warn',
+       //   onInlineAuthors: 'warn',
+       //   onUntruncatedBlogPosts: 'warn',
+       // },
         gtag: {
           trackingID: 'G-PH6HJ6ECV2'
         },
