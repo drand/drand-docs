@@ -43,7 +43,7 @@ Timelock encryption has various applications, including:
 - Voting
 - Quizzes
 
-Join our [Slack](https://drandworkspace.slack.com) and post your ideas in the #drand-use-cases channel for discussion!
+Join our [Slack](https://join.slack.com/t/drandworkspace/shared_invite/zt-2p00bn43o-qALTK5RZEIK3I4fIO9h8dQ) and post your ideas in the #drand-use-cases channel for discussion!
 
 ## 🧮 **The Math behind Timelock Encryption**
 
@@ -71,6 +71,6 @@ Join our [Slack](https://drandworkspace.slack.com) and post your ideas in the #d
 - [**timevault**](https://timevault.drand.love/): A web app for timelock encryption and decryption.
     - timevault is a web app for timelock encrypting and decrypting vulnerability reports for responsible disclosure as well as arbitrary text. It is developed and maintained by the drand team.
 - **tlock-fvm**:
-    - Timelock encryption and decryption will be available on the [**Filecoin Virtual Machine**](https://fvm.bilecoin.io/) in the second half of 2023. Stay tuned to our blog for updates!
+    - Timelock encryption and decryption will be available on the [**Filecoin Virtual Machine**](https://fvm.filecoin.io/) in the second half of 2023. Stay tuned to our blog for updates!
 
 ---

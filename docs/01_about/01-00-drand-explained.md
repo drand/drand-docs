@@ -71,6 +71,6 @@ Special thanks to contributors and collaborators who have supported drand’s de
 
 ### 💌 *Get in touch!*
 
-If you have any questions or comments, you can reach the drand team at [leagueofentropy@googlegroups.com](mailto:leagueofentropy@googlegroups.com) or join the [drand Slack workspace](https://join.slack.com/t/drandworkspace/shared_invite/zt-19u4rf6if-bf7lxIvF2zYn4~TrBwfkiA).
+If you have any questions or comments, you can reach the drand team at [leagueofentropy@googlegroups.com](mailto:leagueofentropy@googlegroups.com), [info@drand.love](mailto:info@drand.love) or join the [drand Slack workspace](https://join.slack.com/t/drandworkspace/shared_invite/zt-19u4rf6if-bf7lxIvF2zYn4~TrBwfkiA).
 
 ---

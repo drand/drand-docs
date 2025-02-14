@@ -31,26 +31,26 @@ const config: Config = {
           editUrl:
             'https://github.com/drand/drand-docs/tree/master',
         },
-        blog: {
-          blogTitle: 'drand Blog',
-          blogDescription: 'The latest news from the drand project',
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
-          showReadingTime: true,
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/drand/drand-docs/tree/master',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-
-        },
+        blog: false,
+       # {
+       #   blogTitle: 'drand Blog',
+       #   blogDescription: 'The latest news from the drand project',
+       #   blogSidebarTitle: 'All posts',
+       #   blogSidebarCount: 'ALL',
+       #   showReadingTime: true,
+       #   readingTime: ({content, frontMatter, defaultReadingTime}) =>
+       #     defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+       #   feedOptions: {
+       #     type: ['rss', 'atom'],
+       #     xslt: true,
+       #   },
+       #   editUrl:
+       #     'https://github.com/drand/drand-docs/tree/master',
+       #   // Useful options to enforce blogging best practices
+       #   onInlineTags: 'warn',
+       #   onInlineAuthors: 'warn',
+       #   onUntruncatedBlogPosts: 'warn',
+       # },
         gtag: {
           trackingID: 'G-PH6HJ6ECV2'
         },
@@ -63,12 +63,12 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/league-members.avif',
+    image: 'img/drand-logo.png',
     navbar: {
       title: 'drand',
       logo: {
         alt: 'drand Logo',
-        src: 'img/drand-logo.avif',
+        src: 'img/drand-logo.png',
       },
       items: [
         {
@@ -115,7 +115,7 @@ const config: Config = {
           items: [
             {
               label: 'Blog',
-              to: '/blog',
+              to: 'https://drand.love/blog',
             },
             {
               label: 'GitHub',

@@ -11,7 +11,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'drand',
-    image: require('@site/static/img/drand-logo.avif').default,
+    image: require('@site/static/img/drand-logo.png').default,
     description: (
       <>
         drand is a distributed randomness beacon daemon written in the Go programming
@@ -28,21 +28,18 @@ const FeatureList: FeatureItem[] = [
       <>
         The League of Entropy is a voluntary consortium providing a verifiable,
         decentralized randomness beacon for anyone who needs a publicly verifiable
-        source of randomness.
+        source of randomness. Checkout the current League Members on our website <a href="https://drand.love/loe/">drand.love</a>. 
       </>
     ),
   },
   {
-    title: 'League Members',
-    image: require('@site/static/img/league-members.avif').default,
+    title: 'Timelock Encryption',
+    image: require('@site/static/img/timelock.png').default,
     description: (
       <>
-        Active members of the League currently include Arbitrand, Automata Network,
-        ChainSafe, cLabs, Cloudflare, DIA Association, Emerald Onion,
-        École Polytechnique Fédérale de Lausanne (EPFL), Ethereum Foundation,
-        Filecoin Foundation; Gelato Network; IPFS Force, KEN Labs, Kudelski Security,
-        Protocol Labs, PTisp, Quantum Resistant Ledger (QRL) Foundation, Randamu,
-        StorSwift, Tierion, University of Chile, UCL, Tangle Network, and Zama.
+        Our Timelock scheme, tlock, is the first widely available and easy to use timed-release encryption scheme! 
+        Use it to encrypt messages toward the future that anybody can decrypt when the time has come, even if you 
+        or your services are off-line by then.
       </>
     ),
   },
