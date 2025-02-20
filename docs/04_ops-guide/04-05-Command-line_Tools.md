@@ -65,7 +65,7 @@ COMMANDS:
    sync              sync your local randomness chain with other nodes and validate your local beacon chain. To follow a remote node, it requires the use of the 'follow' flag.
    generate-keypair  Generate the longterm keypair (drand.private, drand.public) for this node, and load it on the drand daemon if it is up and running.
 
-   util              Multiple commands of utility functions, such as reseting a state, checking the connection of a peer...
+   util              Multiple commands of utility functions, such as resetting a state, checking the connection of a peer...
    show              local information retrieval about the node's cryptographic material. Show prints the information about the collective public key, the group details (group.toml),the long-term public key (drand.public), respectively.
 
    help, h           Shows a list of commands or help for one command
@@ -135,7 +135,7 @@ OPTIONS:
    --traces-probability value  The probability for a certain trace to end up being collected.Between 0.0 and 1.0 values, that corresponds to 0% and 100%.Be careful as a high probability ratio can produce a lot of data. (default: 0.05) [$DRAND_TRACES_PROBABILITY]
    --push                      Push mode forces the daemon to start making beacon requests to the other node, instead of waiting the other nodes contact it to catch-up on the round (default: false) [$DRAND_PUSH]
    --verbose                   If set, verbosity is at the debug level (default: false) [$DRAND_VERBOSE]
-   --from value                Old group.toml path to specify when a new node wishes to participate in a resharing protocol. This flag is optional in case a node is alreadyincluded in the current DKG. [$DRAND_FROM]
+   --from value                Old group.toml path to specify when a new node wishes to participate in a resharing protocol. This flag is optional in case a node is already included in the current DKG. [$DRAND_FROM]
    --skipValidation            skips bls verification of beacon rounds for faster catchup. (default: false) [$DRAND_SKIP_VALIDATION]
    --json                      Set the output as json format (default: false) [$DRAND_JSON]
    --id value                  Indicates the id for the randomness generation process which will be started [$DRAND_ID]
@@ -155,7 +155,7 @@ OPTIONS:
 
 `drand` exposes up to four endpoints, depending on the flags passed in.
 
-The **private drand API endpoint** is used to communicate with other nodes using gRPC. The private API is always enabled. As drand can now support multiple beacons, it will always need the private address to be set, in order to know where to listen. You can pass the `--private-listen` flag and specify the `host:port` to bind to. Note that the addresss associated with the keypair must be publicly accessible and mapped to the `--private-listen` address, for example using a reverse proxy.
+The **private drand API endpoint** is used to communicate with other nodes using gRPC. The private API is always enabled. As drand can now support multiple beacons, it will always need the private address to be set, in order to know where to listen. You can pass the `--private-listen` flag and specify the `host:port` to bind to. Note that the address associated with the keypair must be publicly accessible and mapped to the `--private-listen` address, for example using a reverse proxy.
 
 <aside>
 ⚠️ **WARNING**: While the private API is primarily intended for inter-node communication, it may be exposed to the internet to allow clients to fetch randomness over gRPC using the [**`drand get`**](https://drand.love/operator/drand-cli/#drand-get) command and/or [**`drand-client`**](https://drand.love/operator/drand-cli/#drand-client). This will not allow access to any secret information, but we generally recommend restricting gRPC access using firewall rules to limit the potential for denial of service attacks.
@@ -182,7 +182,7 @@ The **metrics endpoint** provides an API for observing runtime metrics about t
 
 </aside>
 
-Finally drand can produce traces compatible with OpenTelemetry specification. To turn on this feature, set the `DRAND_TRACES` environment varible to the desired destination, e.g.
+Finally drand can produce traces compatible with OpenTelemetry specification. To turn on this feature, set the `DRAND_TRACES` environment variable to the desired destination, e.g.
 
 ```
 export DRAND_TRACES=127.0.0.1:4317

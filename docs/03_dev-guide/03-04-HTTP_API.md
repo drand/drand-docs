@@ -14,9 +14,9 @@ All that's required is the address of the HTTP interface and way to fetch from H
 The public [**League of Entropy**](http://leagueofentropy.org) HTTP APIs are available at:
 
 - Protocol Labs
-    - **`https://api.drand.sh/`**
-    - **`https://api2.drand.sh/`**
-    - **`https://api3.drand.sh/`**
+    - **`https://api.drand.sh/v2`**
+    - **`https://api2.drand.sh/v2`**
+    - **`https://api3.drand.sh/v2`**
 - Cloudflare
     - **`https://drand.cloudflare.com/`**
 - StorSwift
