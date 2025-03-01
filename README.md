@@ -16,6 +16,14 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
+#### Updating the api yaml file
+
+After updating the `drand-api.yaml` file, you need to run the following command to update the api docs:
+
+```
+yarn docusaurus gen-api-docs all
+```
+
 ### Build
 
 ```
