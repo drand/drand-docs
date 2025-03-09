@@ -10,7 +10,15 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header >
+      <div style={{width: "100%", maxHeight: '500px', overflow: "hidden"}}>
+      <img
+        src="/img/banner.avif"  // Path to your banner image
+        alt="Banner"
+        style={{width: "100%", height: '100%', objectFit: "cover", objectPosition: "center bottom"}}
+      />
+    </div>
+    <div className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
@@ -24,6 +32,7 @@ function HomepageHeader() {
           </Link>
         </div>
       </div>
+    </div>
     </header>
   );
 }
