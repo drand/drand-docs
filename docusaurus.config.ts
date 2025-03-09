@@ -134,6 +134,33 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['solidity', 'java', 'rust', 'jsx', 'bash', 'protobuf']
     },
+    languageTabs: [
+      {
+        highlight: 'bash',
+        language: 'curl',
+        logoClass: 'curl',
+      },
+      {
+        highlight: 'go',
+        language: 'go',
+        logoClass: 'go',
+      },
+      {
+        highlight: 'rust',
+        language: 'rust',
+        logoClass: 'rust',
+      },
+      {
+        highlight: 'python',
+        language: 'python',
+        logoClass: 'python',
+      },
+      {
+        highlight: 'nodejs',
+        language: 'nodejs',
+        logoClass: 'nodejs',
+      },
+    ],
   } satisfies Preset.ThemeConfig,
 
   plugins: [
