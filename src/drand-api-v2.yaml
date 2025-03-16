@@ -9,11 +9,11 @@ info:
     
     All that's required is the address of the HTTP interface and way to fetch from HTTP, e.g. curl.
 
-    The version 1 of public [League of Entropy](https://blog.cloudflare.com/league-of-entropy/) HTTP APIs are available at:
-    - Cloudflare
-      - https://drand.cloudflare.com
-    - Storswift
-      - https://api.drand.secureweb3.com:6875
+    The version 2 ofpublic [League of Entropy](https://blog.cloudflare.com/league-of-entropy/) HTTP APIs are available at:
+    - Protocol Labs
+      - https://api.drand.sh
+      - https://api2.drand.sh
+      - https://api3.drand.sh
 
     The League of Entropy currently runs two networks in mainnet: default and fastnet. 
     They are chained and unchained networks respectively, the details of which can be found in the [cryptography 
@@ -22,7 +22,7 @@ info:
     The chain hash for the League of Entropy default chain running at a 30s frequency in chained mode on Mainnet is:
     `8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce`
 
-    It also available at the default context, i.e. omitting the `/{chain-hash}` in the API specification below.
+    It also available at the default context, i.e. omitting the `/:chain-hash` in the API specification below.
 
     The chain hash for the League of Entropy quicknet network running at a 3s frequency in unchained mode on Mainnet is:
     `52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971`
@@ -52,7 +52,7 @@ info:
     (`7672797f548f3f4748ac4bf3352fc6c6b6468c9ad40ad456a397545c6e2df5bf`) or our first G1 based non-RFC compliant chain
     (f3827d772c155f95a9fda8901ddd59591a082df5ac6efe3a479ddb1f5eeb202c) may be deprecated in the future. 
 
-  version: 1.0.0
+  version: 2.0.0
   contact:
     name: drand Team
     url: https://drand.love/
@@ -62,10 +62,12 @@ info:
 
 servers:
   # Public Endpoints
-  - url: https://drand.cloudflare.com
-    description: Cloudflare - Public endpoint for the League of Entropy mainnet
-  - url: https://api.drand.secureweb3.com:6875
-    description: Storswift - Public endpoint for the League of Entropy mainnet
+  - url: https://api.drand.sh
+    description: Protocol Labs - Primary public endpoint for the League of Entropy mainnet
+  - url: https://api2.drand.sh
+    description: Protocol Labs - Secondary public endpoint for the League of Entropy mainnet
+  - url: https://api3.drand.sh
+    description: Protocol Labs - Tertiary public endpoint for the League of Entropy mainnet
 
   # Testnet Endpoints
   - url: https://pl-us.testnet.drand.sh
@@ -76,9 +78,9 @@ servers:
     description: Cloudflare - Testnet endpoint
 
 paths:
-  /chains:
+  "/v2/chains":
     get:
-      summary: /chains
+      summary: /v2/chains
       description: Returns a list of chain hashes supported by this drand node, which can be used to query chain-specific endpoints.
       responses:
         '200':
@@ -96,9 +98,9 @@ paths:
                   - "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
                   - "04f1e9062b8a81f848fded9c12306733282b2727ecced50032187751166ec8c3"
 
-  /{chain-hash}/info:
+  "/v2/chains/{chain-hash}/info":
     get:
-      summary: /:chain-hash/info
+      summary: /v2/chains/:chain-hash/info
       description: Retrieves metadata about a specific randomness chain, identified by its chain hash.
       parameters:
         - name: chain-hash
@@ -108,24 +110,14 @@ paths:
             type: string
             pattern: '^[0-9a-fA-F]{64}$'
           example: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
-          description: The hexadecimal hash identifying the chain (e.g., default chained network).
+          description: The hexadecimal hash identifying the chain.
       responses:
         '200':
-          description: |
-            Chain information
+          description: Chain information
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ChainInfo'
-              example:
-                public_key: "868f005eb8e6e4ca0a47c8a77ceaa5309a47978a7c71bc5cce96366b5d7a569937c529eeda66c7293784a9402801af31"
-                period: 30
-                genesis_time: 1595431050
-                hash: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
-                groupHash: "176f93498eac9ca337150b46d21dd58673ea4e3581185f869672e59fa4cb390a"
-                schemeID: "pedersen-bls-chained"
-                metadata:
-                  beaconID: "default"
         '404':
           description: Chain not found
           content:
@@ -137,41 +129,10 @@ paths:
                     type: string
                     example: "chain not found"
 
-  /{chain-hash}/public/latest:
+  "/v2/chains/{chain-hash}/health":
     get:
-      summary: "/:chain-hash/public/latest"
-      description: Retrieves the most recent randomness value from the default chain. Note this might not be available on all chained networks; prefer using chain-specific endpoints or relays for consistency.
-      parameters:
-        - name: chain-hash
-          in: path
-          required: true
-          schema:
-            type: string
-            pattern: '^[0-9a-fA-F]{64}$'
-          example: "52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971"
-      responses:
-        '200':
-          description: |
-            Randomness data for the latest round
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Randomness'
-        '503':
-          description: Latest randomness unavailable
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                    example: "latest randomness not available"
-
-  /{chain-hash}/public/{round}:
-    get:
-      summary: /:chain-hash/public/:round
-      description: Fetches randomness for a specific round on a given chain, identified by its chain hash.
+      summary: /v2/chains/:chain-hash/health
+      description: Retrieves the health status of the specified chain, including the current and expected round numbers.
       parameters:
         - name: chain-hash
           in: path
@@ -181,37 +142,6 @@ paths:
             pattern: '^[0-9a-fA-F]{64}$'
           example: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
           description: The hexadecimal hash identifying the chain.
-        - name: round
-          in: path
-          required: true
-          schema:
-            type: integer
-            minimum: 1
-          example: 12345
-          description: The round number for which to fetch randomness.
-      responses:
-        '200':
-          description: |
-            Randomness data for the specified round
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Randomness'
-        '404':
-          description: Round or chain not found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                    example: "round or chain not found"
-
-  /health:
-    get:
-      summary: /health
-      description: Retrieves the health status of the drand node, including the current and expected round numbers.
       responses:
         '200':
           description: Health status
@@ -239,14 +169,61 @@ paths:
                     type: string
                     example: "service unavailable"
 
-  /public/latest:
+  "/v2/chains/{chain-hash}/rounds/{round}":
     get:
-      summary: /public/latest
-      description: Retrieves the most recent randomness value from the default chain.
+      summary: /v2/chains/:chain-hash/rounds/:round
+      description: Fetches randomness for a specific round on a given chain, identified by its chain hash.
+      parameters:
+        - name: chain-hash
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9a-fA-F]{64}$'
+          example: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
+          description: The hexadecimal hash identifying the chain.
+        - name: round
+          in: path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          example: 12345
+          description: The round number for which to fetch randomness.
       responses:
         '200':
-          description: |
-            Randomness data for the latest round
+          description: Randomness data for the specified round
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Randomness'
+        '404':
+          description: Round or chain not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "round or chain not found"
+
+  /v2/chains/{chain-hash}/rounds/latest:
+    get:
+      summary: /v2/chains/:chain-hash/rounds/latest
+      description: Retrieves the most recent randomness value from the specified chain.
+      parameters:
+        - name: chain-hash
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9a-fA-F]{64}$'
+          example: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
+          description: The hexadecimal hash identifying the chain.
+      responses:
+        '200':
+          description: Randomness data for the latest round
           content:
             application/json:
               schema:
@@ -262,11 +239,137 @@ paths:
                     type: string
                     example: "latest randomness not available"
 
-  /public/{round}:
+  /v2/chains/{chain-hash}/rounds/next:
     get:
-      summary: /public/:round
-      description: Fetches randomness for a specific round from the default chain.
+      summary: /v2/chains/:chain-hash/rounds/next
+      description: Retrieves the next round's randomness value from the specified chain.
       parameters:
+        - name: chain-hash
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9a-fA-F]{64}$'
+          example: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
+          description: The hexadecimal hash identifying the chain.
+      responses:
+        '200':
+          description: Randomness data for the next round
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Randomness'
+        '503':
+          description: Next randomness unavailable
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "next randomness not available"
+
+  /v2/beacons:
+    get:
+      summary: /v2/beacons
+      description: Returns a list of beacon IDs supported by this drand node, which can be used to query beacon-specific endpoints.
+      responses:
+        '200':
+          description: List of beacon IDs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                description: An array of beacon identifiers.
+                example:
+                  - "default"
+                  - "quicknet"
+                  - "testnet"
+
+  /v2/beacons/{beaconID}/info:
+    get:
+      summary: /v2/beacons/:beaconID/info
+      description: Retrieves metadata about a specific randomness beacon, identified by its ID.
+      parameters:
+        - name: beaconID
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "default"
+          description: The ID of the beacon.
+      responses:
+        '200':
+          description: Beacon information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChainInfo'
+        '404':
+          description: Beacon not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "beacon not found"
+
+  /v2/beacons/{beaconID}/health:
+    get:
+      summary: /v2/beacons/:beaconID/health
+      description: Retrieves the health status of the specified beacon, including the current and expected round numbers.
+      parameters:
+        - name: beaconID
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "default"
+          description: The ID of the beacon.
+      responses:
+        '200':
+          description: Health status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  current:
+                    type: integer
+                    description: The current round number
+                    example: 367
+                  expected:
+                    type: integer
+                    description: The expected round number
+                    example: 368
+        '503':
+          description: Service unavailable
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "service unavailable"
+
+  "/v2/beacons/{beaconID}/rounds/{round}":
+    get:
+      summary: /v2/beacons/:beaconID/rounds/:round
+      description: Fetches randomness for a specific round on a given beacon, identified by its ID.
+      parameters:
+        - name: beaconID
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "default"
+          description: The ID of the beacon.
         - name: round
           in: path
           required: true
@@ -277,14 +380,13 @@ paths:
           description: The round number for which to fetch randomness.
       responses:
         '200':
-          description: |
-            Randomness data for the specified round
+          description: Randomness data for the specified round
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Randomness'
         '404':
-          description: Round not found
+          description: Round or beacon not found
           content:
             application/json:
               schema:
@@ -292,31 +394,29 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: "round not found"
+                    example: "round or beacon not found"
 
-  /info:
+  "/v2/beacons/{beaconID}/rounds/latest":
     get:
-      summary: /info
-      description: Retrieves metadata about the default randomness chain.
+      summary: /v2/beacons/:beaconID/rounds/latest
+      description: Retrieves the most recent randomness value from the specified beacon.
+      parameters:
+        - name: beaconID
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "default"
+          description: The ID of the beacon.
       responses:
         '200':
-          description: |
-            Chain information
+          description: Randomness data for the latest round
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChainInfo'
-              example:
-                public_key: "868f005eb8e6e4ca0a47c8a77ceaa5309a47978a7c71bc5cce96366b5d7a569937c529eeda66c7293784a9402801af31"
-                period: 30
-                genesis_time: 1595431050
-                hash: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
-                groupHash: "176f93498eac9ca337150b46d21dd58673ea4e3581185f869672e59fa4cb390a"
-                schemeID: "pedersen-bls-chained"
-                metadata:
-                  beaconID: "default"
-        '404':
-          description: Chain not found
+                $ref: '#/components/schemas/Randomness'
+        '503':
+          description: Latest randomness unavailable
           content:
             application/json:
               schema:
@@ -324,7 +424,37 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: "chain not found"
+                    example: "latest randomness not available"
+
+  "/v2/beacons/{beaconID}/rounds/next":
+    get:
+      summary: /v2/beacons/:beaconID/rounds/next
+      description: Retrieves the next round's randomness value from the specified beacon.
+      parameters:
+        - name: beaconID
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "quicknet"
+          description: The ID of the beacon.
+      responses:
+        '200':
+          description: Randomness data for the next round
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Randomness'
+        '503':
+          description: Next randomness unavailable
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "next randomness not available"
 
 components:
   schemas:
