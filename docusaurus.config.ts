@@ -1,6 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type * as Plugin from "@docusaurus/types/src/plugin";
+import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: 'drand',
@@ -30,6 +32,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/drand/drand-docs/tree/master',
+          docItemComponent: '@theme/ApiItem',
         },
         blog: false,
        // {
@@ -131,7 +134,63 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['solidity', 'java', 'rust', 'jsx', 'bash', 'protobuf']
     },
+    languageTabs: [
+      {
+        highlight: 'bash',
+        language: 'curl',
+        logoClass: 'curl',
+      },
+      {
+        highlight: 'go',
+        language: 'go',
+        logoClass: 'go',
+      },
+      {
+        highlight: 'rust',
+        language: 'rust',
+        logoClass: 'rust',
+      },
+      {
+        highlight: 'python',
+        language: 'python',
+        logoClass: 'python',
+      },
+      {
+        highlight: 'nodejs',
+        language: 'nodejs',
+        logoClass: 'nodejs',
+      },
+    ],
   } satisfies Preset.ThemeConfig,
+
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'api',
+        docsPluginId: 'classic',
+        config: {
+          drand: {
+            specPath: "src/drand-api.yaml",
+            outputDir: "docs/03_dev-guide/3.7 API Documentation v1",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          drandV2: {
+            specPath: "src/drand-api-v2.yaml",
+            outputDir: "docs/03_dev-guide/3.8 API Documentation v2",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+        }
+      }
+    ]
+  ],
+  themes: [
+    'docusaurus-theme-openapi-docs',
+  ]
 };
 
 export default config;
