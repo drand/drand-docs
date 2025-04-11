@@ -1,0 +1,108 @@
+---
+id: drand-http-api
+title: "drand HTTP API"
+description: "drand provides a JSON HTTP interface that clients can use to fetch randomness from each drand network running on nodes."
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 1.0.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"drand HTTP API"}
+>
+</Heading>
+
+
+
+drand provides a JSON HTTP interface that clients can use to fetch randomness from each drand network running on nodes.
+If you're using drand in an application, it may be easier and more secure to use one of the client libraries, 
+which will also perform verification of randomness rounds and add additional features like failover, racing, aggregation, 
+and caching.
+
+All that's required is the address of the HTTP interface and way to fetch from HTTP, e.g. curl.
+
+The version 1 of public [League of Entropy](https://blog.cloudflare.com/league-of-entropy/) HTTP APIs are available at:
+- Cloudflare
+  - https://drand.cloudflare.com
+- Storswift
+  - https://api.drand.secureweb3.com:6875
+
+The League of Entropy currently runs two networks in mainnet: default and fastnet. 
+They are chained and unchained networks respectively, the details of which can be found in the [cryptography 
+specification](https://drand.love/docs/cryptography/#randomness).
+
+The chain hash for the League of Entropy default chain running at a 30s frequency in chained mode on Mainnet is:
+`8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce`
+
+It also available at the default context, i.e. omitting the `/{chain-hash}` in the API specification below.
+
+The chain hash for the League of Entropy quicknet network running at a 3s frequency in unchained mode on Mainnet is:
+`52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971`
+
+Note that [the fastnet network has been deprecated..](https://drand.love/blog/2023/07/03/fastnet-sunset-quicknet-new/)
+
+Furthermore, we have "testnet endpoints" which are a completely separate environment for testing our latest changes, 
+potentially helping you detect breaking changes or issues with our latest release before they hit mainnet. 
+We recommend running your CI/CD against our testnet endpoints as well as our mainnet ones, in order to detect issues early.
+
+We currently have 3 testnet HTTP(S) endpoints being run by:
+
+- Protocol Labs
+  - https://pl-us.testnet.drand.sh
+  - https://pl-eu.testnet.drand.sh
+- Cloudflare
+  - https://testnet-api.drand.cloudflare.com
+
+As you can see, they are currently running various chains as explained below. 
+We are committed to maintaining the default, G2 based, chained testnet chain 
+(`84b2234fb34e835dccd048255d7ad3194b81af7d978c3bf157e3469592ae4e02`) as well as 
+the faster, G1 based, unchained quicknet-t testnet chain 
+(`cc9c398442737cbd141526600919edd69f1d6f9b4adb67e4d912fbc64341a9a5`) 
+as long as we run the equivalent mainnet networks.
+
+Other testnet chains, such as our first "unchained" testnet 
+(`7672797f548f3f4748ac4bf3352fc6c6b6468c9ad40ad456a397545c6e2df5bf`) or our first G1 based non-RFC compliant chain
+(f3827d772c155f95a9fda8901ddd59591a082df5ac6efe3a479ddb1f5eeb202c) may be deprecated in the future. 
+
+
+<div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    drand Team: 
+  </span><span>
+    URL: [https://drand.love/](https://drand.love/)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    License
+  </h3><a
+    href={"https://github.com/drand/drand/blob/main/LICENSE"}
+  >
+    Apache 2.0 or MIT
+  </a>
+</div>
+      

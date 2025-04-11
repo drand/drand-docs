@@ -1,0 +1,85 @@
+/**
+ * Blog sidebar styling to match docs sidebar
+ */
+
+/* Remove left margin/padding from main container */
+.container.margin-vert--lg {
+  padding-left: 0;
+  margin-left: 0;
+  max-width: 100%;
+}
+
+/* Target the blog wrapper structure */
+.container.margin-vert--lg .row {
+  display: flex;
+  margin-left: 0;
+}
+
+/* Make blog sidebar match docs sidebar layout */
+.container.margin-vert--lg .row aside.col.col--3 {
+  border-right: 1px solid var(--ifm-toc-border-color);
+  margin-right: 1rem;
+  padding-right: 1rem;
+  padding-left: var(--ifm-spacing-horizontal);
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  overflow-y: auto;
+  background-color: var(--ifm-background-surface-color);
+  transition: width var(--ifm-transition-fast) ease;
+  margin-left: 0;
+}
+
+/* Style the sidebar nav container like docs */
+nav.sidebar_re4s.thin-scrollbar {
+  padding: var(--ifm-spacing-horizontal);
+}
+
+/* Style blog sidebar header like docs */
+.sidebarItemTitle_pO2u {
+  font-size: var(--ifm-h3-font-size);
+  font-weight: var(--ifm-font-weight-bold);
+  padding: var(--ifm-padding-vertical) 0;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  margin-bottom: var(--ifm-spacing-vertical);
+}
+
+/* Format blog sidebar items like docs */
+.sidebar_re4s a.sidebar-item {
+  display: block;
+  border-radius: var(--ifm-global-radius);
+  padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
+  text-decoration: none;
+  color: var(--ifm-menu-color);
+  margin: 0.2rem 0;
+}
+
+.sidebar_re4s a.sidebar-item:hover {
+  background-color: var(--ifm-menu-color-background-active);
+  color: var(--ifm-menu-color-active);
+}
+
+/* Limit article width for better readability */
+.container article {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Width consistency with docs sidebar */
+@media (min-width: 997px) {
+  /* Make container full-width */
+  .container.margin-vert--lg {
+    max-width: 100%;
+  }
+  
+  .container.margin-vert--lg .row aside.col.col--3 {
+    flex-basis: var(--doc-sidebar-width, 300px) !important;
+    max-width: var(--doc-sidebar-width, 300px) !important;
+  }
+  
+  .container.margin-vert--lg .row .col.col--9 {
+    max-width: calc(100% - var(--doc-sidebar-width, 300px)) !important;
+    flex-basis: calc(100% - var(--doc-sidebar-width, 300px)) !important;
+    padding-left: var(--ifm-spacing-horizontal);
+  }
+} 

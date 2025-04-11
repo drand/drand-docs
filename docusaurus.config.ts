@@ -1,8 +1,9 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const config: Config = {
   title: 'drand',
@@ -11,6 +12,8 @@ const config: Config = {
 
   url: 'https://docs.drand.love',
   baseUrl: '/',
+
+  staticDirectories: ['static'],
 
   // GitHub pages deployment config.
   organizationName: 'drand', // GitHub org/user name.
@@ -34,31 +37,42 @@ const config: Config = {
             'https://github.com/drand/drand-docs/tree/master',
           docItemComponent: '@theme/ApiItem',
         },
-        blog: false,
-       // {
-       //   blogTitle: 'drand Blog',
-       //   blogDescription: 'The latest news from the drand project',
-       //   blogSidebarTitle: 'All posts',
-       //   blogSidebarCount: 'ALL',
-       //   showReadingTime: true,
-       //   readingTime: ({content, frontMatter, defaultReadingTime}) =>
-       //     defaultReadingTime({content, options: {wordsPerMinute: 300}}),
-       //   feedOptions: {
-       //     type: ['rss', 'atom'],
-       //     xslt: true,
-       //   },
-       //   editUrl:
-       //     'https://github.com/drand/drand-docs/tree/master',
-       //   // Useful options to enforce blogging best practices
-       //   onInlineTags: 'warn',
-       //   onInlineAuthors: 'warn',
-       //   onUntruncatedBlogPosts: 'warn',
-       // },
+        blog: {
+          blogTitle: 'drand Blog',
+          blogDescription: 'The latest news from the drand project',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          showReadingTime: true,
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          editUrl:
+            'https://github.com/drand/drand-docs/tree/master',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+        },
+        
         gtag: {
           trackingID: 'G-PH6HJ6ECV2'
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+            './src/css/blog-sidebar.css',
+          ],
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: [],
+          filename: 'sitemap.xml',
         },
       } satisfies Preset.Options,
     ],
@@ -68,10 +82,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/drand-logo.png',
     navbar: {
-      title: 'drand',
       logo: {
         alt: 'drand Logo',
-        src: 'img/drand-logo.png',
+        src: 'img/logo-drand-text-right-dark.png',
       },
       items: [
         {
@@ -80,7 +93,39 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        {to: 'https://drand.love/blog', label: 'Blog', position: 'left'},
+        {
+          type: "docSidebar",
+          sidebarId: "aboutSidebar",
+          position: "left",
+          label: "About",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "conceptsSidebar",
+          position: "left",
+          label: "Concepts",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "devsSidebar",
+          position: "left",
+          label: "Devs",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "opsSidebar",
+          position: "left",
+          label: "Ops",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "communitySidebar",
+          position: "left",
+          label: "Community",
+        },
+        // adding links to the right
+        {to: '/blog', label: 'Blog', position: 'right'},
+        {href: 'https://drand.love/', label: 'drand.love', position: 'right'},
         {
           href: 'https://github.com/drand/drand-docs',
           label: 'GitHub',
@@ -97,6 +142,10 @@ const config: Config = {
             {
               label: 'Dev Docs',
               to: '/docs/home',
+            },
+            {
+              label: 'HTTP API Docs',
+              to: '/docs/dev-guide/API%20Documentation%20v2/drand-http-api/',
             },
           ],
         },
@@ -118,11 +167,15 @@ const config: Config = {
           items: [
             {
               label: 'Blog',
-              to: 'https://drand.love/blog',
+              href: 'https://drand.love/blog',
             },
             {
               label: 'GitHub',
               href: 'https://github.com/drand/drand',
+            },
+            {
+              label: 'A Randamu, Inc.™ Creation',
+              href: 'https://randa.mu',
             },
           ],
         },
@@ -172,14 +225,14 @@ const config: Config = {
         config: {
           drand: {
             specPath: "src/drand-api.yaml",
-            outputDir: "docs/03_dev-guide/3.7 API Documentation v1",
+            outputDir: "docs/dev-guide/API Documentation v1",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           drandV2: {
             specPath: "src/drand-api-v2.yaml",
-            outputDir: "docs/03_dev-guide/3.8 API Documentation v2",
+            outputDir: "docs/dev-guide/API Documentation v2",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
@@ -190,7 +243,16 @@ const config: Config = {
   ],
   themes: [
     'docusaurus-theme-openapi-docs',
-  ]
+  ],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
 };
 
 export default config;

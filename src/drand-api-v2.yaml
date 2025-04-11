@@ -2,18 +2,20 @@ openapi: 3.0.3
 info:
   title: drand HTTP API
   description: |
-    Drand provides a JSON HTTP interface that clients can use to fetch randomness from each drand network running on nodes.
+    drand provides a JSON HTTP interface that clients can use to fetch randomness from each drand network running on nodes.
     If you're using drand in an application, it may be easier and more secure to use one of the client libraries, 
     which will also perform verification of randomness rounds and add additional features like failover, racing, aggregation, 
     and caching.
     
     All that's required is the address of the HTTP interface and way to fetch from HTTP, e.g. curl.
 
-    The version 2 ofpublic [League of Entropy](https://blog.cloudflare.com/league-of-entropy/) HTTP APIs are available at:
+    ## Public endpoints
+
+    The version 2 of the public [League of Entropy](https://blog.cloudflare.com/league-of-entropy/) HTTP APIs are available at:
     - Protocol Labs
-      - https://api.drand.sh
-      - https://api2.drand.sh
-      - https://api3.drand.sh
+      - https://api.drand.sh/v2
+      - https://api2.drand.sh/v2
+      - https://api3.drand.sh/v2
 
     The League of Entropy currently runs two networks in mainnet: default and fastnet. 
     They are chained and unchained networks respectively, the details of which can be found in the [cryptography 
@@ -28,6 +30,8 @@ info:
     `52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971`
 
     Note that [the fastnet network has been deprecated..](https://drand.love/blog/2023/07/03/fastnet-sunset-quicknet-new/)
+    
+    ## Testnet endpoints
 
     Furthermore, we have "testnet endpoints" which are a completely separate environment for testing our latest changes, 
     potentially helping you detect breaking changes or issues with our latest release before they hit mainnet. 
@@ -36,10 +40,10 @@ info:
     We currently have 3 testnet HTTP(S) endpoints being run by:
 
     - Protocol Labs
-      - https://pl-us.testnet.drand.sh
-      - https://pl-eu.testnet.drand.sh
+      - https://pl-us.testnet.drand.sh/v2
+      - https://pl-eu.testnet.drand.sh/v2
     - Cloudflare
-      - https://testnet-api.drand.cloudflare.com
+      - https://testnet-api.drand.cloudflare.com/
 
     As you can see, they are currently running various chains as explained below. 
     We are committed to maintaining the default, G2 based, chained testnet chain 

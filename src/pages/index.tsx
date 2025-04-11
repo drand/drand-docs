@@ -11,28 +11,21 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header >
-      <div style={{width: "100%", maxHeight: '500px', overflow: "hidden"}}>
-      <img
-        src="/img/banner.avif"  // Path to your banner image
-        alt="Banner"
-        style={{width: "100%", height: '100%', objectFit: "cover", objectPosition: "center bottom"}}
-      />
-    </div>
-    <div className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/concepts/2-0-intro-to-drand">
-            Get Started using drand!
-          </Link>
+      <div className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <Heading as="h1" className="hero__title">
+            {siteConfig.title}
+          </Heading>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={styles.buttons}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/concepts/intro-to-drand">
+              Get Started using drand!
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
     </header>
   );
 }
