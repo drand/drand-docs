@@ -36,6 +36,8 @@ const config: Config = {
           editUrl:
             'https://github.com/drand/drand-docs/tree/master',
           docItemComponent: '@theme/ApiItem',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: {
           blogTitle: 'drand Blog',
