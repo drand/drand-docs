@@ -6,8 +6,8 @@ tags:
     - Conferences and Events
     - News
 ---
-<!-- truncate -->
 _drand was recently presented at the North Sec conference! Here is a brief summary of the event and the drand talk, as well as the answers to a few of the interesting questions we received._
+<!-- truncate -->
 
 You can find the slides [ready to be downloaded on IPFS](https://ipfs.io/ipfs/bafybeigenfo4az5j7abbjc3mbn7i4rl6qto7cca75kednwh73lopzq6foa/Public_verifiable_unbiasable_randomness_wassat-NSec2022-Yolan_Romailler.pdf) [CID: bafybeigenfo4az5j7abbjc3mbn7i4rl6qto7cca75kednwh73lopzq6foa] and if you want to watch the video of the talk, it is already [available on Youtube](https://youtu.be/I1iKtNGRv0s?t=17468).
 
