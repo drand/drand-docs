@@ -60,7 +60,7 @@ nav.sidebar_re4s.thin-scrollbar {
 }
 
 /* Limit article width for better readability */
-.container article {
+.container.margin-vert--lg article {
   max-width: 900px;
   margin: 0 auto;
 }

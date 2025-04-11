@@ -83,11 +83,15 @@ $\frac{2^{63.4}\;\text{H}}{68.9\;\text{GH/s}} =  49034.2\;\text{hours}$
 
 using our brand new RTX 5090 GPU, which is roughly 5.6 GPU-years, also very far from the 107 GPU-year it took in 2020!
 
+## Make it happen in 2025
+
 But here’s a trick with these kind of attacks: they parallelize really well! So we could just use more GPUs, maybe 8, and then we could get a SHA-1 collision in only 74 days… Actually just using 2 RTX 5090s would allow us to find a collision in 296 days, which would still be in 2025!
 
 And that would come at a cost of ~\$3,998 for our 2 GPUs, plus 296 days of consuming 2 times 575 watts at a cost of \$0.18 per kWh (average cost in December 2024 in the USA), which is \$1,470 of electricity costs for running our GPUs until we find our collision. Therefore finding a SHA-1 collision “at home” in 2025 could cost us roughly \$5,468.
 
 But let’s be honest, no one builds a GPU farm just to find a SHA-1 collision when one can just rent some beefy GPU instances… And funnily the on-going AI hype has led to a significant increase in options in the landscape of GPU rentals. For example, an instance of 8 beefy RTX 4090 GPUs with a hash rate of ~408GH/s can be rented for as little as \$3 per hour and no more than \$5.5 per hour… Having found 22 such instances, I could find a collision in less than 5 days at a cost of less than \$12,000! So yeah, still a bit too long and too expensive for a CTF challenge! 
+
+## Can we be faster?
 
 Also note that this is not taking possible ASICs into account, unlike the 2021 paper "On The Cost of ASIC Hardware Crackers: A SHA-1 Case Study" which answers our question when assuming custom ASICs are an option:
 
@@ -99,6 +103,8 @@ Finally, if we take into account **supercomputers** or distributed compute netwo
 With such power, you’d expect to find hundreds of collisions every second! But that's not technically true since the Bitcoin's dedicated hardware is actually very specialized and is meant to compute SHA-256 hashes. As a side note, the way the Bitcoin network relies on double SHA-256 hashing for its Proof of Work algorithm doesn’t help when it comes to collisions: any collision $\operatorname{SHA256}(x)=\operatorname{SHA256}(y)$ will necessarily also be a collision for  $$\operatorname{SHA256}(\operatorname{SHA256}(x))=\operatorname{SHA256}(\operatorname{SHA256}(y)).$$
 
 In a more realistic way, it would take less than a day to find a SHA-1 collision on a super-computer such as the one owned by the US Department of Energy's Oak Ridge National Laboratory (ORNL) named "Summit", and the fastest super-computer in the world, El Capitan, relies on a whopping 43,808 AMD MI300A GPUs, and each of these MI300A GPUs are able to pump at least 22GH/s (or $2^{34}$ H/s) SHA-1 computations (according to [some recent benchmarks](https://www.youtube.com/watch?v=D4aIl0tzILE)), meaning El Capitan can run $43808 \cdot 2^{34} \approx 2^{49}$ hashes per second on its GPUs, meaning it reaches the $2^{61.6}$ hashes required in roughly an hour! El Capitan however has an estimated cost of $600 million, so that might not be a cost-effective option…
+
+## Conclusion: finding a SHA-1 collision in 2025
 
 Finally, looking back at the prediction we quoted earlier, can we really find a SHA-1 chosen-prefix collision for less than \$10,000 in 2025? Well, not if we want it to finish in 2025 and assume an electricity price of \$0.18 per kWh, and also not using rented GPUs. But if we purchase just 2 RTX 5090s at \$1999 each (let’s assume you’re not getting the fancy, expensive versions), and have them running for the 413 days it would take them to find a SHA-1 **chosen-prefix collision** for roughly \$5065 of electricity cost, then we could find one for less than \$10,000!   
 
