@@ -69,3 +69,52 @@
   white-space: normal;
   width: auto;
 }
+
+/* Blog post header modifications - only for blog pages */
+/* Layout fix for blog post metadata */
+.blog-wrapper header > :nth-child(2) {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.blog-wrapper header > :nth-child(2)::after {
+  content: "•";
+  margin-left: 8px;
+}
+
+.blog-wrapper header > :nth-child(3) {
+  display: inline-block !important;
+  margin-top: 0 !important;
+}
+
+.blog-wrapper .authorCol_Hf19 {
+  padding: 0;
+  width: auto;
+}
+
+.blog-wrapper .avatar {
+  margin: 0 !important;
+}
+
+.blog-wrapper .authorName_yefp {
+  font-weight: normal;
+}
+
+/* Clear float after the elements */
+.blog-wrapper header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.blog-wrapper .margin-bottom--xl {
+  margin-bottom: 2rem !important;
+}
+
+.blog-wrapper .docusaurus-mt-lg {
+  margin-top: 1rem !important;
+}
+
+.blog-wrapper .sidebar_re4s {
+  max-height: 100%;
+}

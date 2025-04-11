@@ -9,12 +9,9 @@ tags:
     - League-of-Entropy
 slug: /fastnet-to-be-sunset
 ---
-
-### TL;DR
-
-If you’re currently using `fastnet` you must migrate to `quicknet` by October 31st.
-
+If you’re currently using `fastnet` you must migrate to `quicknet` by October 31st 2024.
 <!-- truncate -->
+That's the TL;DR!.
 
 ## The Details
 
