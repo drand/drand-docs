@@ -48,6 +48,11 @@
   color: #ffffff;
 }
 
+.lightToggleIcon_pyhR{
+  color: #ffffff;
+
+}
+
 /* Visually hide an element while keeping it accessible */
 .visually-hidden {
   clip: rect(0 0 0 0);
