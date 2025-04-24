@@ -1,6 +1,7 @@
 ---
 id: ops-guide-deployment
 title: "Deployment"
+slug: /operator/deploy
 description: Detailed instructions for how to deploy one or more drand nodes.
 ---
 # Deployment
