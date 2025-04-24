@@ -79,9 +79,9 @@ The same holds for our mainnet relays, any given beacon chain information can be
 
 ## Sun-setting of `fastnet`
 
-If you've been following our blog, you'll remember our previous post about [timelock being supported on mainnet](https://drand.love/blog/2023/03/28/timelock-on-fastnet/) where we announced the launch of our new `fastnet` network that supported our timelock scheme. The League of Entropy launched this new drand network on March 1st, 2023, however we quickly identified an issue with our BLS signatures on G1 that made them non-spec compliant with the Hash To Curve [RFC 9380](https://www.ietf.org/rfc/rfc9380.html) as well as most BLS signatures implementations on G1 apart from ours. Therefore we had to double down and launch the `quicknet` network in order to fix this issue.
+If you've been following our blog, you'll remember our previous post about [timelock being supported on mainnet](/blog/2023-03-28-timelock-on-fastnet.md) where we announced the launch of our new `fastnet` network that supported our timelock scheme. The League of Entropy launched this new drand network on March 1st, 2023, however we quickly identified an issue with our BLS signatures on G1 that made them non-spec compliant with the Hash To Curve [RFC 9380](https://www.ietf.org/rfc/rfc9380.html) as well as most BLS signatures implementations on G1 apart from ours. Therefore we had to double down and launch the `quicknet` network in order to fix this issue.
 
-We’ll be sun-setting `fastnet` in the coming months [as announced previously](https://drand.love/blog/2023/07/03/fastnet-sunset-quicknet-new/). We are currently going to scale down `fastnet` by another 3 nodes in November, and we’ll be shutting it down completely in Q1’24 most likely. Please reach out to us if this is a concern for you or your team.
+We'll be sun-setting `fastnet` in the coming months [as announced previously](/blog/2023-07-03-fastnet-sunset-quicknet-new.md). We are currently going to scale down `fastnet` by another 3 nodes in November, and we'll be shutting it down completely in Q1'24 most likely. Please reach out to us if this is a concern for you or your team.
 
 > Note: The default chained beacon network remains available with its legacy frequency of 30s for those who require it. We might consider deprecating it at some point in the next 18 months, but nothing is set in stone yet.
 > 
@@ -94,9 +94,9 @@ A big shoutout to the League of Entropy for their invaluable contributions, runn
 
 ## Get Started 🚀
 
-For developers and users eager to dive into the new `quicknet` drand network, our [official documentation](https://drand.love/developer/) provides detailed resources about using drand relays and beacons. 
+For developers and users eager to dive into the new `quicknet` drand network, our [official documentation](/docs/dev-guide/00-Getting-started-devs.md) provides detailed resources about using drand relays and beacons. 
 
-We also have a blog post about “[drand for beginners](https://drand.love/blog/2023/06/02/drand-explainer/)” that’s packed with useful information and another one about [using drand on-chain](https://drand.love/blog/2023/03/16/draffle/) with a demo lottery use-case running on the Filecoin Virtual Machine.
+We also have a blog post about "[drand for beginners](/blog/2023-06-02-drand-explainer.md) that's packed with useful information and another one about [using drand on-chain](/blog/2023-03-15-draffle.md) with a demo lottery use-case running on the Filecoin Virtual Machine.
 
 ## G1 - G2 Swap
 
@@ -116,7 +116,7 @@ This swap allowed us to **reduce the size of the drand beacons emitted by the ne
 
 ## Unchained mode
 
-We’ve introduced the notion of [unchained beacons](https://drand.love/blog/2022/02/21/multi-frequency-support-and-timelock-encryption-capabilities/#unchained-randomness-timed-encryption) last year on the blog already. But in essence, the new drand network brings a host of improvements aimed at enhancing the overall UX for drand users and developers. The 'unchained mode' means that new random beacons are entirely independent from previous ones, meaning that you can now perform stateless verification of a beacon, without having to keep a record of past beacons! 
+We've introduced the notion of [unchained beacons](/blog/2022-02-21-multi-frequency-support-and-timelock-encryption-capabilities.md#unchained-randomness-timed-encryption) last year on the blog already. But in essence, the new drand network brings a host of improvements aimed at enhancing the overall UX for drand users and developers. The 'unchained mode' means that new random beacons are entirely independent from previous ones, meaning that you can now perform stateless verification of a beacon, without having to keep a record of past beacons! 
 
 These enhancements are designed to make the drand network more robust, efficient, and user-friendly. They help in reducing the computational and storage load of our users, making drand more cost-effective and faster. The unchained nature of the beacons also means you can now decide to sample only one every 5 beacons to have a frequency of 15s or one every 20 beacons to have a frequency of 1 minute! This significantly improves flexibility and scalability for everyone.
 
@@ -134,7 +134,7 @@ The fact that the drand beacons are now **unchained** might give the *false impr
 - **predictability:** an attacker controlling a threshold number of shares is able to predict any arbitrary round in the unchained setting, whereas they would need to compute all intermediary rounds in order to predict a given future round with the chained setting. *However* controlling a threshold amount of shares at any point in time allows computation of the shared secret of the group and nothing can prevent such an attacker having obtained the group secret from then computing all future chained rounds offline much faster than the existing network would have, leading to the same result as in the unchained case: a complete predictability of all future rounds in case of a compromise of either schemes.
 - **bias:** all future beacons are entirely determined by two things: the initial Distributed Key Generation and their round number. This was already the case for the chained network and hasn’t changed with the unchained schemes. For a given distributed group public key, future rounds cannot be biased in any way after the initial Distributed Key Generation ceremony has been run.
 
-We’ve also made sure our new Timelock Encryption service relying on our new `quicknet` network was [properly audited](https://drand.love/blog/2023/05/26/tlock-security-assessment/). We’ve got you covered!
+We've also made sure our new Timelock Encryption service relying on our new `quicknet` network was [properly audited](/blog/2023-05-26-tlock-security-assessment.md). We've got you covered!
 
 ## Extra liveness!
 

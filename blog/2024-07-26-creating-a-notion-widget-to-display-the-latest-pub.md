@@ -17,7 +17,7 @@ In this blog post, we’ll dive into creating a simple Notion widget that displa
 
 ## An overview of drand
 
-Our earlier [blog](/blog/a-guide-on-how-to-use-drand) post titled "A Guide on How to Use drand", explains the importance of public randomness and how drand provides it using a threshold network. It offers a step-by-step tutorial on setting up and using drand's randomness in applications, including fetching randomness with JavaScript, verifying it, and using it in real-life scenarios like coin flips and random selection. The guide emphasizes fairness and verifiability in applications requiring random numbers.
+Our earlier [blog](./2023-02-17-how-to-use-drand.md) post titled "A Guide on How to Use drand", explains the importance of public randomness and how drand provides it using a threshold network. It offers a step-by-step tutorial on setting up and using drand's randomness in applications, including fetching randomness with JavaScript, verifying it, and using it in real-life scenarios like coin flips and random selection. The guide emphasizes fairness and verifiability in applications requiring random numbers.
 
 In a nutshell, drand uses a threshold network, where multiple parties collaborate to generate random numbers, ensuring no single entity can predict or bias the outcome. By leveraging hashed signatures without a complete secret key held by any party, drand achieves verifiable randomness. This system's reliability and unpredictability make it ideal for projects with a dependency on secure and verifiable randomness.
 

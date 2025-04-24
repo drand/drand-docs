@@ -2,6 +2,7 @@
 id: concepts-cryptography
 title: "Cryptography"
 description: An overview of drand's cryptographic building blocks
+slug: /docs/cryptography/
 ---
 # Cryptography
 

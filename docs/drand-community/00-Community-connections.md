@@ -1,7 +1,8 @@
 ---
 id: community-connections
-title: "Community Connections"
-description: A list of ways you can connect with the drand community.
+title: Community Connections
+description: Connect with the drand community
+slug: /about/community/
 ---
 # Community Connections
 

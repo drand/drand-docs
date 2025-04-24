@@ -1,7 +1,8 @@
 ---
-id: getting-started
-title: Getting Started - Dev
-description: Guidance for developers seeking to use drand.
+id: devs-getting-started
+title: Getting Started
+description: A guide for developers to get started with drand
+slug: /developer/
 ---
 # Getting Started - Developers
 
@@ -32,14 +33,14 @@ There are two networks on mainnet:
 
 </aside>
 
-In order to retrieve randomness from a drand network you should **preferentially use the [drand client libraries](dev-guide-client-libraries) or the [drand-client CLI](dev-guide-drand-client-cli)**, which support the different mechanisms and perform verification for every value obtained.
+In order to retrieve randomness from a drand network you should **preferentially use the [drand client libraries](./03-Client_Libraries.mdx)**, which support the different mechanisms and perform verification for every value obtained.
 
 Alternatively, you can interact directly with the endpoints. Make sure to manually verify every value:
 
-- [**HTTP API reference**](dev-guide-http-api)
-- [PubSub-based randomness distribution](dev-guide-pubsub-network)
-- gRPC API: usually not publicly accessible. A gRPC API is supported by the drand client libraries, the `drand-client` CLI application and the [**drand application**](../ops-guide/ops-guide-command-line-tools) itself (using `drand get public`).
+- [**HTTP API reference**](06-HTTP-API.md)
+- [PubSub-based randomness distribution](./04-PubSub_Network_Integration.md)
+- gRPC API: not publicly accessible anymore.
 
-Finally, for development purposes, we recommend also testing your code against our Testnet endpoints. See [**our dedicated documentation entry about testnet endpoints**](dev-guide-http-api).
+Finally, for development purposes, we recommend also testing your code against our Testnet endpoints. See [**our dedicated documentation entry about testnet endpoints**](./06-HTTP-API.md).
 
 ---

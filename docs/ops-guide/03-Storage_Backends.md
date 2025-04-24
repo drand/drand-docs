@@ -1,7 +1,8 @@
 ---
-id: ops-guide-storage-backends
-title: "Storage Backends"
-description: Describes options available for storage of drand beacon data.
+id: ops-storage-backends
+title: Storage Backends
+description: Learn about drand's storage backend options
+slug: /operator/storage-backends/
 ---
 # Storage Backends
 

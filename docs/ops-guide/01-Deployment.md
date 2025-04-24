@@ -1,8 +1,8 @@
 ---
-id: ops-guide-deployment
-title: "Deployment"
-slug: /operator/deploy
-description: Detailed instructions for how to deploy one or more drand nodes.
+id: ops-deployment
+title: Deployment
+description: Learn how to deploy drand
+slug: /operator/deploy/
 ---
 # Deployment
 
@@ -27,7 +27,7 @@ The setup process for a drand node consists of the following steps:
 3. Generate the long-term key pair for each new network.
 4. The leader starts the command as a coordinator & every participant connects to the coordinator to setup the network.
 
-This document explains how to do the setup with the drand binary itself. If you want to install drand using Docker, follow the [**Docker instructions instead**](ops-guide-docker-install).
+This document explains how to do the setup with the drand binary itself. If you want to install drand using Docker, follow the [**Docker instructions instead**](/docs/ops-guide/02-Docker_Install.md).
 
 ### **Beacon ID**
 
@@ -35,7 +35,7 @@ Each drand network needs a **unique identifier** to run. The only constraint r
 
 ### **Long-term Key**
 
-Each drand network needs a public and secret key to interact with the rest of the nodes. To generate these keys run [**`drand generate-keypair`**](https://drand.love/operator/drand-cli/#drand-generate-keypair) followed by the address of your node:
+Each drand network needs a public and secret key to interact with the rest of the nodes. To generate these keys run [**`drand generate-keypair`**](/docs/ops-guide/05-Command-line_Tools.md#drand-generate-keypair) followed by the address of your node:
 
 ```bash
 drand generate-keypair --id {beacon-id} drand.example.com:443
@@ -164,7 +164,7 @@ If the address used is a DNS name, this command will try to resolve the DNS name
 
 To setup a new network, drand uses the notion of a coordinator that collects the public key of the participants, setups the group configuration once all keys are received, and then start the distributed key generation phase. Once the DKG phase is performed, the participants can see the list of members in the group configuration file.
 
-We refer you to our [drand dkg documentation](/docs/ops-guide/ops-guide-command-line-tools#drand-dkg) to learn more about how to use the `dkg` commands to create a new group.
+We refer you to our [drand dkg documentation](/docs/ops-guide/05-Command-line_Tools.md#drand-dkg) to learn more about how to use the `dkg` commands to create a new group.
 
 ### **Custom Entropy Source**
 
@@ -303,7 +303,7 @@ drand share --leader --transition --secret-file /path/to/my/secret/file --nodes 
 drand share --connect <coordinator> --transition --secret-file /path/to/my/secret/file --out group2.toml --id {beacon-id}
 ```
 
-**Setting up the new members**: The new members need the current group file to proceed. Check how to get the group file in the [Deployment](ops-guide-deployment) section.
+**Setting up the new members**: The new members need the current group file to proceed. Check how to get the group file in the [Deployment](/docs/ops-guide/01-Deployment.md) section.
 
 <aside>
 💡 **TIP**: A new member will need the full history of randomness beacons to participate in a group so that the new node can field requests for previous rounds. Getting the full history can take a while.

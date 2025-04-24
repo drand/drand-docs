@@ -48,7 +48,7 @@ A set of tools is now used to monitor the various drand nodes and alert operator
 
 ### drand’s specification & security model
 
-The drand protocol now has a [full specification](/docs/specification/) and a documented [security model](/docs/security-model/). 
+The drand protocol now has a [full specification](/docs/concepts/03-Specification.md) and a documented [security model](/docs/concepts/02-Security_Model.md). 
 
 ### Security audit
 

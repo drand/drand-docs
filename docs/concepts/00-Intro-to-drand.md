@@ -1,7 +1,8 @@
 ---
 id: intro-to-drand
-title: Intro to drand
-description: A brief introduction to key concepts
+title: "Intro to drand"
+description: "A brief introduction to drand and its key concepts"
+slug: /docs/overview/
 ---
 # Intro to drand
 

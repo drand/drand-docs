@@ -32,6 +32,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/drand/drand-docs/tree/master',
@@ -55,12 +56,11 @@ const config: Config = {
             'https://github.com/drand/drand-docs/tree/master',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
+          onInlineAuthors: 'ignore',
           onUntruncatedBlogPosts: 'warn',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
-        
         gtag: {
           trackingID: 'G-PH6HJ6ECV2'
         },

@@ -1,11 +1,12 @@
 ---
-id: dev-guide-drand-client-cli
-title: "drand-client CLI"
-description: Instructions for installation and use of the drand client CLI.
+id: devs-drand-client-cli
+title: drand-client CLI
+description: Learn how to use the drand-client CLI
+slug: /developer/drand-client/
 ---
 # drand-client CLI
 
-The `drand-client` command-line interface application can be used to fetch randomness from a drand network. It is a CLI frontend for the [**drand client libraries**](dev-guide-client-libraries).
+The `drand-client` command-line interface application can be used to fetch randomness from a drand network. It is a CLI frontend for the [**drand client libraries**](/docs/dev-guide/03-Client_Libraries.mdx).
 
 # **Installation**
 

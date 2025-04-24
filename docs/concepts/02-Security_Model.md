@@ -1,7 +1,8 @@
 ---
 id: concepts-security-model
 title: "Security Model"
-description: Describes drand’s security assumptions.
+description: "An overview of drand's security model"
+slug: /docs/security-model/
 ---
 # Security Model
 

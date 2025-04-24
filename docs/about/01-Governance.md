@@ -2,6 +2,7 @@
 id: governance
 title: Governance
 description: Describes how project contributors conduct themselves.
+slug: /about/governance
 ---
 # About: Governance
 

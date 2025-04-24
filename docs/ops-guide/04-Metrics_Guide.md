@@ -1,7 +1,8 @@
 ---
-id: ops-guide-metrics-guide
-title: "Metrics Guide"
-description: Describes Prometheus instrumentation exposed by drand nodes.
+id: ops-metrics-guide
+title: Metrics Guide
+description: Learn about drand's metrics
+slug: /operator/metrics/
 ---
 # Metrics Guide
 

@@ -1,7 +1,8 @@
 ---
 id: concepts-specification
-title: "Specification"
-description: Outlines the drand protocol specification.
+title: "Protocol Specification"
+description: "A description of drand's protocol"
+slug: /docs/specification/
 ---
 # Concepts: Specification
 

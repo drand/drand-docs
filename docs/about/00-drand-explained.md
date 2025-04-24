@@ -2,6 +2,7 @@
 id: drand-explained
 title: drand Explained
 description: What is drand?
+slug: /about/
 ---
 # drand Explained (What is “drand”?)
 

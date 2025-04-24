@@ -10,7 +10,7 @@ tags:
 Our tlock implementations were reviewed for security issues and are now production ready!
 <!-- truncate -->
 
-We are happy to announce that our timed release encryption scheme "[tlock](https://eprint.iacr.org/2023/189)" and its implementations, which we introduced in our [previous blog post](https://drand.love/blog/2023/03/28/timelock-on-fastnet/), have recently undergone a comprehensive security assessment by [Kudelski Security](https://kudelskisecurity.com). This was a crucial step in ensuring the robustness and reliability of our encryption system in order to guarantee that timelocked content remains encrypted until the time has come for it to be decrypted and never before.
+We are happy to announce that our timed release encryption scheme "[tlock](https://eprint.iacr.org/2023/189)" and its implementations, which we introduced in our [previous blog post](/blog/2023-03-28-timelock-on-fastnet.md), have recently undergone a comprehensive security assessment by [Kudelski Security](https://kudelskisecurity.com). This was a crucial step in ensuring the robustness and reliability of our encryption system in order to guarantee that timelocked content remains encrypted until the time has come for it to be decrypted and never before.
 
 ## Overview
 

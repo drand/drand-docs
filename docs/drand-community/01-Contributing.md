@@ -1,7 +1,8 @@
 ---
-id: drand-community-contributing
-title: "Contributing"
-description: Explains how to contribute your time and talent to the drand project.
+id: contributing-to-drand
+title: Contributing to drand
+description: Learn how to contribute to drand
+slug: /about/contributing/
 ---
 # Contributing
 

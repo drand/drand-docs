@@ -2,6 +2,7 @@
 id: dev-guide-code-examples
 title: "Code Examples"
 description: Examples of how to integrate drand in various coding languages.
+slug: /developer/examples
 ---
 # Code Examples
 

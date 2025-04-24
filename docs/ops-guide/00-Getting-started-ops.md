@@ -1,7 +1,8 @@
 ---
-id: getting-started-ops
-title: "Getting Started - Ops"
-description: A guide for drand node operators.
+id: ops-getting-started
+title: Getting Started
+description: A guide for operators to get started with drand
+slug: /operator/
 ---
 # Getting Started - Operators
 

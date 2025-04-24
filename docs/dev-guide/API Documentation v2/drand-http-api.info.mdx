@@ -36,15 +36,17 @@ and caching.
 
 All that's required is the address of the HTTP interface and way to fetch from HTTP, e.g. curl.
 
-The version 2 ofpublic [League of Entropy](https://blog.cloudflare.com/league-of-entropy/) HTTP APIs are available at:
+## Public endpoints
+
+The version 2 of the public [League of Entropy](https://blog.cloudflare.com/league-of-entropy/) HTTP APIs are available at:
 - Protocol Labs
-  - https://api.drand.sh
-  - https://api2.drand.sh
-  - https://api3.drand.sh
+  - https://api.drand.sh/v2/
+  - https://api2.drand.sh/v2/
+  - https://api3.drand.sh/v2/
 
 The League of Entropy currently runs two networks in mainnet: default and fastnet. 
 They are chained and unchained networks respectively, the details of which can be found in the [cryptography 
-specification](https://drand.love/docs/cryptography/#randomness).
+specification](/docs/cryptography/#randomness).
 
 The chain hash for the League of Entropy default chain running at a 30s frequency in chained mode on Mainnet is:
 `8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce`
@@ -56,6 +58,8 @@ The chain hash for the League of Entropy quicknet network running at a 3s freque
 
 Note that [the fastnet network has been deprecated..](https://drand.love/blog/2023/07/03/fastnet-sunset-quicknet-new/)
 
+## Testnet endpoints
+
 Furthermore, we have "testnet endpoints" which are a completely separate environment for testing our latest changes, 
 potentially helping you detect breaking changes or issues with our latest release before they hit mainnet. 
 We recommend running your CI/CD against our testnet endpoints as well as our mainnet ones, in order to detect issues early.
@@ -63,10 +67,10 @@ We recommend running your CI/CD against our testnet endpoints as well as our mai
 We currently have 3 testnet HTTP(S) endpoints being run by:
 
 - Protocol Labs
-  - https://pl-us.testnet.drand.sh
-  - https://pl-eu.testnet.drand.sh
+  - https://pl-us.testnet.drand.sh/v2
+  - https://pl-eu.testnet.drand.sh/v2
 - Cloudflare
-  - https://testnet-api.drand.cloudflare.com
+  - https://testnet-api.drand.cloudflare.com/
 
 As you can see, they are currently running various chains as explained below. 
 We are committed to maintaining the default, G2 based, chained testnet chain 

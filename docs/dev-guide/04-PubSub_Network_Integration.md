@@ -1,7 +1,8 @@
 ---
-id: dev-guide-pubsub-network-integration
-title: "PubSub Network Integration"
-description: A list of public endpoints with usage instructions.
+id: devs-pubsub-network-integration
+title: PubSub Network Integration
+description: Learn how to integrate with the drand PubSub network
+slug: /developer/gossipsub/
 ---
 # PubSub Network Integration
 
@@ -27,7 +28,7 @@ for the public network being `/drand/pubsub/v0.0.0/8990e7a9aaed2ffed73dbd709212
 
 The published messages are encoded protobufs of type [**`PublicRandResponse`**(RandResponse)](https://github.com/drand/drand/blob/799190bff8e1a2ce46dccfcf4e7f7d75075495b2/protobuf/drand/api.proto#L42-L53).
 
-In order to receive randomness using this method you will need to run an application that creates a libp2p host that can connect to a pubsub relay and subscribe to the PubSub topic. We recommend using drand's [**client libraries**](dev-guide-client-libraries) or the [**drand-client**](dev-guide-drand-client-cli) tool, which automatically perform *verification* for this task.
+In order to receive randomness using this method you will need to run an application that creates a libp2p host that can connect to a pubsub relay and subscribe to the PubSub topic. We recommend using drand's [**client libraries**](/docs/dev-guide/03-Client_Libraries.mdx), which can perform *verification* for this task.
 
 As a side note, IPFS can be used to subscribe to PubSub topics (running with `ipfs daemon --enable-pubsub-experiment`):
 

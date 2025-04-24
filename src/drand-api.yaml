@@ -23,7 +23,7 @@ info:
 
     The League of Entropy currently runs two networks in mainnet: default and fastnet. 
     They are chained and unchained networks respectively, the details of which can be found in the [cryptography 
-    specification](https://drand.love/docs/cryptography/#randomness).
+    specification](/docs/cryptography/#randomness).
 
     The chain hash for the League of Entropy default chain running at a 30s frequency in chained mode on Mainnet is:
     `8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce`

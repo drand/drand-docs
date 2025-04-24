@@ -16,7 +16,7 @@ We are excited to announce that IPFSForce has joined the League of Entropy!
 
 IPFSForce has focused on technology research and development in blockchain since 2017. With the vision of being Web 3.0’s infrastructure service provider, IPFSForce is working to make storage more efficient, cost-effective, open, and safer. With "Co-built Value, Sharing Honour" as a guiding principle, IPFSForce leverages technologies to empower global communities with high quality services.
 
-We've asked IPFSForce some key questions that we've previously asked other LoE members - see **[here](https://drand.love/blog/2021/09/14/the-value-of-drand/)** and **[here](https://drand.love/blog/2021/10/28/the-value-of-drand-continued/)** - on the value of drand. Check out what they said.
+We've asked IPFSForce some key questions that we've previously asked other LoE members - see **[here](/blog/2021-09-14-the-value-of-drand.md)** and **[here](/blog/2021-10-28-the-value-of-drand-continued.md)** - on the value of drand. Check out what they said.
 
 ---
 

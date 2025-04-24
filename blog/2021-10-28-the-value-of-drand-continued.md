@@ -7,7 +7,7 @@ tags:
 ---
 This post covers the second set of responses we received from League of Entropy members on our question: _“What’s the value of drand for your organisation and why do you support it”_! 
 <!-- truncate -->
-We hope you enjoyed [the first part](../blog/2021-09-14-the-value-of-drand.md) as much as we did. Read on to get more inspiration and come join as an operator, or a [Software Engineer](https://jobs.lever.co/protocol/ca0b97f4-6117-4004-8d7d-1a4520e2d5be) to take drand to the next level, and establish it as a foundational Internet protocol!
+We hope you enjoyed [the first part](/blog/2021-09-14-the-value-of-drand.md) as much as we did. Read on to get more inspiration and come join as an operator, or a [Software Engineer](https://jobs.lever.co/protocol/ca0b97f4-6117-4004-8d7d-1a4520e2d5be) to take drand to the next level, and establish it as a foundational Internet protocol!
 
 As a reminder, the [League of Entropy](https://leagueofentropy.com/) (LoE) is a consortium of independent, and diverse organizations that partner together to operate a  publicly verifiable, decentralized, bias-resistant, and reliable randomness beacon, called [drand](https://drand.love)! The consortium was originally formed in 2019, and is currently supported by 16 member organizations that include: Cloudflare, École Polytechnique Fédérale de Lausanne (EPFL), University of Chile, Kudelski Security, Protocol Labs, ChainSafe, cLabs, C4DT, Emerald Onion, Ethereum Foundation, IC3, PTisp, Tierion, UCL, QRL Foundation, and ZenGo.
 

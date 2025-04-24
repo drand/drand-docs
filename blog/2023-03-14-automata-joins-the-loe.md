@@ -11,7 +11,7 @@ Automata becomes the newest member of the League of Entropy. We've asked them wh
 <!-- truncate -->
 We are proud to announce that [Automata](https://www.ata.network), a Web3 middleware protocol focused on protecting fairness & privacy, is joining forces with the League of Entropy (LoE)! Automata is becoming the 17th member to join the LoE and the first partner joining from Singapore - a significant milestone for the LoE.
 
-We’ve asked Automata some key questions that we’ve previously asked other LoE members - see [here](https://drand.love/blog/2021/09/14/the-value-of-drand/), [here](https://drand.love/blog/2021/10/28/the-value-of-drand-continued/) and [here](https://drand.love/blog/2022/03/30/storswift-joining/) - on the value of drand. Here are the team's answers.
+We've asked Automata some key questions that we've previously asked other LoE members - see [here](/blog/2021-09-14-the-value-of-drand.md), [here](/blog/2021-10-28-the-value-of-drand-continued.md) and [here](/blog/2022-03-28-storswift-joining.md) - on the value of drand. Here are the team's answers.
 
 ---
 

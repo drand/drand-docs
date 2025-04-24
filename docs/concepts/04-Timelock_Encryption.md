@@ -1,7 +1,8 @@
 ---
 id: concepts-timelock-encryption
 title: "Timelock Encryption"
-description: Describes timelock encryption and how it works.
+description: "An overview of how drand provides timelock encryption services"
+slug: /docs/timelock-encryption/
 ---
 
 # Timelock Encryption

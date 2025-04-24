@@ -1,7 +1,8 @@
 ---
-id: ops-guide-docker-install
-title: "Docker Install"
-description: Detailed instructions for running a production drand node using Docker.
+id: ops-docker-install
+title: Docker Install
+description: Learn how to install drand using Docker
+slug: /operator/docker/
 ---
 # Docker Install
 
@@ -127,7 +128,7 @@ drand dkg join --id <beaconID> --group /path/to/previous/group.toml
 
 At this point, once _everybody_ in the `group.toml` has accepted/joined the DKG, the leader can execute the DKG and the randomness generation will start. Well done! Simply let it run, there's nothing else to do.
 
-In general, we refer you to the [drand-cli guide](05-Command-line_Tools.md) page for up-to-date information about the drand cli.
+In general, we refer you to the [drand-cli guide](./05-Command-line_Tools.md) page for up-to-date information about the drand cli.
 
 ## **Other Topics**
 
