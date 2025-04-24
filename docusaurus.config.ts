@@ -169,7 +169,7 @@ const config: Config = {
           items: [
             {
               label: 'Blog',
-              href: 'https://drand.love/blog',
+              href: 'https://docs.drand.love/blog/',
             },
             {
               label: 'GitHub',

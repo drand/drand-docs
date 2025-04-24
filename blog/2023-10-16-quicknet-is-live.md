@@ -94,7 +94,7 @@ A big shoutout to the League of Entropy for their invaluable contributions, runn
 
 ## Get Started 🚀
 
-For developers and users eager to dive into the new `quicknet` drand network, our [official documentation](/docs/dev-guide/00-Getting-started-devs.md) provides detailed resources about using drand relays and beacons. 
+For developers and users eager to dive into the new `quicknet` drand network, our [official documentation](/developer/) provides detailed resources about using drand relays and beacons. 
 
 We also have a blog post about "[drand for beginners](/blog/2023-06-02-drand-explainer.md) that's packed with useful information and another one about [using drand on-chain](/blog/2023-03-15-draffle.md) with a demo lottery use-case running on the Filecoin Virtual Machine.
 

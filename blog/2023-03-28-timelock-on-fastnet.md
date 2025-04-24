@@ -41,7 +41,7 @@ First things first, let’s recall that `drand`, which stands for “**distribut
 
 To accomplish this drand relies on the threshold BLS signature scheme and its security proof that tells us BLS signatures are indistinguishable from random ones (in the group of all possible signatures). At each epoch, the members of a drand network work together to create an aggregated BLS signature on the message **m = H(round)}**. An important point here for what comes next is that the **message is predictable** according to the target round at a time T (in other words, there is a mapping between time and round numbers, since the network operates at a fixed frequency), when we’re using drand in the so-called unchained mode that [we presented in a post last year](/blog/2022-02-21-multi-frequency-support-and-timelock-encryption-capabilities.md#unchained-randomness-timed-encryption).
 
-You can learn more about drand and how it works under the hood in our documentation: [https://docs.drand.love/docs/cryptography/](/docs/concepts/01-Cryptography.md) 
+You can learn more about drand and how it works under the hood in our documentation: [https://docs.drand.love/docs/cryptography/](/docs/cryptography/) 
 
 ### The League of Entropy
 
