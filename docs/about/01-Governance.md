@@ -11,7 +11,7 @@ Our mission thrives in an environment that is friendly, safe, accepting, and fre
 ## Key Points
 
 - Be respectful.
-- Need help? Contact: [abuse@ipfs.io](mailto:abuse@ipfs.io).
+- Need help? Contact: [abuse@drand.love](mailto:abuse@drand.love).
 - Abusive behavior is never tolerated.
 - Violations may result in immediate and permanent expulsion.
 - Ignorance of this document is not an excuse.
@@ -40,7 +40,7 @@ Harassment includes:
 
 ## Reporting Violations
 
-If you believe someone is harassing you or violating this Code of Conduct, [contact us](https://github.com/ipfs/community/blob/master/code-of-conduct.md#contact-info) with an abuse report. Provide as much detail as possible to help us address the issue effectively.
+If you believe someone is harassing you or violating this Code of Conduct, [contact us](mailto:abuse@drand.love) with an abuse report. Provide as much detail as possible to help us address the issue effectively.
 
 ## Consequences
 
@@ -52,7 +52,7 @@ If you feel falsely or unfairly accused of violating this Code of Conduct, notif
 
 ## Contact Information
 
-As our community remains small, the [IPFS abuse team](https://github.com/ipfs/community/blob/master/code-of-conduct.md#contact-info) acts as a neutral arbiter for Code of Conduct and abuse issues within drand.
+As our community remains small, the abuse team acts as a neutral arbiter for Code of Conduct and abuse issues within the drand community.
 
 Contact us if you are unsure about content appropriateness. We are happy to provide guidance.
 
