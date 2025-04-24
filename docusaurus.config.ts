@@ -62,7 +62,7 @@ const config: Config = {
           rehypePlugins: [rehypeKatex],
         },
         gtag: {
-          trackingID: 'G-PH6HJ6ECV2'
+          trackingID: 'G-GKDXYSL7EF'
         },
         theme: {
           customCss: [
