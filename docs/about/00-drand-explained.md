@@ -12,20 +12,21 @@ drand serves as a critical Internet-wide infrastructure, providing randomness to
 
 Randomness plays a crucial role in various aspects of modern life, from voting systems and traffic management to financial services. However, its most critical application is in cryptography.
 
-For example, WPA2, the widely used security protocol for Wi-Fi networks, relies on randomness. When a laptop connects to a Wi-Fi network, both the laptop and the Wi-Fi access point generate large random numbers to perform a secure handshake. This ensures that communications cannot be eavesdropped. If these random numbers were predictable, an attacker could intercept the connection.
-
 ## Current Randomness Generators
 
 Several systems have tried to provide strong randomness, but each has its limitations.  As an example:
 
-- **NIST Randomness Beacon**: The NIST Randomness Beacon provides cryptographic randomness in real-time. However, it is centralized and not verifiable by the public, which poses trust and reliability concerns.
+- **NIST Randomness Beacon**: The United States' [National Institute of Standards and Technology (NIST)'](https://www.nist.gov/) has a project that aims to produce randomness by using quantum entanglement. While this is an excellent way to produce incredibly random numbers, there is no way for an end-user to verify that the numbers they are getting from NIST are random. Users have to trust that the system is providing genuinely random numbers.
+- Bitcoin is also able to [produce random numbers](https://eprint.iacr.org/2015/1015.pdf). However, the cryptocurrency is fairly centralized, with power coming from a handful of mining pools.
+- [Randhound](https://eprint.iacr.org/2016/1067.pdf) is the most robust random number generator created so far. It claims to be scalable, bias-resistant, unpredictable, verifiable, and decentralized. However, tests have shown that it offers probabilistic guarantees, meaning that an attacker could have the system lean towards favorable numbers. Randhound is also hard to set up and takes a while to generate an output. It is the conceptual predecessor of drand.
+
 
 ## Features of Good Randomness
 
-To prevent manipulation, a strong random-number generator should be:
+To prevent manipulation, a strong public random number generator should be:
 
 - **Unpredictable**: Impossible to predict the next number.
-- **Publicly Verifiable**: Anyone can verify the randomness.
+- **Publicly Verifiable**: Anyone can verify the randomness is really random.
 - **Bias-Resistant**: Cannot be influenced to produce specific outcomes.
 - **Decentralized**: Produced by a set of independent, unrelated parties.
 - **Always Available**: Reliably capable of providing random numbers.
@@ -37,9 +38,9 @@ drand aims to fulfill all these criteria.
 drand generates randomness without allowing any party to predict or bias the output. Here's a simplified overview:
 
 1. **Network Setup**: A drand network consists of nodes running the drand protocol. These nodes agree on a threshold parameter and generate partial signatures.
-2. **Randomness Generation**: Nodes broadcast parts of their signatures, which are collected until they match the threshold. The final signature, a [**Boneh–Lynn–Shacham**](https://en.wikipedia.org/wiki/BLS_digital_signature) (BLS) signature, is verified by the network and hashed to produce the random value.
+2. **Randomness Generation**: Nodes broadcast parts of their signatures, which are collected until they reach the threshold. The final signature, a [**Boneh–Lynn–Shacham**](https://en.wikipedia.org/wiki/BLS_digital_signature) (BLS) signature, is verified by the network and hashed to produce the random value. Because secure signature schemes need to produce unpredictable signatures, this method is secure.
 
-For more details, refer to the [project specifications](https://docs.drand.love/docs/concepts/concepts-specification).
+For more details, refer to the [project specifications](/docs/concepts/03-Specification.md).
 
 ## Public Randomness
 
