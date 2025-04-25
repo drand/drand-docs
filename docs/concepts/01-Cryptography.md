@@ -164,12 +164,12 @@ The drand randomness beacon operates in discrete rounds $r$. In every round, dra
 
 In **chained** mode, in order to extend the chain of randomness, each drand participant $i$ creates the partial BLS signature $\sigma_i^r$ on the message $m = H(r || \sigma_{r-1})$ in round $r$, where $\sigma_{r-1}$ denotes the (full) BLS threshold signature from round $r - 1$ and $H$ is a cryptographic hash function.
 
-![randomness_chained.png](./images/randomness_chained.png)
+![randomness_chained.png](/images/randomness_chained.png)
 Chained mode is supported by using the `pedersen-bls-chained` scheme.
 
 In **unchained** mode, in order to produce unchained randomness, each drand participant $i$ creates the partial BLS signature $\sigma_i^r$ on the message $m = H(r)$ in round $r$, where $H$ is a cryptographic hash function.
 
-![randomness_unchained.png](./images/randomness_unchained.png)
+![randomness_unchained.png](/images/randomness_unchained.png)
 
 Unchained mode is supported by using the either the `pedersen-bls-unchained` or `bls-unchained-on-g1` scheme.
 
