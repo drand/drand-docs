@@ -160,68 +160,6 @@ getRandomnessFastNode()
    Randomness from fastest node is: 7b1f0db59345bcaa48e6d385fab911cd7a9d705b0a7f2bdf27ca7a7f47c1b1b6
    Randomness is: 7b1f0db59345bcaa48e6d385fab911cd7a9d705b0a7f2bdf27ca7a7f47c1b1b6
    ```
-   
-## HTTP API
-
-### Python (WIP)
-
-This guide recommends you use Pyenv to manage Python versions as it simplifies the process.
-It also recommends you use Pipenv for managing project dependencies for your Python project.
-
-1. First, [install Pyenv][INSTALL_PYENV] with brew: `brew install pyenv`.
-2. Then [install Pipenv][INSTALL_PIPENV] with `brew install pipenv`.
-3. Then install Python 3.12.3 with Pipenv: `pyenv install 3.12.3`.
-4. Set Python 3.12.3 to be in use globally with `pyenv global 3.12.3`.
-5. Set up your project directory, dependency management Pipfile, and your Python module.
-    ```bash
-    mkdir myproject
-    cd myproject
-    touch main.py
-    touch Pipfile
-    ```
-6. Add the `reqests` library to your `Pipfile`:
-   ```bash
-   pipenv install requests
-   ```
-7. Make an HTTP request to `https://pl-us.testnet.drand.sh/chains` to get the list of chains.
-
-   Select the first chain and save it in a variable, say `chain-hash`.
-
-   Sample JSON response:
-   ```json
-   [
-   "84b2234fb34e835dccd048255d7ad3194b81af7d978c3bf157e3469592ae4e02",
-   "cc9c398442737cbd141526600919edd69f1d6f9b4adb67e4d912fbc64341a9a5",
-   "f3827d772c155f95a9fda8901ddd59591a082df5ac6efe3a479ddb1f5eeb202c",
-   "7672797f548f3f4748ac4bf3352fc6c6b6468c9ad40ad456a397545c6e2df5bf"
-   ]
-   ```
-
-8. To get the chain information make an HTTP request to `f"https://pl-us.testnet.drand.sh/{chain-hash}/info"`
-
-   Sample JSON response:
-   ```json
-   {
-      "public_key": "8200fc249deb0148eb918d6e213980c5d01acd7fc251900d9260136da3b54836ce125172399ddc69c4e3e11429b62c11",
-      "period": 3,
-      "genesis_time": 1651677099,
-      "hash": "7672797f548f3f4748ac4bf3352fc6c6b6468c9ad40ad456a397545c6e2df5bf",
-      "groupHash": "65083634d852ae169e21b6ce5f0410be9ed4cc679b9970236f7875cff667e13d",
-      "schemeID": "pedersen-bls-unchained",
-      "metadata": {
-         "beaconID": "testnet-unchained-3s"
-      }
-   }   
-   ```
-
-9. 
-
-### Postman Collection (WIP)
-
-TBD
-## LIB p2p Examples
-
-### Goland WIP
 
 [INSTALL_GO]: https://go.dev/doc/install
 [INSTALL_NODEJS]: https://nodejs.org/en/download/package-manager
