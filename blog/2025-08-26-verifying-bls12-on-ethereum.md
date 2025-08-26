@@ -2,22 +2,23 @@
 title: "Verifying the `quicknet` beacons on Ethereum"
 description: "At long last!"
 date: 2025-08-26
-author: Julie Bettens
+author: Julie Tyché Bettens
 tags:
     - Beginner
+    - Research
 ---
-Let us explore together the effectivness of EIP-2537 after the Pectra upgrade for onchain BLS signature verification.
+Let us explore together the effectiveness of EIP-2537 after the Pectra upgrade for onchain BLS signature verification.
 <!-- truncate -->
 
-The League of Entropy has been emitting `quicknet` random beacons for anyone to use for all their public verifiable randomness uses [since 2023](https://docs.drand.love/blog/2023/10/16/quicknet-is-live), and ever since we launched it people have been repeatedly asking us about how to verify drand beacons “onchain”, especially on Ethereum. Today we finally have everything we need to answer that question!
+The League of Entropy has been emitting `quicknet` random beacons for anyone to use for all their public verifiable randomness needs [since 2023](https://docs.drand.love/blog/2023/10/16/quicknet-is-live), and ever since we launched it people have been repeatedly asking us about how to verify drand beacons “onchain”, especially on Ethereum. Today we finally have everything we need to answer that question!
 
-To make drand work, we need to use a mathematical construction known as a *pairing-friendly elliptic curve*. [You can read more about this in our documentation.](https://docs.drand.love/docs/cryptography/#pairing-based-cryptography) Nowadays, there are two main contenders to chose from: BN254 and BLS12-381. BN254 has the advantage of being supported by many blockchain networks because it is a bit older, whereas BLS12-381 offers better performance and higher security. Since our launch in 2020, drand has relied on BLS12-381, although the League of Entropy has also discreetly launched a special `evmnet` beacon in 2024 that uses BN254 to be compatible with more blockchain networks.
+To make drand work, we need to use a mathematical construction known as a *pairing-friendly elliptic curve*. [You can read more about this in our documentation.](https://docs.drand.love/docs/cryptography/#pairing-based-cryptography) Nowadays, there are two main contenders to choose from: BN254 and BLS12-381. BN254 has the advantage of being supported by many blockchain networks because it is a bit older, whereas BLS12-381 offers better performance and higher security. Since our launch in 2020, drand has relied on BLS12-381, although the League of Entropy has also discreetly launched a special `evmnet` beacon in 2024 that uses BN254 to be compatible with more blockchain networks.
 
 Earlier this year, the Ethereum network underwent an upgrade known as Prague-Electra, which brought among other things [EIP-2537](https://eips.ethereum.org/EIPS/eip-2537). EIP-2357 allows using BLS12-381 efficiently in the Ethereum Virtual Machine. [Randamu team members have contributed to the discussion around this EIP](https://ethereum-magicians.org/t/eip-2537-bls12-precompile-discussion-thread/4187/52), and we were thrilled to see it land in production after years  being in the works.
 
 As part of [Randamu](https://randa.mu/)'s ongoing research and development efforts, I set out to discover how beneficial these changes are to threshold networks seeking to interoperate with Ethereum and similar blockchain networks. To that end, I added BLS12-381 support to our onchain signature verification library using the latest version of the EVM. It is able to verify signatures originating from the League of Entropy's `quicknet`  beacon, as well as from a modified version of our own [dcipher network](https://dcipher.network/). I also added support for the [compressed representation of BLS12-381](https://github.com/zcash/librustzcash/blob/6e0364cd42a2b3d2b958a54771ef51a8db79dd29/pairing/src/bls12_381/README.md#serialization), which is used in drand quicknet.
 
-This table compares the onchain costs of the three possible variants. Execution gas was measured using `forge snapshot`. Compared to BN254, BLS12-381 uses up to 20% less gas for verification. In uncompressed form, BLS12-381 signatures consume 50% more bandwidth. With compression however, signatures are 25% shorter than with BN254. The tradeoff is that decompression must be performed onchain, which costs gas. As a result, using point compression is not optimal on Ethereum L1, but it may be beneficial on rollups, where data costs dominate.
+This table compares the onchain costs of the three possible variants. Execution gas was measured using `forge snapshot`. Compared to BN254, BLS12-381 uses up to 20% less gas for verification. In uncompressed form, BLS12-381 signatures consume 50% more bandwidth. With compression however, signatures are 25% shorter than with BN254. The trade-off is that decompression must be performed onchain, which costs gas. As a result, using point compression is not optimal on Ethereum L1, but it may be beneficial on rollups, where data costs dominate.
 
 | Pairing-friendly Curve | Gas cost of verification | Byte size of the signatures | Gas cost of calldata | Total gas cost |
 | --- | --- | --- | --- | --- |
