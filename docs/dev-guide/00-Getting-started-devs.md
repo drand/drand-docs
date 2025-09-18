@@ -19,14 +19,17 @@ The current public [League of Entropy](https://leagueofentropy.org) drand mainne
 - `/dnsaddr/api2.drand.sh` (1st-level libp2p gossipsub relay endpoint)
 - `/dnsaddr/api3.drand.sh` (1st-level libp2p gossipsub relay endpoint)
 
-There are two networks on mainnet:
+There are three networks on mainnet:
 
 - `default` which is running the chained scheme with public keys on G1
 - `quicknet` which is running the unchained scheme with public keys on G2
+- `evmnet` which is running the unchained scheme with public keys on G2, using the BN254 curve instead of the BLS12-381, meaning it is compatible with EVM pre-compiles.
 
 `default` network chain hash: `8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce`
 
 `quicknet` network chain hash: `52db9ba70e0cc0f6eaf7803dd07447a1f5477735fd3f661792ba94600c84e971`
+
+`evmnet` network chain hash: `04f1e9062b8a81f848fded9c12306733282b2727ecced50032187751166ec8c3`
 
 <aside>
 ⚠️ Note that ** [the`fastnet` network has been deprecated](https://drand.love/blog/fastnet-to-be-sunset). **

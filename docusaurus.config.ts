@@ -47,7 +47,7 @@ const config: Config = {
           blogSidebarCount: 'ALL',
           showReadingTime: true,
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+            defaultReadingTime({content, locale: 'en', frontMatter, options: {wordsPerMinute: 300}}),
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -80,6 +80,8 @@ const config: Config = {
     ],
   ],
 
+
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/drand-logo.png',
@@ -94,6 +96,10 @@ const config: Config = {
           sidebarId: 'docsSidebar',
           position: 'left',
           label: 'Docs',
+        },
+        {
+          type: 'search',
+          position: 'left',
         },
         {
           type: "docSidebar",
@@ -245,6 +251,24 @@ const config: Config = {
   ],
   themes: [
     'docusaurus-theme-openapi-docs',
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+
+        // Customize the keyboard shortcut to focus search bar (default is "mod+k"):
+        // searchBarShortcutKeymap: "s", // Use 'S' key
+        // searchBarShortcutKeymap: "ctrl+shift+f", // Use Ctrl+Shift+F
+
+        // If you're using `noIndex: true`, set `forceIgnoreNoIndex` to enable local index:
+        // forceIgnoreNoIndex: true,
+        indexPages: true,
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: '/',
+      },
+    ],
   ],
   stylesheets: [
     {
