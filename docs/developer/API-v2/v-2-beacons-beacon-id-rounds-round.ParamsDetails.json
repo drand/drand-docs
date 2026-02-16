@@ -1,0 +1,1 @@
+{"parameters":[{"name":"beaconID","in":"path","required":true,"schema":{"type":"string"},"example":"default","description":"The ID of the beacon."},{"name":"round","in":"path","required":true,"schema":{"type":"integer","minimum":1},"example":12345,"description":"The round number for which to fetch randomness."}]}

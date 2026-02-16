@@ -1,0 +1,1 @@
+{"parameters":[{"name":"beaconID","in":"path","required":true,"schema":{"type":"string"},"example":"default","description":"The ID of the beacon."}]}

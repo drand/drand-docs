@@ -1,0 +1,1 @@
+{"parameters":[{"name":"chain-hash","in":"path","required":true,"schema":{"type":"string","pattern":"^[0-9a-fA-F]{64}$"},"example":"8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce","description":"The hexadecimal hash identifying the chain."}]}

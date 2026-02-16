@@ -233,14 +233,14 @@ const config: Config = {
         config: {
           drand: {
             specPath: "src/drand-api.yaml",
-            outputDir: "docs/dev-guide/API Documentation v1",
+            outputDir: "docs/developer/API-v1",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           drandV2: {
             specPath: "src/drand-api-v2.yaml",
-            outputDir: "docs/dev-guide/API Documentation v2",
+            outputDir: "docs/developer/API-v2",
             sidebarOptions: {
               groupPathsBy: "tag",
             },

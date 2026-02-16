@@ -480,35 +480,28 @@ components:
           type: integer
           description:  The time in seconds since the Unix Epoch that the group began generating randomness
           example: 1595431050
-        hash:
+        genesis_seed:
+          type: string
+          description: The genesis seed used instead of round 0.
+          example: "176f93498eac9ca337150b46d21dd58673ea4e3581185f869672e59fa4cb390a"
+        chain_hash:
           type: string
           description: The chain hash, which uniquely identifies the drand chain. It is used as a root of trust for validation of the first round of randomness.
           example: "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce"
-        groupHash:
-          type: string
-          description: The hash of a file containing the current set of nodes participating in the network. The group file is updated on every resharing
-          example: "176f93498eac9ca337150b46d21dd58673ea4e3581185f869672e59fa4cb390a"
-        schemeID:
+        scheme:
           type: string
           description: The name of the scheme this network uses. The scheme specifies the type of cryptography being used to generate the randomness beacons
           example: "pedersen-bls-chained"
-        metadata:
-          type: object
-          properties:
-            beaconID:
-              type: string
-              description: The identifier for the beacon.
-              example: "default"
-          description: Contains some miscellaneous metadata about the network that is added to most packets during operation
+        beacon_id:
+          type: string
+          description: The identifier for the beacon.
+          example: "default"
 
       required:
         - public_key
         - period
         - genesis_time
-        - hash
-        - groupHash
-        - schemeID
-        - metadata
+        - scheme
 
     Randomness:
       type: object
@@ -516,11 +509,7 @@ components:
         round:
           type: integer
           description: A monotonically increasing integer - the randomness round index
-          example: 367
-        randomness:
-          type: string
-          description: A SHA-256 hash of the signature
-          example: "3439d92d58e47d342131d446a3abe264396dd264717897af30525c98408c834f"
+          example: 5860648
         signature:
           type: string
           description: The Boneh-Lynn-Shacham (BLS) signature for this round of randomness
@@ -531,5 +520,4 @@ components:
           example: "859504eade86790ad09b2b3474d5e09d1718b549ef7107d7bbd18f5e221765ce8252d7db02664c1f6b20f40c6e8e138704d2acfeb6c5abcc14c77e3a842b2f84515e7366248ca37b1460d23b4f98493c246fbb02851f2a43a710c968a349f8d6"
       required:
         - round
-        - randomness
         - signature
