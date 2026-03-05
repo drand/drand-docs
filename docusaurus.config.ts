@@ -153,7 +153,7 @@ const config: Config = {
             },
             {
               label: 'HTTP API Docs',
-              to: '/docs/dev-guide/API%20Documentation%20v2/drand-http-api/',
+              to: '/docs/developer/http-api/',
             },
           ],
         },

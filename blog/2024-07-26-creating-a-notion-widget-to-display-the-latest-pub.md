@@ -39,7 +39,7 @@ npm install drand-client
 
 Once the drand client is installed, we’re ready to start implementing our simple ReactJS application! The application will allow users to select their desired network (i.e., default or quicknet) from a dropdown menu and display the latest randomness after each round, the round number and a countdown to the next randomness generation round or ETA. 
 
-Appropriate API URLs for the mainnet default and quicknet networks can be found here: [https://docs.drand.love/docs/dev-guide/3-0-dev-guide](https://docs.drand.love/docs/dev-guide/3-0-dev-guide)
+Appropriate API URLs for the mainnet default and quicknet networks can be found here: [https://docs.drand.love/docs/developer/http-api](https://docs.drand.love/docs/developer/http-api)
 
 Let’s implement the reactjs component in our `App.js` file.
 
