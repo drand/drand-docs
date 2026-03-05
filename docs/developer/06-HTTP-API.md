@@ -2,7 +2,7 @@
 id: dev-guide-http-api
 title: "Our HTTP API"
 description: The easiest way to get drand randomness, using our HTTP(s) API endpoints.
-slug: developer/http-api
+slug: /developer/http-api
 ---
 
 Our HTTP API has two version: a legacy one, v1, and a newer REST based API, v2. Checkout:
