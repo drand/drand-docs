@@ -1,12 +1,9 @@
 ---
-id: ops-deployment
-title: Deployment
-description: Learn how to deploy drand
-slug: /operator/deploy/
+
 ---
 # Deployment
 
-# **Deployment guide**
+https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8446.pdf
 
 This document explains the workflow to have a working group of drand nodes generate randomness. There are four sections to this guide:
 
