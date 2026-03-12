@@ -247,7 +247,21 @@ const config: Config = {
           } satisfies OpenApiPlugin.Options,
         }
       }
-    ]
+    ],
+    function () {
+      return {
+        name: 'webpack-polyfill-plugin',
+        configureWebpack(config, isServer) {
+          return {
+            resolve: {
+              fallback: {
+                path: require.resolve('path-browserify'),
+              },
+            },
+          };
+        },
+      };
+    },
   ],
   themes: [
     'docusaurus-theme-openapi-docs',
