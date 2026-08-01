@@ -19,10 +19,10 @@ Our timelock scheme uses identity-based encryption to allow users to create ciph
 
 ## 🎓 **Learn more about Timelock Encryption**
 
-- [Our blog post announcing the new network and timelock encryption](https://drand.love/blog/timelock-encryption-is-now-supported-on-drand-mainnet)
+- [Our blog post announcing the new network and timelock encryption](https://docs.drand.love/blog/2023/03/28/timelock-on-fastnet/)
 - [**Yolan's talk at Real World Crypto on timelock encryption**](https://www.youtube.com/watch?v=Xh849Ij3lhU)
 - [The Timelock Paper on ePrint](https://eprint.iacr.org/2023/189)
-- [Our post about deprecating fastnet in favor of quicknet](https://drand.love/blog/fastnet-to-be-sunset)
+- [Our post about deprecating fastnet in favor of quicknet](https://docs.drand.love/blog/fastnet-to-be-sunset/)
 
 ## 🛡️ **Security Assumptions**
 
