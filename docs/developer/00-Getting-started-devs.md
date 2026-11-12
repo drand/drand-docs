@@ -14,7 +14,6 @@ The current public [League of Entropy](https://leagueofentropy.org) drand mainne
 - `https://api2.drand.sh` (HTTPS endpoint, also available over HTTP)
 - `https://api3.drand.sh` (HTTPS endpoint, also available over HTTP)
 - `https://drand.cloudflare.com` (HTTPS endpoint)
-- `https://api.drand.secureweb3.com:6875` (HTTPS endpoint)
 - `/dnsaddr/api.drand.sh` (1st-level libp2p gossipsub relay endpoint)
 - `/dnsaddr/api2.drand.sh` (1st-level libp2p gossipsub relay endpoint)
 - `/dnsaddr/api3.drand.sh` (1st-level libp2p gossipsub relay endpoint)

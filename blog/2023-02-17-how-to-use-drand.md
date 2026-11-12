@@ -39,7 +39,7 @@ From there, create a new file at the root of the project called `index.js` and o
 
 The most basic primitive is a `Chain` - it represents a single network instance hosted by a node. Networks can have different parameters such as frequency (how often it creates randomness), algorithm (what type of cryptography underpins it and how the beacons are related) and participants (the nodes that are actually working together to create the shared signature that constitutes randomness), but for our purposes the default network is enough!
 
-We're going to connect to http API of the drand team’s nodes  ([https://api.drand.sh](https://api.drand.sh/)), but you could also use Cloudflare's API endpoint ([https://drand.cloudflare.com/](https://drand.cloudflare.com/)), or StorSwift’s relay ([https://api.drand.secureweb3.com:6875](https://api.drand.secureweb3.com:6875/)), but beacons are also available through libp2p (/dnsaddr/api.drand.sh) or any CDN that hosts drand beacons! Provenance of the beacons is not important, since they are entirely verifiable.
+We're going to connect to http API of the drand team’s nodes  ([https://api.drand.sh](https://api.drand.sh/)), but you could also use Cloudflare's API endpoint ([https://drand.cloudflare.com/](https://drand.cloudflare.com/)). Beacons are also available through libp2p (/dnsaddr/api.drand.sh) or any CDN that hosts drand beacons! Provenance of the beacons is not important, since they are entirely verifiable.
 
 Since we're using HTTPs, let's create a chain using the HTTPs implementation:
 

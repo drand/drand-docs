@@ -16,7 +16,6 @@ The public League of Entropy drand mainnet endpoints are:
  - https://api2.drand.sh (HTTPS endpoint, also available over HTTP)
  - https://api3.drand.sh (HTTPS endpoint, also available over HTTP)
  - https://drand.cloudflare.com (HTTPS endpoint)
- - https://api.drand.secureweb3.com:6875 (HTTPS endpoint)
 
 The easiest way to try them out is with `curl`:
 
