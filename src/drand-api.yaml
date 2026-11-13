@@ -18,8 +18,6 @@ info:
       - https://api3.drand.sh/
     - Cloudflare
       - https://drand.cloudflare.com/
-    - Storswift
-      - https://api.drand.secureweb3.com:6875/
 
     The League of Entropy currently runs three networks in mainnet: `default`, `fastnet` and `evmnet`. 
     They are chained and unchained networks respectively, the details of which can be found in the [cryptography 
@@ -75,8 +73,6 @@ servers:
   # Public Endpoints
   - url: https://drand.cloudflare.com
     description: Cloudflare - Public endpoint for the League of Entropy mainnet
-  - url: https://api.drand.secureweb3.com:6875
-    description: Storswift - Public endpoint for the League of Entropy mainnet
 
   # Testnet Endpoints
   - url: https://pl-us.testnet.drand.sh
